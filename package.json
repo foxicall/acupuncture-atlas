@@ -17,6 +17,7 @@
     "model:generate": "node scripts/generate-model.js",
     "sync": "node scripts/git-sync.js",
     "mobile:preview": "node scripts/mobile-preview.js",
+    "mobile:tunnel": "node scripts/mobile-preview.js --tunnel",
     "calibration:import": "node scripts/import-calibration.js"
   },
   "dependencies": {

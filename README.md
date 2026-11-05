@@ -66,6 +66,8 @@ npm run model:generate
 
 教材中的角度、深度、禁忌照錄來源；未載明的數值不推測。`needle_angle`、`needleVector`／`vector`、原始 `depth`、`technique.dangerLevel` 及 `docPath` 讓教材與場景共用結構化資料。數值角度僅引用原文明確度數。「直刺」沿表面法線向內，以細圓柱針體與箭頭示意，資料中的數值角度仍為 `null`。針體長度不代表實際深度，也不將「寸」換算成模型單位。未知斜刺角度、平刺方向或多種方案不生成任意針向；缺乏資料的風險等級為 `unreviewed`，不標成 `safe`。所有教材尚須專業師資審閱；本應用用於課程學習，不作為臨床取穴導航。
 
+渲染前會再次驗證 `needleVector` 必須為三個有限數值組成的非零陣列。缺值、錯誤格式、NaN、無限值或零向量均不生成針體，仍可聚焦穴位並閱讀教材；抽屜顯示「進針角度與向量：待專業校準」。切換至未知向量穴位時也會清除先前的針體。
+
 公開業界介面的參考範圍及來源見 [DESIGN-REFERENCES.md](DESIGN-REFERENCES.md)，沒有取用第三方受版權保護模型或臨床數值。
 
 ## PWA 與離線
@@ -74,28 +76,44 @@ npm run model:generate
 
 上線需要 HTTPS（localhost 可開發）。Android 以 Chrome 安裝選單／安裝按鈕加入主畫面；iOS 在 Safari 分享選單選「加入主畫面」。包含 standalone manifest、192/512 PNG、maskable 圖示、Apple touch icon、safe-area 及 reduced-motion 適配。
 
-## 手機 HTTPS 實測入口
+## 手機區網實測入口
 
 ```sh
 npm run mobile:preview
 ```
 
-一個命令會以根路徑建立正式 `dist/`，在 **4175 port** 啟動僅提供成品檔案的本機伺服器，再建立 Cloudflare HTTPS quick tunnel。終端機會在確認隧道連線成功後顯示手機網址與 QR Code。手機掃碼開啟後，等待「離線教材已就緒」，再以 Safari「分享 → 加入主畫面」或 Android Chrome「安裝應用程式」安裝。保持終端機開啟；`Ctrl+C` 同時關閉預覽與隧道。既有 8080 開發伺服器不會被停止或改動。
+預設以根路徑建立正式 `dist/`，使用 **Vite preview `--host 0.0.0.0`、4175 port** 啟動區域網路預覽。終端機依電腦實際網卡的非內部 IPv4 位址列出每個可用網址與 QR Code；手機與電腦連接同一 Wi-Fi 後掃碼即可測試觸控、旋轉、縮放和排版。若有多張網卡，選擇與手機所在 Wi-Fi 相同網段的地址，必要時允許防火牆的 4175 port。未取得有效 LAN 位址時會明確提示，不會用 localhost 假裝手機網址。
 
-臨時網址可能每次不同；離線快取與本機校準依網址分開保存。更換網址前請匯出校準 JSON，新網址需重新完成首次離線快取。
+**區網 HTTP 通常不是安全內容來源（secure context），不能用來驗證 Service Worker 離線快取或標準 PWA 安裝。** 安裝與離線行為請使用 HTTPS 網址，再等待「離線教材已就緒」；桌面 localhost 可作開發測試，但手機不能以電腦的 localhost 連線。
+
+雲端容器網路受限時，請於本機執行 npm run mobile:preview，並確保手機與電腦處於同一 Wi-Fi，或使用本機 ngrok/localtunnel 建立轉發
+
+雲端顯示的容器 IP 只證明本機網卡存在，不代表手機有路由可達。此環境的驗證限於本機 listener 與 HTTP 成品回應，不宣稱手機已成功連線。保持終端機開啟；`Ctrl+C` 關閉自己啟動的預覽。既有 8080 開發伺服器不會被停止或改動。
 
 ```sh
-# 使用剛完成的根路徑正式建置
+# 使用剛完成的根路徑正式建置，不再建置
 npm run mobile:preview -- --skip-build
 # 4175 已被使用時
 npm run mobile:preview -- --port 4176
-# 只驗證本機正式成品，不建立外部網址
+# 只在 loopback 驗證成品，不列手機網址
 npm run mobile:preview -- --local-only
+# 明確選用原 Cloudflare HTTPS 隧道；預設不下載或啟動它
+npm run mobile:preview -- --tunnel
 ```
 
-工具從 Cloudflare 官方 GitHub release 下載固定版本 `2026.10.7`，以官方發行資產的 SHA-256 驗證後才執行，快取於忽略追蹤的 `node_modules/.cache/cloudflared/`。Linux x64/arm64、macOS Intel/Apple Silicon 與 Windows x64 有對應校驗碼；需要 `curl`，macOS 解壓另需系統 `tar`。不使用關閉 TLS 驗證或任意第三方執行檔。預覽伺服器綁定 loopback、限制 Host、拒絕路徑越界和逃出 `dist/` 的符號連結；公開網址仍可讓知道網址的人瀏覽這份成品，關閉命令即失效。
+需要手機安裝測試時，可在**本機電腦**保持預覽運行，於另一終端機擇一建立 HTTPS 轉發：
 
-**此雲端環境的實測限制**：已成功下載並驗證官方工具，但 cloudflared 呼叫 `https://api.trycloudflare.com/tunnel` 時直接連線被平台拒絕（`connect: connection refused`），因此這裡尚未產生可用手機網址。HTTP/2 隧道另需要 outbound TCP **7844**。當環境只允許 HTTP 代理而無對應直接 TCP 路由時，請在可連線的本機電腦執行相同命令，或將 `dist/` 部署至 HTTPS 靜態主機後以手機開啟；這不需要變更應用程式。腳本逾時或失敗會停止自己的預覽與隧道，不會改動網路政策。
+```sh
+ngrok http 4175 --host-header=rewrite
+# 或
+npx localtunnel --port 4175 --local-host 127.0.0.1
+```
+
+這些 Host 重寫選項讓 Vite 保留主機名稱檢查，不必放行未知網域。依工具指示取得公開 HTTPS 網址，必要時完成供應商自己的帳戶或驗證流程。本輪未在雲端啟動這兩種轉發，也不假設它們在受限容器中可用。公開網址可能每次不同，離線快取與本機校準依網址分開保存；更換網址前先匯出校準 JSON，新網址需重新完成首次離線快取。
+
+`--tunnel` 才會使用 Cloudflare：下載官方固定版本 `2026.10.7`，以官方發行資產的 SHA-256 驗證後執行，快取於忽略追蹤的 `node_modules/.cache/cloudflared/`。Linux x64/arm64、macOS Intel/Apple Silicon 與 Windows x64 有對應校驗碼；下載需要 `curl`，macOS 解壓另需 `tar`。預覽保留 Host 檢查，沒有設定 `allowedHosts: true`。HTTPS 公開網址可讓知道網址的人瀏覽成品，關閉隧道即失效。
+
+**Cloudflare 在此雲端的已知限制**：先前已成功下載並驗證工具，但呼叫 `https://api.trycloudflare.com/tunnel` 時直接連線遭拒（`connect: connection refused`）；HTTP/2 隧道另外需要 outbound TCP **7844**。因此預設區網模式完全不依賴 cloudflared，亦不會為預覽變更網路政策。
 
 ## GitHub 同步
 

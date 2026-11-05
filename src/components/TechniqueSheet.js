@@ -1,6 +1,6 @@
 import { getDocument, renderMarkdown, text } from '../lib/docs.js';
 import { icon } from '../lib/icons.js';
-import { needleSpec } from '../lib/needle.js';
+import { needleSpec, normalizedNeedleVector } from '../lib/needle.js';
 
 export class TechniqueSheet {
   constructor(element, onFocus, onClose) {
@@ -45,12 +45,13 @@ export class TechniqueSheet {
     const primaryDoc = getDocument(point.docPath || technique.source || point.docs[0]);
     const warnings = (point.dangerWarnings || []).filter((warning, index, all) => all.findIndex(other => other.text === warning.text) === index);
     const danger = technique.dangerLevel === 'high';
+    const hasNeedleVector = normalizedNeedleVector(point.needleVector) !== null;
     const fields = [['體表定位', technique.location], ['刺灸操作', technique.method], ['進針深度', technique.depth], ['安全與禁忌', technique.safety]];
     this.element.innerHTML = `<button class="sheet-drag-handle mobile-only" data-sheet-drag aria-label="展開穴位詳解" aria-expanded="false"><span class="sheet-handle"></span></button><div class="sheet-top"><span>穴位詳解</span><button class="icon-button" data-close-sheet aria-label="收合穴位詳解">${icon('close')}</button></div>
       <div class="point-title"><span class="detail-code">${text(point.id.startsWith('DOC-') ? '區域示意' : point.id)}</span><h2>${text(point.name)}</h2><p>${text(point.meridian)}</p></div>
       <div class="sheet-actions"><button class="primary-button" data-focus>${icon('pin')}聚焦穴位</button><button class="secondary-button" data-expand>${icon('book')}閱讀講義</button></div>
       <div class="sheet-scroll">${danger ? `<section class="danger-warning" data-danger-warning aria-label="高風險穴位警示"><strong class="danger-badge">高風險穴位 · 危險深度</strong><p>避開重要臟器／血管，依教材確認方向與深度。</p>${warnings.map(warning => `<div class="danger-excerpt"><p>${text(warning.text)}</p><button class="text-button" data-danger-source="${text(warning.source.path)}">查閱警示來源 · 第 ${text(warning.source.line)} 行 ${icon('arrow')}</button></div>`).join('')}</section>` : ''}
-      <div class="geometry-note">${icon('layers')}<p>${point.coordinatePrecision === 'manual' ? '手動表面取點（待審訂）' : '體表區域示意'} · ${needleSpec(point) ? text(needleSpec(point).label) : '教材未載明可視化角度'}<br><span>模型、針向與針體長度為示意，未將「寸」換算為模型距離。</span></p></div>
+      <div class="geometry-note">${icon('layers')}<p>${point.coordinatePrecision === 'manual' ? '手動表面取點（待審訂）' : '體表區域示意'} · ${hasNeedleVector ? (needleSpec(point) ? text(needleSpec(point).label) : '依教材所載針向示意') : '<span data-needle-calibration-warning>進針角度與向量：待專業校準</span>'}<br><span>模型、針向與針體長度為示意，未將「寸」換算為模型距離。</span></p></div>
       <div class="technique-fields">${fields.map(([title, value]) => `<section class="technique-field"><h3>${title}</h3><div class="markdown-body">${renderMarkdown(value || '本講義未載明，請查閱完整教材。')}</div></section>`).join('')}</div>
       <section class="source-section"><h3>教材來源</h3><div class="source-links">${point.docs.map(path => `<button class="source-link" data-source="${text(path)}">${icon('book')}<span>${text(getDocument(path)?.title || path)}</span>${icon('arrow')}</button>`).join('')}</div></section>
       <section class="sheet-original" data-sheet-original hidden><h3>原始講義全文</h3><div class="markdown-body">${renderMarkdown(primaryDoc?.markdown || '此穴位沒有對應的原始講義。')}</div></section>

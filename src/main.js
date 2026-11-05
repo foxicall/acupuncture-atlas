@@ -119,6 +119,7 @@ try {
   window.__atlas = {
     get selectedId() { return selected.id; }, get modelLoaded() { return Boolean(viewer.body); },
     get needleVisible() { return viewer.needle.visible && viewer.needle.children.length > 0; },
+    get needleMeshCount() { return viewer.needle.children.length; },
     get visiblePointIds() { return viewer.meshes.filter(mesh => mesh.visible && viewer.hotspots.visible).map(mesh => mesh.userData.point.id); },
   };
 } catch (error) {

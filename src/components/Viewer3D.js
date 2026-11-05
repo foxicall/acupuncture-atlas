@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import gsap from 'gsap';
+import { normalizedNeedleVector } from '../lib/needle.js';
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export class Viewer3D {
@@ -199,8 +200,9 @@ export class Viewer3D {
       this.needle.remove(child);
       child.traverse(o => { o.geometry?.dispose(); if (o.material) o.material.dispose(); });
     });
-    if (point.needleVector) {
-      const direction = new THREE.Vector3(...point.needleVector).normalize();
+    const needleVector = normalizedNeedleVector(point.needleVector);
+    if (needleVector) {
+      const direction = new THREE.Vector3(...needleVector);
       const surface = new THREE.Vector3(...point.position);
       const rotation = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
       // Fixed display lengths. Cun/mm remain source text, without an unsupported
