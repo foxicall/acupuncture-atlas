@@ -1,0 +1,61 @@
+{
+  "markdownFiles": 75,
+  "acupoints": 158,
+  "tableSourceRows": 334,
+  "proseSourceRows": 18,
+  "warningSourceRows": 27,
+  "excludedRows": [
+    {
+      "path": "docs/2.2经络系统的组成-十二经脉.md",
+      "line": 31,
+      "label": "本講不適用",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/2.3十二经脉走向交接规律、血气流注规律.md",
+      "line": 35,
+      "label": "影片未提及",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/4.18.1上肢部常用腧穴-概述.md",
+      "line": 38,
+      "label": "鼻咽管/腕部穴位 (暗指舉例)",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/5.3皮内针.md",
+      "line": 27,
+      "label": "背部腧穴（示範部位）",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/5.3皮内针.md",
+      "line": 28,
+      "label": "耳穴（示範部位）",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/5.7拔罐疗法.md",
+      "line": 28,
+      "label": "影片未提及",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/6.3针灸临床诊治特点.md",
+      "line": 29,
+      "label": "影片未提及",
+      "reason": "Not an individually identified point"
+    },
+    {
+      "path": "docs/7.4肥胖的针灸治疗.md",
+      "line": 29,
+      "label": "臍周八針 (肥八針)",
+      "reason": "Group or non-individual category; see original document"
+    }
+  ],
+  "coordinates": "schematic-unvalidated-surface-fitted",
+  "manualOverrides": 0,
+  "surfaceProjectionUnresolved": [],
+  "clinicalContent": "verbatim-unreviewed-source-material"
+}

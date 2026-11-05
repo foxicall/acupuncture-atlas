@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "針灸圖譜 · Acupuncture Atlas",
+  "short_name": "針灸圖譜",
+  "description": "在 3D 圖譜中探索穴位，對照原始教材學習入針手法。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#edf1ef",
+  "theme_color": "#edf1ef",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
