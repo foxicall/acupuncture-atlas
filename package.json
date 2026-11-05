@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
+    "dev:https": "vite --config vite.https.config.js",
     "build": "vite build && node scripts/verify-build.js",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --test",
@@ -16,7 +17,9 @@
     "data:generate": "node scripts/generate-acupoints.js",
     "model:generate": "node scripts/generate-model.js",
     "sync": "node scripts/git-sync.js",
-    "mobile:preview": "node scripts/mobile-preview.js",
+    "mobile:preview": "node scripts/mobile-preview.js --https",
+    "mobile:https": "node scripts/mobile-preview.js --https",
+    "mobile:http": "node scripts/mobile-preview.js",
     "mobile:tunnel": "node scripts/mobile-preview.js --tunnel",
     "calibration:import": "node scripts/import-calibration.js"
   },
@@ -31,6 +34,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.58.0",
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
     "vite": "^7.3.0",
     "vite-plugin-pwa": "^1.2.0"
   }

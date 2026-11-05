@@ -2,13 +2,14 @@
 import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { mkdir, readFile, realpath, rm, stat, rename, chmod } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
+import { createHash, X509Certificate } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { platform, arch, networkInterfaces } from 'node:os';
 import { isIP } from 'node:net';
 import { npmCommand } from './npm-command.js';
+import { localHttpsConfig } from './local-https.js';
 
 // SHA-256 digests from the official Cloudflare GitHub release assets API.
 // https://api.github.com/repos/cloudflare/cloudflared/releases/tags/2026.10.7
@@ -24,15 +25,25 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.svg': 'image/svg+xml', '.glb': 'model/gltf-binary', '.gltf': 'model/gltf+json', '.bin': 'application/octet-stream', '.woff2': 'font/woff2', '.md': 'text/markdown; charset=utf-8' };
 
 export function parsePreviewArgs(args) {
-  const options = { port: 4175, skipBuild: false, localOnly: false, tunnel: false, timeout: 60_000 };
+  const options = { port: 4175, skipBuild: false, localOnly: false, tunnel: false, https: false, timeout: 60_000 };
+  let explicitPort = false;
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--skip-build') options.skipBuild = true;
     else if (args[i] === '--local-only') options.localOnly = true;
     else if (args[i] === '--tunnel') options.tunnel = true;
-    else if (args[i] === '--port') options.port = Number(args[++i]);
+    else if (args[i] === '--https') options.https = true;
+    else if (args[i] === '--cert' || args[i] === '--key') {
+      const option = args[i].slice(2);
+      if (!args[i + 1] || args[i + 1].startsWith('--')) throw new Error(`Missing value for --${option}`);
+      options[option] = args[++i]; options.https = true;
+    }
+    else if (args[i] === '--port') { options.port = Number(args[++i]); explicitPort = true; }
     else if (args[i] === '--timeout') options.timeout = Number(args[++i]);
     else throw new Error(`Unknown option: ${args[i]}`);
   }
+  if (options.https && !explicitPort) options.port = 8080;
+  if (Boolean(options.cert) !== Boolean(options.key)) throw new Error('HTTPS requires both --cert and --key.');
+  if (options.https && options.tunnel) throw new Error('Use --tunnel with the HTTP origin command (npm run mobile:tunnel), not --https.');
   if (!Number.isInteger(options.port) || options.port < 1024 || options.port > 65535) throw new Error('Port must be an integer from 1024 to 65535.');
   if (!Number.isInteger(options.timeout) || options.timeout < 1000 || options.timeout > 180_000) throw new Error('Timeout must be between 1000 and 180000 ms.');
   if (options.localOnly && options.tunnel) throw new Error('--local-only and --tunnel cannot be combined.');
@@ -40,8 +51,9 @@ export function parsePreviewArgs(args) {
 }
 
 // Use actual local interfaces, never an example address or loopback QR code.
-export function lanUrls(interfaces, port) {
+export function lanUrls(interfaces, port, protocol = 'http') {
   if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('Invalid LAN preview port.');
+  if (!['http', 'https'].includes(protocol)) throw new Error('Invalid preview URL protocol.');
   const urls = new Set();
   for (const [name, addresses] of Object.entries(interfaces)) {
     // These virtual host/bridge adapters do not represent the shared Wi-Fi LAN.
@@ -50,18 +62,20 @@ export function lanUrls(interfaces, port) {
       if (item.internal || !['IPv4', 4].includes(item.family) || isIP(item.address) !== 4) continue;
       const octets = item.address.split('.').map(Number);
       if (octets[0] === 0 || octets[0] === 127 || octets[0] >= 224 || (octets[0] === 169 && octets[1] === 254)) continue;
-      urls.add(`http://${item.address}:${port}/`);
+      urls.add(`${protocol}://${item.address}:${port}/`);
     }
   }
   return [...urls];
 }
 
-export async function createLanPreview(port, { root = projectRoot, dist = path.join(projectRoot, 'dist') } = {}) {
+export async function createLanPreview(port, { root = projectRoot, dist = path.join(projectRoot, 'dist'), https = false, cert, key, certDir, domains, host = '0.0.0.0' } = {}) {
   const { preview } = await import('vite');
+  const ssl = https ? await localHttpsConfig({ root, cert, key, certDir, domains }) : { plugins: [], https: undefined };
   return preview({
     root, configFile: false, base: '/', logLevel: 'silent',
+    plugins: ssl.plugins,
     build: { outDir: dist },
-    preview: { host: '0.0.0.0', port, strictPort: true, allowedHosts: ['localhost'] },
+    preview: { host, port, strictPort: true, allowedHosts: ['localhost'], https: ssl.https },
   });
 }
 
@@ -151,7 +165,7 @@ export async function mobilePreview(args = process.argv.slice(2)) {
     clearTimeout(timer);
     controller.abort();
     tunnel?.kill('SIGTERM');
-    server?.httpServer?.closeAllConnections();
+    server?.httpServer?.closeAllConnections?.();
     server?.close();
     process.removeListener('SIGINT', stop); process.removeListener('SIGTERM', stop);
   };
@@ -166,23 +180,35 @@ export async function mobilePreview(args = process.argv.slice(2)) {
     const dist = path.join(projectRoot, 'dist');
     const html = await readFile(path.join(dist, 'index.html'), 'utf8');
     if (!html.includes('src="/assets/')) throw new Error('Build must use root VITE_BASE_PATH=/ for the phone preview.');
-    if (options.localOnly) {
+    if (options.localOnly && !options.https) {
       server = await createPreviewServer(dist, options.port);
       if (controller.signal.aborted) { server.close(); return; }
       console.log(`Loopback production preview listening on port ${options.port}. No phone URL or tunnel was created.`);
       return { server, urls: [], close: cleanup };
     }
-    server = await createLanPreview(options.port, { dist });
+    try {
+      server = await createLanPreview(options.port, { dist, https: options.https, cert: options.cert, key: options.key, host: options.localOnly ? '127.0.0.1' : '0.0.0.0' });
+    } catch (error) {
+      if (/already in use|EADDRINUSE/i.test(error.message)) throw new Error(`Port ${options.port} is already in use. Keep the existing server or choose another port: npm run mobile:preview -- --port 8443`);
+      throw error;
+    }
     if (controller.signal.aborted) { await server.close(); return; }
-    console.log(`Vite production preview listening on 0.0.0.0:${options.port}. Existing dev servers are untouched.`);
-    const urls = lanUrls(networkInterfaces(), options.port);
+    const protocol = options.https ? 'https' : 'http';
+    console.log(`Vite production preview listening on ${protocol}://${options.localOnly ? '127.0.0.1' : '0.0.0.0'}:${options.port}. Existing dev servers are untouched.`);
+    const urls = options.localOnly ? [] : lanUrls(networkInterfaces(), options.port, protocol);
     const qr = (await import('qrcode')).default;
     for (const address of urls) {
       console.log(`\n同 Wi-Fi 手機測試網址：${address}`);
       console.log(await qr.toString(address, { type: 'terminal', small: true }));
     }
-    if (!urls.length) console.log('未偵測到可用的區域網路 IPv4 位址；目前只有本機可測，請先連接 Wi-Fi。');
-    console.log('HTTP 區網網址供觸控與排版測試；PWA 安裝與離線快取需要 HTTPS。容器 IP 不代表手機可連線。');
+    if (!urls.length) console.log(`本機測試網址：${protocol}://localhost:${options.port}/；沒有可供手機掃描的區網網址。`);
+    if (options.https) {
+      console.log('HTTPS 需手機信任憑證；僅點「繼續前往」不保證 Service Worker 或 PWA 安裝。請參閱 README 的 mkcert／手機信任步驟。');
+      if (!options.cert) console.log('目前為 basic-ssl 自簽預覽憑證。區網 IP 的名稱驗證可能不符；完整 PWA 測試請用 --cert 與 --key 載入含該 IP SAN 的可信憑證。');
+      const certificate = new X509Certificate(server.config.preview.https.cert);
+      for (const address of urls) if (!certificate.checkIP(new URL(address).hostname)) console.log(`憑證未涵蓋此 IP：${new URL(address).hostname}；需要重新簽發含正確 IP SAN 的憑證。`);
+    } else console.log('HTTP 區網網址供觸控與排版測試；PWA 安裝與離線快取需要 HTTPS。');
+    console.log('容器 IP 不代表手機可連線。');
     console.log('雲端容器網路受限時，請於本機執行 npm run mobile:preview，並確保手機與電腦處於同一 Wi-Fi，或使用本機 ngrok/localtunnel 建立轉發');
     console.log('Ctrl+C 關閉此預覽。');
     if (!options.tunnel) return { server, urls, close: cleanup };

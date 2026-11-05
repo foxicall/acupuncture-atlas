@@ -8,3 +8,4 @@ test-results/
 .taste-skill/
 *.log
 .DS_Store
+.certs/
