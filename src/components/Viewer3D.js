@@ -2,19 +2,22 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import gsap from 'gsap';
-import { needleSpec } from '../lib/needle.js';
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export class Viewer3D {
-  constructor(container, points, onSelect, onStatus) {
+  constructor(container, points, onSelect, onStatus, onCalibrate = () => {}) {
     this.container = container;
     this.points = points;
     this.onSelect = onSelect;
     this.onStatus = onStatus;
+    this.onCalibrate = onCalibrate;
+    this.calibrationMode = false;
+    this.pointers = new Map();
     this.active = null;
     this.meshes = [];
     this.labels = [];
     this.visibleIds = new Set(points.filter(p => p.featured).map(p => p.id));
+    this.restrictSelection = false;
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color('#edf1ef');
     this.camera = new THREE.PerspectiveCamera(34, 1, 0.01, 100);
@@ -47,9 +50,20 @@ export class Viewer3D {
     this.overlay = document.createElement('div');
     this.overlay.className = 'hotspot-labels';
     container.append(this.overlay);
+    this.meridianOverlay = document.createElement('div');
+    this.meridianOverlay.className = 'meridian-labels';
+    container.append(this.meridianOverlay);
+    this.meridianLabels = new Map();
     this.hotspots = new THREE.Group();
     this.needle = new THREE.Group();
     this.scene.add(this.hotspots, this.needle);
+    this.calibrationMarker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.027, 20, 14),
+      new THREE.MeshBasicMaterial({ color: '#d34b50', transparent: true, opacity: 0.55, depthWrite: false }),
+    );
+    this.calibrationMarker.visible = false;
+    this.calibrationMarker.renderOrder = 5;
+    this.scene.add(this.calibrationMarker);
     const sphere = new THREE.SphereGeometry(0.021, 12, 8);
     const material = new THREE.MeshBasicMaterial({ color: '#24765e', depthTest: false });
     points.forEach(point => {
@@ -60,8 +74,24 @@ export class Viewer3D {
       this.hotspots.add(mesh);
       this.meshes.push(mesh);
     });
-    this.renderer.domElement.addEventListener('pointerdown', e => { this.down = { x: e.clientX, y: e.clientY, t: performance.now() }; });
-    this.renderer.domElement.addEventListener('pointerup', e => this.pick(e));
+    this.renderer.domElement.addEventListener('pointerdown', e => {
+      if (!this.pointers.size) this.down = { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId, moved: false, multi: false };
+      this.pointers.set(e.pointerId, true);
+      if (this.pointers.size > 1 && this.down) this.down.multi = true;
+    });
+    this.renderer.domElement.addEventListener('pointermove', e => {
+      if (this.down && Math.hypot(e.clientX - this.down.x, e.clientY - this.down.y) > 7) this.down.moved = true;
+    });
+    this.renderer.domElement.addEventListener('pointerup', e => {
+      if (this.pointers.size === 1 && this.down?.id === e.pointerId && !this.down.moved && !this.down.multi) this.pick(e);
+      this.pointers.delete(e.pointerId);
+      if (!this.pointers.size) this.down = null;
+    });
+    this.renderer.domElement.addEventListener('pointercancel', e => {
+      this.pointers.delete(e.pointerId);
+      if (this.down) this.down.multi = true;
+      if (!this.pointers.size) this.down = null;
+    });
     this.renderer.domElement.addEventListener('webglcontextlost', e => {
       e.preventDefault(); onStatus('3D 顯示暫停，請重新載入。穴位目錄與教材仍可使用。', true);
     });
@@ -114,13 +144,49 @@ export class Viewer3D {
     const distance = THREE.MathUtils.clamp(offset.length() * factor, this.controls.minDistance, this.controls.maxDistance);
     this.camera.position.copy(this.controls.target).add(offset.setLength(distance));
   }
-  setVisible(points) { this.visibleIds = new Set(points.map(p => p.id)); }
+  setVisible(points, showLabels = false, restrictSelection = false) {
+    this.visibleIds = new Set(points.map(p => p.id));
+    this.restrictSelection = restrictSelection;
+    this.meridianOverlay.replaceChildren(); this.meridianLabels.clear();
+    if (showLabels) points.forEach(point => {
+      const label = document.createElement('button'); label.className = 'meridian-label';
+      label.dataset.id = point.id; label.textContent = `${point.id} ${point.name}`;
+      label.setAttribute('aria-label', `查看${point.name}手法`);
+      label.onclick = () => this.onSelect(point);
+      this.meridianOverlay.append(label); this.meridianLabels.set(point.id, label);
+    });
+  }
+  setCalibrationMode(enabled) {
+    this.calibrationMode = enabled;
+    this.hotspots.visible = !enabled;
+    this.needle.visible = !enabled;
+    this.overlay.hidden = enabled;
+    this.meridianOverlay.hidden = enabled;
+    this.container.classList.toggle('is-calibrating', enabled);
+    this.clearCalibrationMarker();
+  }
+  clearCalibrationMarker() {
+    this.calibrationMarker.visible = false;
+    delete this.container.dataset.calibrationMarker;
+  }
+  updatePoints(points) {
+    this.points = points;
+    const lookup = new Map(points.map(point => [point.id, point]));
+    this.meshes.forEach(mesh => {
+      const point = lookup.get(mesh.userData.point.id);
+      if (point) { mesh.userData.point = point; mesh.position.fromArray(point.position); }
+    });
+    if (this.active) this.select(lookup.get(this.active.id) || this.active, false);
+  }
   select(point, fly = true) {
     this.active = point;
     this.overlay.replaceChildren();
     const label = document.createElement('button');
     label.className = 'hotspot-label';
     label.textContent = `${point.name} · ${point.id.startsWith('DOC-') ? '示意' : point.id}`;
+    const caption = document.createElement('small');
+    caption.textContent = `${point.technique?.angle || '針向未定'} · ${point.depth || '深度未載明'}`;
+    label.append(caption);
     label.setAttribute('aria-label', `查看${point.name}手法`);
     label.onclick = () => this.onSelect(point);
     this.overlay.append(label);
@@ -133,16 +199,20 @@ export class Viewer3D {
       this.needle.remove(child);
       child.traverse(o => { o.geometry?.dispose(); if (o.material) o.material.dispose(); });
     });
-    const spec = needleSpec(point);
-    if (spec) {
-      const normal = new THREE.Vector3(...point.normal).normalize();
-      const tangent = (spec.towardMidline ? new THREE.Vector3(-Math.sign(point.position[0] || 1), 0, 0) : new THREE.Vector3(0, 1, 0)).projectOnPlane(normal).normalize();
-      if (!tangent.lengthSq()) tangent.set(1, 0, 0);
-      const angle = THREE.MathUtils.degToRad(spec.angle);
-      const outward = normal.multiplyScalar(Math.sin(angle)).add(tangent.multiplyScalar(-Math.cos(angle))).normalize();
-      const end = new THREE.Vector3(...point.position);
-      const arrow = new THREE.ArrowHelper(outward.clone().negate(), end.clone().addScaledVector(outward, 0.35), 0.33, '#b67531', 0.045, 0.018);
-      this.needle.add(arrow);
+    if (point.needleVector) {
+      const direction = new THREE.Vector3(...point.needleVector).normalize();
+      const surface = new THREE.Vector3(...point.position);
+      const rotation = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction);
+      // Fixed display lengths. Cun/mm remain source text, without an unsupported
+      // conversion to this schematic model's coordinate units.
+      const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.003, 0.003, 0.38, 10), new THREE.MeshStandardMaterial({ color: '#6f7774', metalness: .7, roughness: .3 }));
+      shaft.position.copy(surface).addScaledVector(direction, -0.11); shaft.quaternion.copy(rotation);
+      const handle = new THREE.Mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.085, 12), new THREE.MeshStandardMaterial({ color: '#b67531', metalness: .5, roughness: .4 }));
+      handle.position.copy(surface).addScaledVector(direction, -0.30); handle.quaternion.copy(rotation);
+      const tip = new THREE.Mesh(new THREE.ConeGeometry(0.003, 0.025, 10), shaft.material.clone());
+      tip.position.copy(surface).addScaledVector(direction, .0925); tip.quaternion.copy(rotation);
+      const arrow = new THREE.ArrowHelper(direction, surface.clone().addScaledVector(direction, -.26), .22, '#b67531', .035, .015);
+      this.needle.add(shaft, handle, tip, arrow);
     }
     if (fly) {
       const target = new THREE.Vector3(...point.position);
@@ -157,16 +227,25 @@ export class Viewer3D {
     }
   }
   updateVisibility() {
-    const cameraDirection = new THREE.Vector3();
-    this.camera.getWorldDirection(cameraDirection);
+    const labelRects = [];
     this.meshes.forEach(mesh => {
       const point = mesh.userData.point;
       const towardCamera = this.camera.position.clone().sub(mesh.position).normalize();
       const frontFacing = towardCamera.dot(new THREE.Vector3(...point.normal)) > 0.1;
-      mesh.visible = (this.visibleIds.has(point.id) || point.id === this.active?.id) && frontFacing;
+      mesh.visible = (this.visibleIds.has(point.id) || (!this.restrictSelection && point.id === this.active?.id)) && frontFacing;
       const pixels = point.id === this.active?.id ? 5 : 3.5;
       const worldRadius = 2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2)) * this.camera.position.distanceTo(mesh.position) * pixels / this.container.clientHeight;
       mesh.scale.setScalar(worldRadius / 0.021);
+      const label = this.meridianLabels.get(point.id);
+      if (label) {
+        const projected = mesh.position.clone().project(this.camera);
+        const x = (projected.x * .5 + .5) * this.container.clientWidth;
+        const y = (-projected.y * .5 + .5) * this.container.clientHeight;
+        const fits = x > 40 && x < this.container.clientWidth - 50 && y > 24 && y < this.container.clientHeight - 24;
+        const overlaps = labelRects.some(rect => Math.abs(rect.x - x) < 95 && Math.abs(rect.y - y) < 42);
+        label.hidden = !mesh.visible || point.id === this.active?.id || projected.z > 1 || !fits || overlaps;
+        if (!label.hidden) { label.style.left = `${x + 9}px`; label.style.top = `${y}px`; labelRects.push({ x, y }); }
+      }
     });
     if (this.active && this.label) {
       const point = new THREE.Vector3(...this.active.position).project(this.camera);
@@ -175,12 +254,24 @@ export class Viewer3D {
       this.label.style.left = `${(point.x * 0.5 + 0.5) * this.container.clientWidth}px`;
       this.label.style.top = `${(-point.y * 0.5 + 0.5) * this.container.clientHeight}px`;
     }
+    this.needle.visible = !this.calibrationMode && (this.visibleIds.has(this.active?.id) || !this.restrictSelection);
   }
   pick(event) {
     if (!this.down || Math.hypot(event.clientX - this.down.x, event.clientY - this.down.y) > 7 || performance.now() - this.down.t > 500) return;
     const rect = this.renderer.domElement.getBoundingClientRect();
     this.pointer.set((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1);
     this.raycaster.setFromCamera(this.pointer, this.camera);
+    if (this.calibrationMode) {
+      this.scene.updateMatrixWorld(true);
+      const hit = this.raycaster.intersectObjects(this.bodyMeshes || [], false)[0];
+      if (!hit?.face) { this.onCalibrate(null); return; }
+      const normal = hit.face.normal.clone().applyNormalMatrix(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)).normalize();
+      this.calibrationMarker.position.copy(hit.point);
+      this.calibrationMarker.visible = true;
+      this.container.dataset.calibrationMarker = 'true';
+      this.onCalibrate({ position: hit.point.toArray(), normal: normal.toArray(), surfaceMesh: hit.object.name });
+      return;
+    }
     // A larger picking radius leaves the visible landmark small while making it touch-friendly.
     const candidates = this.meshes.filter(mesh => mesh.visible).map(mesh => {
       const screen = mesh.position.clone().project(this.camera);

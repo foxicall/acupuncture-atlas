@@ -1,6 +1,8 @@
 import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { mergeCalibration, parseCalibration } from '../src/lib/calibration.js';
+import { withNeedleData } from '../src/lib/needle-data.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dataDir = path.join(root, 'src/data');
@@ -26,7 +28,7 @@ const seeds = [
  ['GB1','瞳子髎',.12,1.48,.18],['GB2','聽會',.15,1.40,.04],['GB8','率谷',.17,1.62,.01],['GB14','陽白',.07,1.62,.19],['GB20','風池',.095,1.22,-.14],['GB21','肩井',.36,1.01,-.03],['GB24','日月',.26,.46,.19],['GB30','環跳',.34,-.29,-.08],['GB33','膝陽關',.32,-.88,-.01],['GB34','陽陵泉',.32,-1.02,.04],['GB40','丘墟',.32,-1.61,.08],['GB41','足臨泣',.30,-1.69,.15],['GB44','足竅陰',.29,-1.73,.26],
  ['LR1','大敦',.19,-1.72,.24],['LR2','行間',.18,-1.70,.21],['LR3','太衝',.19,-1.69,.15],['LR4','中封',.215,-1.60,.10],['LR13','章門',.30,.35,.13],['LR14','期門',.24,.53,.21],
  ['CV1','會陰',0,-.43,0],['CV3','中極',0,-.28,.19],['CV4','關元',0,-.20,.21],['CV6','氣海',0,-.10,.23],['CV8','神闕',0,.03,.235],['CV10','下脘',0,.21,.23],['CV12','中脘',0,.37,.225],['CV15','鳩尾',0,.57,.21],['CV17','膻中',0,.77,.215],['CV22','天突',0,1.04,.105],['CV24','承漿',0,1.30,.21],
- ['GV1','長強',0,-.38,-.16],['GV4','命門',0,-.02,-.19],['GV14','大椎',0,1.04,-.13],['GV16','風府',0,1.21,-.16],['GV20','百會',0,1.79,0],['GV25','素髎',0,1.42,.25],['GV26','水溝',0,1.37,.24],['GV28','齦交',0,1.365,.21],
+ ['GV1','長強',0,-.38,-.16],['GV4','命門',0,-.02,-.19],['GV14','大椎',0,1.04,-.13],['GV15','啞門',0,1.165,-.14],['GV16','風府',0,1.21,-.16],['GV20','百會',0,1.79,0],['GV25','素髎',0,1.42,.25],['GV26','水溝',0,1.37,.24],['GV28','齦交',0,1.365,.21],
  ['EX-HN1','四神聰',.07,1.76,.02],['EX-HN3','印堂',0,1.55,.235],['EX-HN5','太陽',.17,1.51,.12],['EX-HN22','安眠',.12,1.30,-.08],['EX-B1','定喘',.045,1.04,-.14],['EX-B2','華佗夾脊',.04,.60,-.21],['EX-UE2','二白',.81,-.15,.09],['EX-UE7','腰痛點',.93,-.46,-.025],['EX-UE9','八邪',.95,-.56,.015],['EX-UE10','四縫',.95,-.61,.06],['EX-UE11','十宣',.95,-.70,.06],['EX-LE4','內膝眼',.19,-.94,.14],['EX-LE5','膝眼',.24,-.94,.14],['EX-LE6','膽囊穴',.32,-1.09,.04],['EX-LE7','闌尾穴',.29,-1.20,.13],['EX-LE10','八風',.24,-1.71,.22],['EX-CA1','子宮',.20,-.28,.185],
  ['REG-頸夾脊','頸夾脊',.04,1.13,-.13],['REG-頭痛穴','頭痛穴',.13,1.56,.17],['REG-腰痛穴','腰痛穴',.93,-.46,-.025],['REG-牙痛穴','牙痛穴',.14,1.34,.14],['REG-阿是穴','阿是穴',.31,.50,.16],
 ];
@@ -171,6 +173,24 @@ for(const absolute of await walk(docsDir)) {
    rowPoints.add(point.id);
   }
  }
+ // Preserve named risk notes outside core-point tables as explicit source evidence.
+ // They cannot supply a point-specific method or depth, only the original caution.
+ for(const [index,line] of content.split(/\r?\n/).entries()) {
+  if(line.trim().startsWith('|'))continue;
+  if(!/嚴禁|严禁|禁深刺|以防|防傷|防伤|防氣胸|氣胸|延髓|延腦|頸動脈|脊髓/.test(line))continue;
+  const evidence=clean(line.replace(/^\s*-\s*/,''));
+  const heading=clean(line.match(/\*\*(.+?)\*\*/)?.[1]||'');
+  const namedHeading=[...registry.values()].some(point=>point.meridianCode!=='EAR'&&[point.name,...point.aliases].some(name=>heading.includes(name)));
+  // A chapter synopsis naming four points and singling one out as dangerous is
+  // not evidence that all four share that danger. Prefer the named warning label.
+  if(!namedHeading&&!/解剖危險區|解剖危险区|危險解剖區|延髓中樞|項部|项部/.test(heading))continue;
+  const scope=namedHeading?heading:evidence;
+  const matched=[...registry.values()].filter(point=>point.meridianCode!=='EAR'&&[point.name,...point.aliases].some(name=>scope.includes(name)));
+  for(const point of matched) {
+   point.sources.push({path:docPath,line:index+1,label:point.name,group:matched.length>1,kind:'warning',excerpt:evidence,location:'',indications:'',method:'',safety:evidence});
+   rowPoints.add(point.id);
+  }
+ }
  // Include prose-only mentions without extracting their unstructured text as clinical instructions.
  const referenced=new Set(rowPoints);
  for(const point of registry.values()) {
@@ -197,8 +217,12 @@ const points=[...registry.values()].filter(point=>point.sources.length>0 || cata
 // The acupoint list includes only points discovered in the current documents.
 const ids=new Set(points.map(p=>p.id));
 for(const doc of catalog) doc.acupointIds=doc.acupointIds.filter(id=>ids.has(id));
+let overrides=[];
+try { overrides=parseCalibration(await readFile(path.join(dataDir,'calibration-overrides.json'),'utf8'),points); }
+catch(error) { if(error.code!=='ENOENT')throw error; }
+const calibratedPoints=mergeCalibration(points.map(withNeedleData),overrides);
 await mkdir(dataDir,{recursive:true});
-await writeFile(path.join(dataDir,'acupoints.json'),JSON.stringify(points,null,2)+'\n');
+await writeFile(path.join(dataDir,'acupoints.json'),JSON.stringify(calibratedPoints,null,2)+'\n');
 await writeFile(path.join(dataDir,'docs-catalog.json'),JSON.stringify(catalog,null,2)+'\n');
-await writeFile(path.join(dataDir,'coverage.json'),JSON.stringify({markdownFiles:catalog.length,acupoints:points.length,tableSourceRows:points.reduce((n,p)=>n+p.sources.filter(s=>s.kind!=='prose').length,0),proseSourceRows:points.reduce((n,p)=>n+p.sources.filter(s=>s.kind==='prose').length,0),excludedRows:excluded,coordinates:'schematic-unvalidated-surface-fitted',surfaceProjectionUnresolved:points.filter(p=>!p.surfaceProjection).map(p=>p.id),clinicalContent:'verbatim-unreviewed-source-material'},null,2)+'\n');
+await writeFile(path.join(dataDir,'coverage.json'),JSON.stringify({markdownFiles:catalog.length,acupoints:points.length,tableSourceRows:points.reduce((n,p)=>n+p.sources.filter(s=>!s.kind).length,0),proseSourceRows:points.reduce((n,p)=>n+p.sources.filter(s=>s.kind==='prose').length,0),warningSourceRows:points.reduce((n,p)=>n+p.sources.filter(s=>s.kind==='warning').length,0),excludedRows:excluded,coordinates:'schematic-unvalidated-surface-fitted',manualOverrides:overrides.length,surfaceProjectionUnresolved:points.filter(p=>!p.surfaceProjection).map(p=>p.id),clinicalContent:'verbatim-unreviewed-source-material'},null,2)+'\n');
 console.log(`Indexed ${catalog.length} Markdown documents and ${points.length} schematic points; ${excluded.length} non-individual table rows retained in coverage report.`);

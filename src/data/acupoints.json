@@ -133,10 +133,79 @@
       "depth": "直刺 1~1.5寸。",
       "safety": "膀胱充盈時不可深刺；孕婦慎用。",
       "source": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Guanyuan",
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 32
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "膀胱充盈時不可深刺；",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "膀胱充盈時不可深刺；",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用。",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "需注意膀胱充盈狀態，孕婦慎用",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "需注意膀胱充盈狀態，孕婦慎用",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "CV17",
@@ -190,10 +259,47 @@
       "depth": "向下平刺 0.5~1 寸。若治療乳房病變，可向乳頭方向斜刺 1~1.5 寸。",
       "safety": "影片未特別提及禁忌，但臨床操作平刺/沿皮刺可確保胸骨前安全。",
       "source": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Danzhong",
+    "needle_angle": null,
+    "depth": "0.5~1 寸；1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 28
+        }
+      },
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未特別提及禁忌，但臨床操作平刺/沿皮刺可確保胸骨前安全。",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "GB20",
@@ -236,6 +342,30 @@
         "indications": "感冒主穴；祛風解表",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+        "line": 32,
+        "label": "風池",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。"
+      },
+      {
+        "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+        "line": 41,
+        "label": "風池",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；風池穴、天柱穴深部亦鄰近延髓與高位頸髓。若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；風池穴、天柱穴深部亦鄰近延髓與高位頸髓。若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。"
       },
       {
         "path": "docs/6.1.2针灸治疗原则（2）.md",
@@ -283,10 +413,95 @@
       "depth": "向下頜方向斜刺 0.5~1 寸。",
       "safety": "嚴禁向內上方深刺，以防刺傷延髓。",
       "source": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Fengchi",
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 24
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "嚴禁向內上方深刺，以防刺傷延髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 24
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁向內上方深刺，以防刺傷延髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 24
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "風池穴、天柱穴深部亦鄰近延髓與高位頸髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      }
+    ]
   },
   {
     "id": "GV20",
@@ -388,10 +603,39 @@
       "depth": "平刺 0.5~1 寸。升陽舉陷時多用灸法。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "平刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Baihui",
+    "needle_angle": "平刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "小兒囟門未合者禁針",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 32
+        }
+      }
+    ]
   },
   {
     "id": "HT7",
@@ -458,10 +702,63 @@
       "depth": "直刺 0.3～0.5 寸。",
       "safety": "腕部進針不宜過深，避開尺動、靜脈。",
       "source": "docs/4.18.6手少阴经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Shenmen",
+    "needle_angle": "直刺",
+    "depth": "0.3～0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3～0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.6手少阴经.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "腕部進針不宜過深，避開尺動、靜脈。",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 28
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "腕部進針不宜過深，避開尺動、靜脈。",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 28
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "避開尺動、靜脈。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "LI4",
@@ -621,10 +918,71 @@
       "depth": "直刺 0.5~1.0 寸。若透刺後溪穴，針刺深度可適當加深，針尖朝後溪方向透刺。",
       "safety": "孕婦不宜針（因研究發現針刺合谷會促進子宮收縮）。",
       "source": "docs/4.18.2手阳明经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Hegu",
+    "needle_angle": "直刺",
+    "depth": "0.5~1.0 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1.0 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.2手阳明经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.2手阳明经.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "孕婦不宜針（因研究發現針刺合谷會促進子宮收縮）。",
+        "source": {
+          "path": "docs/4.18.2手阳明经.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用/禁用",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁針，易致流產。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁作穴位注射",
+        "source": {
+          "path": "docs/5.8水针疗法.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "LI11",
@@ -725,10 +1083,38 @@
       "depth": "直刺 1.0~1.5 寸。",
       "safety": "影片未提及特殊危險解剖區。",
       "source": "docs/4.18.2手阳明经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Quchi",
+    "needle_angle": "直刺",
+    "depth": "1.0~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1.0~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.2手阳明经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.2手阳明经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LR3",
@@ -831,10 +1217,47 @@
       "depth": "直刺 0.5~0.8 寸",
       "safety": "需沿跖骨间隙进针，避免刺中骨膜引起剧痛。（影片未提及解剖）",
       "source": "docs/4.19.5足少阴肾经和足厥阴经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Taichong",
+    "needle_angle": "直刺",
+    "depth": "0.5~0.8 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      -1,
+      0
+    ],
+    "vector": [
+      0,
+      -1,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.5足少阴肾经和足厥阴经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "需沿跖骨间隙进针，避免刺中骨膜引起剧痛。",
+        "source": {
+          "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
+          "line": 29
+        }
+      }
+    ]
   },
   {
     "id": "LU1",
@@ -867,6 +1290,18 @@
         "indications": "影片未提及具體主治",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.1手太阴肺经.md",
+        "line": 52,
+        "label": "中府",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：影片未提及。（臨床補充：中府穴下方為肺尖，嚴禁向內深刺以防氣胸）。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：影片未提及。（臨床補充：中府穴下方為肺尖，嚴禁向內深刺以防氣胸）。"
       }
     ],
     "surfaceProjection": "Continuous torso and neck",
@@ -889,10 +1324,63 @@
       "depth": "向外斜刺或平刺 0.5~0.8 寸。",
       "safety": "嚴禁向內下方深刺，以免傷及肺臟引起氣胸。",
       "source": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "high"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Zhongfu",
+    "needle_angle": null,
+    "depth": "0.5~0.8 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "嚴禁向內下方深刺，以免傷及肺臟引起氣胸。",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 29
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁向內下方深刺，以免傷及肺臟引起氣胸。",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 29
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "（臨床補充：中府穴下方為肺尖，嚴禁向內深刺以防氣胸）。",
+        "source": {
+          "path": "docs/4.1手太阴肺经.md",
+          "line": 52
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "（臨床補充：中府穴下方為肺尖，嚴禁向內深刺以防氣胸）。",
+        "source": {
+          "path": "docs/4.1手太阴肺经.md",
+          "line": 52
+        }
+      }
+    ]
   },
   {
     "id": "PC6",
@@ -971,10 +1459,47 @@
       "depth": "直刺 0.5～1.0 寸。",
       "safety": "影片未提及，臨床深部為正中神經，進針得氣即可，忌大幅度提插以免損傷神經。",
       "source": "docs/4.18.7手厥阴心包经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Neiguan",
+    "needle_angle": "直刺",
+    "depth": "0.5～1.0 寸",
+    "depthValues": [
+      {
+        "raw": "0.5～1.0 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.7手厥阴心包经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.7手厥阴心包经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "避開正中神經主幹",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 29
+        }
+      }
+    ]
   },
   {
     "id": "SP6",
@@ -1095,10 +1620,79 @@
       "depth": "直刺 1~1.5 寸",
       "safety": "孕婦慎用（臨床實務中多為孕期禁針，以免引發流產）",
       "source": "docs/4.19.4足太阴脾经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Sanyinjiao",
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.4足太阴脾经.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": [
+      1,
+      0,
+      0
+    ],
+    "vector": [
+      1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.4足太阴脾经.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用（臨床實務中多為孕期禁針，以免引發流產）",
+        "source": {
+          "path": "docs/4.19.4足太阴脾经.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用/禁用",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 33
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁針",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁針。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 29
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁作穴位注射",
+        "source": {
+          "path": "docs/5.8水针疗法.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "ST36",
@@ -1213,6 +1807,18 @@
         "safety": "影片未提及"
       },
       {
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 42,
+        "label": "足三里",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：本講次涉及的下肢及足部穴位，解剖結構相對安全。但在臨床實踐中，針刺足三里、豐隆等穴區需注意避開脛前動靜脈及腓深神經幹，以防皮下出血或過度放電感。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：本講次涉及的下肢及足部穴位，解剖結構相對安全。但在臨床實踐中，針刺足三里、豐隆等穴區需注意避開脛前動靜脈及腓深神經幹，以防皮下出血或過度放電感。"
+      },
+      {
         "path": "docs/6.1.2针灸治疗原则（2）.md",
         "line": 31,
         "label": "足三里、關元",
@@ -1275,10 +1881,71 @@
       "depth": "直刺 1~1.5寸",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.19.1足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": true,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": "Zusanli",
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.1足阳明胃经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "避開腓總神經；",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "無特殊禁忌。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：本講次涉及的下肢及足部穴位，解剖結構相對安全。",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 42
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "但在臨床實踐中，針刺足三里、豐隆等穴區需注意避開脛前動靜脈及腓深神經幹，以防皮下出血或過度放電感。",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 42
+        }
+      }
+    ]
   },
   {
     "id": "BL1",
@@ -1343,10 +2010,55 @@
       "depth": "囑患者閉目，醫者以左手輕推眼球向外側固定，沿眶緣直刺 0.5~1 寸。",
       "safety": "嚴禁提插捻轉。出針後需用乾棉球按壓片刻以防出血。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 31
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "嚴禁提插捻轉。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 31
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "出針後需用乾棉球按壓片刻以防出血。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 31
+        }
+      }
+    ]
   },
   {
     "id": "BL2",
@@ -1389,10 +2101,21 @@
       "depth": "點刺法：快速點刺微出血。",
       "safety": "面部血管豐富，嚴格控制深度與出血量。",
       "source": "docs/5.4三棱针.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.4三棱针.md",
+    "dangerWarnings": []
   },
   {
     "id": "BL10",
@@ -1415,6 +2138,30 @@
         "indications": "神志病（癲狂癇）、頸項強痛。",
         "method": "向下頜方向斜刺 0.5~1 寸。",
         "safety": "嚴禁向內上方深刺，以防刺入椎管傷及脊髓或延髓。"
+      },
+      {
+        "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+        "line": 32,
+        "label": "天柱",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。"
+      },
+      {
+        "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+        "line": 41,
+        "label": "天柱",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；風池穴、天柱穴深部亦鄰近延髓與高位頸髓。若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；風池穴、天柱穴深部亦鄰近延髓與高位頸髓。若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。"
       }
     ],
     "surfaceProjection": "Continuous torso and neck",
@@ -1436,10 +2183,95 @@
       "depth": "向下頜方向斜刺 0.5~1 寸。",
       "safety": "嚴禁向內上方深刺，以防刺入椎管傷及脊髓或延髓。",
       "source": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "嚴禁向內上方深刺，以防刺入椎管傷及脊髓或延髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁向內上方深刺，以防刺入椎管傷及脊髓或延髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "風池穴、天柱穴深部亦鄰近延髓與高位頸髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      }
+    ]
   },
   {
     "id": "BL11",
@@ -1483,10 +2315,47 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。虛寒可灸，實熱可刺絡拔罐。",
       "safety": "不可直刺或深刺，以免傷及內部臟腑（防氣胸）。",
       "source": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+          "line": 25
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可直刺或深刺，以免傷及內部臟腑（防氣胸）。",
+        "source": {
+          "path": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+          "line": 25
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可直刺或深刺，以免傷及內部臟腑（防氣胸）。",
+        "source": {
+          "path": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+          "line": 25
+        }
+      }
+    ]
   },
   {
     "id": "BL12",
@@ -1540,10 +2409,30 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。虛寒可灸，實熱可刺絡拔罐。",
       "safety": "同上。",
       "source": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+    "dangerWarnings": []
   },
   {
     "id": "BL13",
@@ -1599,10 +2488,30 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。虛寒可灸，實熱可刺絡拔罐。",
       "safety": "同上。",
       "source": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+    "dangerWarnings": []
   },
   {
     "id": "BL15",
@@ -1667,10 +2576,55 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。虛寒可灸，實熱可刺絡拔罐。",
       "safety": "同上。",
       "source": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.3 背腰部常用腧穴-背腰部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及（臨床常規需防氣胸）",
+        "source": {
+          "path": "docs/7.3失眠的针灸治疗.md",
+          "line": 31
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "BL17",
@@ -1747,10 +2701,47 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "膈俞嚴禁直刺深刺。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 31
+        }
+      }
+    ]
   },
   {
     "id": "BL18",
@@ -1815,10 +2806,55 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "BL19",
@@ -1872,10 +2908,39 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "BL20",
@@ -1964,10 +3029,55 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 29
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "BL21",
@@ -2034,10 +3144,39 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.4 背腰部常用腧穴-背腰部四区.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "BL23",
@@ -2126,10 +3265,63 @@
       "depth": "直刺 1~1.5 寸。治療虛寒證時多用灸法。",
       "safety": "不可深刺，以免傷及臟腑（腎臟）。",
       "source": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 25
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑（腎臟）。",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 25
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁深刺直刺，以防氣胸或傷及內臟。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "BL25",
@@ -2172,10 +3364,47 @@
       "depth": "直刺 1~1.5 寸。虛寒證多用灸法。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "BL32",
@@ -2229,10 +3458,47 @@
       "depth": "直刺 1~1.5 寸。虛寒證多用灸法。",
       "safety": "不可深刺，以免傷及臟腑。",
       "source": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及臟腑。",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "BL36",
@@ -2275,10 +3541,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "BL40",
@@ -2357,10 +3634,47 @@
       "depth": "直刺 1~1.5 寸；或點刺出血。",
       "safety": "影片未提及特殊禁忌，解剖上需注意膕動靜脈及神經。",
       "source": "docs/4.19.2足太阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.2足太阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及特殊禁忌，解剖上需注意膕動靜脈及神經。",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "BL54",
@@ -2403,10 +3717,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "BL57",
@@ -2450,10 +3775,47 @@
       "depth": "直刺 1~2 寸。",
       "safety": "針刺手法宜輕柔，避免引起腓腸肌痙攣導致彎針或斷針。",
       "source": "docs/4.19.2足太阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~2 寸",
+    "depthValues": [
+      {
+        "raw": "1~2 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.2足太阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "針刺手法宜輕柔，避免引起腓腸肌痙攣導致彎針或斷針。",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "BL60",
@@ -2522,10 +3884,55 @@
       "depth": "直刺 0.3~0.5 寸。",
       "safety": "孕婦禁針。",
       "source": "docs/4.19.2足太阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": [
+      -1,
+      0,
+      0
+    ],
+    "vector": [
+      -1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.2足太阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁針。",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 29
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用/禁用",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 34
+        }
+      }
+    ]
   },
   {
     "id": "BL62",
@@ -2592,10 +3999,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.15.1头部常用腧穴 概述.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.1头部常用腧穴 概述.md",
+    "dangerWarnings": []
   },
   {
     "id": "BL67",
@@ -2660,10 +4078,47 @@
       "depth": "淺刺 0.1 寸；治胎位不正多用艾灸法（灸法）。",
       "safety": "孕婦禁針（除非用於特定產科治療如糾正胎位或催產）。",
       "source": "docs/4.19.2足太阳经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.1 寸",
+    "depthValues": [
+      {
+        "raw": "0.1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.19.2足太阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "孕婦禁針（除非用於特定產科治療如糾正胎位或催產）。",
+        "source": {
+          "path": "docs/4.19.2足太阳经.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用/禁用",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 34
+        }
+      }
+    ]
   },
   {
     "id": "CV1",
@@ -2708,10 +4163,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.13任脉.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.13任脉.md",
+    "dangerWarnings": []
   },
   {
     "id": "CV3",
@@ -2769,10 +4235,63 @@
       "depth": "直刺 1~1.5寸。",
       "safety": "膀胱充盈時不可深刺；孕婦慎用。",
       "source": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 33
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "膀胱充盈時不可深刺；",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 33
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "膀胱充盈時不可深刺；",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 33
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用。",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 33
+        }
+      }
+    ]
   },
   {
     "id": "CV6",
@@ -2864,10 +4383,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.13任脉.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.13任脉.md",
+    "dangerWarnings": []
   },
   {
     "id": "CV8",
@@ -2936,10 +4466,46 @@
       "depth": "不可用針法；常用隔鹽灸或藥物敷貼療法。",
       "safety": "禁針；孕婦慎用。",
       "source": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "禁針；",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用。",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可用針法；",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "CV10",
@@ -2982,10 +4548,21 @@
       "depth": "影片未提及具體手法（按實證常規應為瀉法）。",
       "safety": "影片未提及",
       "source": "docs/7.1胃痛的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.1胃痛的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "CV12",
@@ -3085,10 +4662,47 @@
       "depth": "直刺 1~1.5寸；寒證可用灸法。",
       "safety": "飽食後不可深刺。",
       "source": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 25
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "飽食後不可深刺。",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 25
+        }
+      }
+    ]
   },
   {
     "id": "CV15",
@@ -3142,10 +4756,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/2.4奇经八脉—十五络脉.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/2.4奇经八脉—十五络脉.md",
+    "dangerWarnings": []
   },
   {
     "id": "CV22",
@@ -3199,10 +4824,55 @@
       "depth": "先直刺 0.2~0.3 寸，待針進入皮下後，調整針尖方向向下，緊靠胸骨柄後方直刺 1~1.5 寸。",
       "safety": "具危險性，不可深刺。深部有氣管、主動脈弓等，嚴格掌握進針角度與深度。",
       "source": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.2~0.3 寸；1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.2~0.3 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 27
+        }
+      },
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "具危險性，不可深刺。",
+        "source": {
+          "path": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "CV24",
@@ -3257,10 +4927,30 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.13任脉.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.13任脉.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "面部穴位避開血管，注意防內出血淤青。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 32
+        }
+      }
+    ]
   },
   {
     "id": "EAR-坐骨神經",
@@ -3305,10 +4995,21 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "同上。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-心",
@@ -3354,10 +5055,30 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "重症心臟病患者刺激不宜過強。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "重症心臟病患者刺激不宜過強。",
+        "source": {
+          "path": "docs/5.10.2耳穴疗法二.md",
+          "line": 29
+        }
+      }
+    ]
   },
   {
     "id": "EAR-皮質下",
@@ -3402,10 +5123,30 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "勿用力過猛以防擦破皮膚。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "勿用力過猛以防擦破皮膚。",
+        "source": {
+          "path": "docs/5.10.2耳穴疗法二.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "EAR-眼",
@@ -3450,10 +5191,21 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "同上。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-神門",
@@ -3498,10 +5250,21 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "同上。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-耳尖",
@@ -3558,10 +5321,21 @@
       "depth": "點刺法：快速點刺，擠出數滴血液。",
       "safety": "需先揉按耳廓使其充血。",
       "source": "docs/5.4三棱针.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.4三棱针.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-耳背溝",
@@ -3607,10 +5381,21 @@
       "depth": "貼壓後施以對壓或輕揉法。",
       "safety": "同上。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-胃",
@@ -3656,10 +5441,21 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "同上。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-腎上腺",
@@ -3704,10 +5500,21 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "嚴防炎症期或破潰處貼壓。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": []
   },
   {
     "id": "EAR-風溪",
@@ -3752,10 +5559,30 @@
       "depth": "貼壓後施以適當手法。",
       "safety": "勿用力過猛以防擦破皮膚。",
       "source": "docs/5.10.2耳穴疗法二.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/5.10.2耳穴疗法二.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "勿用力過猛以防擦破皮膚。",
+        "source": {
+          "path": "docs/5.10.2耳穴疗法二.md",
+          "line": 23
+        }
+      }
+    ]
   },
   {
     "id": "EX-B1",
@@ -3809,10 +5636,47 @@
       "depth": "向脊柱方向斜刺 0.5~1 寸。",
       "safety": "影片未提及，臨床需注意深度與角度以防氣胸。",
       "source": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "影片未提及，臨床需注意深度與角度以防氣胸。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "影片未提及，臨床需注意深度與角度以防氣胸。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "EX-B2",
@@ -3837,6 +5701,18 @@
         "indications": "針對背腰部肥胖病人，調節臟腑氣血",
         "method": "向正中斜刺45°，進針0.5~1寸",
         "safety": "嚴禁直刺過深或向外斜刺，以免刺破胸膜造成氣胸"
+      },
+      {
+        "path": "docs/7.4肥胖的针灸治疗.md",
+        "line": 49,
+        "label": "華佗夾脊",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "背部夾脊穴安全警告：操作第3胸椎至第5腰椎的華佗夾脊穴時，針尖必須朝脊柱正中方向成45度斜刺。絕對不可直刺過深，更不可向外側斜刺，否則極易刺入胸腹腔導致氣胸等嚴重醫療事故。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "背部夾脊穴安全警告：操作第3胸椎至第5腰椎的華佗夾脊穴時，針尖必須朝脊柱正中方向成45度斜刺。絕對不可直刺過深，更不可向外側斜刺，否則極易刺入胸腹腔導致氣胸等嚴重醫療事故。"
       },
       {
         "path": "docs/1.2针灸医学的发展史.md",
@@ -3876,10 +5752,71 @@
       "depth": "向正中斜刺45°，進針0.5~1寸",
       "safety": "嚴禁直刺過深或向外斜刺，以免刺破胸膜造成氣胸",
       "source": "docs/7.4肥胖的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      -0.7071067811865476,
+      0,
+      0.7071067811865475
+    ],
+    "vector": [
+      -0.7071067811865476,
+      0,
+      0.7071067811865475
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/7.4肥胖的针灸治疗.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "嚴禁直刺過深或向外斜刺，以免刺破胸膜造成氣胸",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 28
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁直刺過深或向外斜刺，以免刺破胸膜造成氣胸",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 28
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "絕對不可直刺過深，更不可向外側斜刺，否則極易刺入胸腹腔導致氣胸等嚴重醫療事故。",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 49
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "絕對不可直刺過深，更不可向外側斜刺，否則極易刺入胸腹腔導致氣胸等嚴重醫療事故。",
+        "source": {
+          "path": "docs/7.4肥胖的针灸治疗.md",
+          "line": 49
+        }
+      }
+    ]
   },
   {
     "id": "EX-CA1",
@@ -3929,10 +5866,47 @@
       "depth": "直刺 1~1.5寸。",
       "safety": "孕婦慎用。",
       "source": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 34
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用。",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 34
+        }
+      }
+    ]
   },
   {
     "id": "EX-HN1",
@@ -3986,10 +5960,30 @@
       "depth": "向百會方向平刺 0.5~1 寸。可用灸法。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "平刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "平刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-HN3",
@@ -4044,10 +6038,30 @@
       "depth": "向下平刺 0.3~0.5 寸。熱證可用三稜針點刺放血。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "平刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "平刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-HN5",
@@ -4127,10 +6141,38 @@
       "depth": "直刺 0.3~0.5 寸。熱證可用點刺放血。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 33
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-HN22",
@@ -4184,10 +6226,47 @@
       "depth": "直刺 0.5~1 寸。",
       "safety": "影片未提及特殊禁忌，但臨床操作亦不宜過深。",
       "source": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 25
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "影片未提及特殊禁忌，但臨床操作亦不宜過深。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 25
+        }
+      }
+    ]
   },
   {
     "id": "EX-LE4",
@@ -4230,10 +6309,21 @@
       "depth": "三棱針點刺出血，以達瀉熱、消腫、止痛作用。",
       "safety": "影片未提及",
       "source": "docs/6.1.1针灸治疗原则（1）.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/6.1.1针灸治疗原则（1）.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-LE5",
@@ -4278,10 +6368,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-LE6",
@@ -4339,10 +6440,38 @@
       "depth": "直刺 1~1.5 寸。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-LE7",
@@ -4398,10 +6527,38 @@
       "depth": "直刺 0.5~1 寸。",
       "safety": "尋找穴位時可沿足陽明胃經（犢鼻至解谿）連線尋找壓痛點。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-LE10",
@@ -4444,10 +6601,30 @@
       "depth": "向踝關節方向斜刺 0.5~0.8 寸，或點刺出血。",
       "safety": "足部末端血循較差，糖尿病患者針刺需慎防感染。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~0.8 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 31
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-UE7",
@@ -4491,10 +6668,47 @@
       "depth": "直刺 0.3~0.5 寸。",
       "safety": "避開手背靜脈網。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "避開手背靜脈網。",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "EX-UE9",
@@ -4537,10 +6751,30 @@
       "depth": "向上斜刺 0.5~0.8 寸，或點刺出血。",
       "safety": "毒蛇咬傷放血時需循近心端向遠心端推擠。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~0.8 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "EX-UE10",
@@ -4605,10 +6839,47 @@
       "depth": "直刺 0.1~0.2 寸，或用三稜針點刺，擠出少許黃白色透明樣黏液或出血。",
       "safety": "點刺擠液時需注意嚴格無菌操作，避免關節腔感染。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.1~0.2 寸",
+    "depthValues": [
+      {
+        "raw": "0.1~0.2 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 25
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "點刺擠液時需注意嚴格無菌操作，避免關節腔感染。",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 25
+        }
+      }
+    ]
   },
   {
     "id": "EX-UE11",
@@ -4673,10 +6944,38 @@
       "depth": "直刺 0.1~0.2 寸，或用三稜針點刺出血。",
       "safety": "痛覺極度敏感，進針需迅速。",
       "source": "docs/4.19.6奇穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.1~0.2 寸",
+    "depthValues": [
+      {
+        "raw": "0.1~0.2 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.6奇穴.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.6奇穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "GB1",
@@ -4719,10 +7018,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.11足少阳胆经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.11足少阳胆经.md",
+    "dangerWarnings": []
   },
   {
     "id": "GB2",
@@ -4745,6 +7055,18 @@
         "indications": "耳鳴、耳聾、下頜關節病變。",
         "method": "張口取穴。",
         "safety": "留針時需保持微張口姿勢。"
+      },
+      {
+        "path": "docs/4.15.2头部常用腧穴.md",
+        "line": 60,
+        "label": "聽會",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "耳前三穴（耳門、聽宮、聽會）：由於解剖上位於下頜骨髁突後方，閉口時該間隙狹小，進針容易刺中骨膜引起劇痛或損傷關節。因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "耳前三穴（耳門、聽宮、聽會）：由於解剖上位於下頜骨髁突後方，閉口時該間隙狹小，進針容易刺中骨膜引起劇痛或損傷關節。因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。"
       }
     ],
     "surfaceProjection": "Head",
@@ -4765,10 +7087,30 @@
       "depth": "張口取穴。",
       "safety": "留針時需保持微張口姿勢。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 60
+        }
+      }
+    ]
   },
   {
     "id": "GB8",
@@ -4811,10 +7153,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/7.6偏头痛的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.6偏头痛的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "GB14",
@@ -4857,10 +7210,30 @@
       "depth": "平刺 0.3~0.5 寸。可用灸法。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "平刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "平刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "GB21",
@@ -4883,6 +7256,42 @@
         "indications": "共同：頸項/肩背疼痛（頸椎病必選穴）。特異：1. 乳房病變（乳癰、產後缺乳/少乳）；2. 難產、滯產。",
         "method": "直刺 0.5~1 寸。",
         "safety": "極度危險：下方為肺尖，不可深刺，以免引起氣胸。生理禁忌：引發宮縮，孕婦禁用。"
+      },
+      {
+        "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+        "line": 11,
+        "label": "肩井",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "1. 肩井穴的安全禁忌：深部為肺尖，嚴禁深刺防氣胸；且能引發宮縮，孕婦絕對禁用。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "1. 肩井穴的安全禁忌：深部為肺尖，嚴禁深刺防氣胸；且能引發宮縮，孕婦絕對禁用。"
+      },
+      {
+        "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+        "line": 44,
+        "label": "肩井",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "肩井穴（防氣胸）：肩井穴正下方為肺尖所在區域，操作時絕不可深刺。若進針過深或提插幅度過大，極易刺破胸膜和肺組織，引發創傷性氣胸，屬針灸臨床重大醫療安全隱患。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "肩井穴（防氣胸）：肩井穴正下方為肺尖所在區域，操作時絕不可深刺。若進針過深或提插幅度過大，極易刺破胸膜和肺組織，引發創傷性氣胸，屬針灸臨床重大醫療安全隱患。"
+      },
+      {
+        "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+        "line": 63,
+        "label": "肩井",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "肩井兩大禁忌：「下有肺尖禁深刺（防氣胸），下氣極速孕婦禁（防流產）」。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "肩井兩大禁忌：「下有肺尖禁深刺（防氣胸），下氣極速孕婦禁（防流產）」。"
       },
       {
         "path": "docs/4.15.1头部常用腧穴 概述.md",
@@ -4916,10 +7325,143 @@
       "depth": "直刺 0.5~1 寸。",
       "safety": "極度危險：下方為肺尖，不可深刺，以免引起氣胸。生理禁忌：引發宮縮，孕婦禁用。",
       "source": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "極度危險：下方為肺尖，不可深刺，以免引起氣胸。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "極度危險：下方為肺尖，不可深刺，以免引起氣胸。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "生理禁忌：引發宮縮，孕婦禁用。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "1. 肩井穴的安全禁忌：深部為肺尖，嚴禁深刺防氣胸；",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 11
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "1. 肩井穴的安全禁忌：深部為肺尖，嚴禁深刺防氣胸；",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 11
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "且能引發宮縮，孕婦絕對禁用。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 11
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "肩井穴（防氣胸）：肩井穴正下方為肺尖所在區域，操作時絕不可深刺。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 44
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "肩井穴（防氣胸）：肩井穴正下方為肺尖所在區域，操作時絕不可深刺。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 44
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "若進針過深或提插幅度過大，極易刺破胸膜和肺組織，引發創傷性氣胸，屬針灸臨床重大醫療安全隱患。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 44
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "若進針過深或提插幅度過大，極易刺破胸膜和肺組織，引發創傷性氣胸，屬針灸臨床重大醫療安全隱患。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 44
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "肩井兩大禁忌：「下有肺尖禁深刺（防氣胸），下氣極速孕婦禁（防流產）」。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 63
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "肩井兩大禁忌：「下有肺尖禁深刺（防氣胸），下氣極速孕婦禁（防流產）」。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 63
+        }
+      },
+      {
+        "kind": "contraindication",
+        "text": "肩井兩大禁忌：「下有肺尖禁深刺（防氣胸），下氣極速孕婦禁（防流產）」。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 63
+        }
+      }
+    ]
   },
   {
     "id": "GB30",
@@ -4942,6 +7484,18 @@
         "indications": "近治：下肢痿痹、癱瘓、腰腿痛（坐骨神經痛等）。遠治/特殊：不明顯。",
         "method": "直刺 2~3 寸。要求有觸電般的放射感向下肢傳導。",
         "safety": "影片未提及；臨床需注意針尖方向，避免刺入盆腔或損傷坐骨神經主幹造成不可逆損傷。"
+      },
+      {
+        "path": "docs/4.19.3足少阳经.md",
+        "line": 42,
+        "label": "環跳",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：影片中雖未特別強調禁忌，但針對環跳穴給出了 2~3 寸的深刺範圍。臨床實踐中，此部位脂肪與肌肉層較厚，但深部有坐骨神經通過，操作需由具備解剖知識的醫師進行，以防神經幹損傷。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：影片中雖未特別強調禁忌，但針對環跳穴給出了 2~3 寸的深刺範圍。臨床實踐中，此部位脂肪與肌肉層較厚，但深部有坐骨神經通過，操作需由具備解剖知識的醫師進行，以防神經幹損傷。"
       },
       {
         "path": "docs/7.8痹证的针灸治疗.md",
@@ -4974,10 +7528,63 @@
       "depth": "直刺 2~3 寸。要求有觸電般的放射感向下肢傳導。",
       "safety": "影片未提及；臨床需注意針尖方向，避免刺入盆腔或損傷坐骨神經主幹造成不可逆損傷。",
       "source": "docs/4.19.3足少阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "2~3 寸",
+    "depthValues": [
+      {
+        "raw": "2~3 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.3足少阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "臨床需注意針尖方向，避免刺入盆腔或損傷坐骨神經主幹造成不可逆損傷。",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：影片中雖未特別強調禁忌，但針對環跳穴給出了 2~3 寸的深刺範圍。",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 42
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "臨床實踐中，此部位脂肪與肌肉層較厚，但深部有坐骨神經通過，操作需由具備解剖知識的醫師進行，以防神經幹損傷。",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 42
+        }
+      }
+    ]
   },
   {
     "id": "GB33",
@@ -5020,10 +7627,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "GB34",
@@ -5090,10 +7708,47 @@
       "depth": "直刺 1~1.5 寸。",
       "safety": "影片未提及；臨床需注意避開腓總神經。",
       "source": "docs/4.19.3足少阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      -1,
+      0,
+      0
+    ],
+    "vector": [
+      -1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.3足少阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "臨床需注意避開腓總神經。",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "GB40",
@@ -5136,10 +7791,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "GB41",
@@ -5194,10 +7860,47 @@
       "depth": "直刺 0.3~0.5 寸。",
       "safety": "影片未提及；足背皮薄肉少，注意進針勿過猛。",
       "source": "docs/4.19.3足少阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      -1,
+      0
+    ],
+    "vector": [
+      0,
+      -1,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.3足少阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "足背皮薄肉少，注意進針勿過猛。",
+        "source": {
+          "path": "docs/4.19.3足少阳经.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "GB44",
@@ -5240,10 +7943,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.11足少阳胆经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.11足少阳胆经.md",
+    "dangerWarnings": []
   },
   {
     "id": "GV1",
@@ -5308,10 +8022,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/2.4奇经八脉—十五络脉.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/2.4奇经八脉—十五络脉.md",
+    "dangerWarnings": []
   },
   {
     "id": "GV4",
@@ -5368,10 +8093,55 @@
       "depth": "直刺 0.5~0.8 寸。治療虛寒證時多用灸法。",
       "safety": "不可深刺，以免傷及脊髓與內部臟腑。",
       "source": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~0.8 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及脊髓與內部臟腑。",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 26
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可深刺，以免傷及脊髓與內部臟腑。",
+        "source": {
+          "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "GV14",
@@ -5517,10 +8287,173 @@
       "depth": "治痛：向上斜刺 0.5~1 寸。治熱：刺絡拔罐法。保健：灸法或穴位敷貼。",
       "safety": "影片未提及特殊禁忌，臨床需注意避免刺傷脊髓。",
       "source": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 25
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及特殊禁忌，臨床需注意避免刺傷脊髓。",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 25
+        }
+      }
+    ]
+  },
+  {
+    "id": "GV15",
+    "name": "啞門",
+    "aliases": [],
+    "meridianCode": "GV",
+    "position": [
+      0,
+      1.165,
+      -0.133435
+    ],
+    "coordinatePrecision": "schematic",
+    "sources": [
+      {
+        "path": "docs/4.14督脉.md",
+        "line": 51,
+        "label": "啞門",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。（註：此為臨床常規補充，非影片直接內容）",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。（註：此為臨床常規補充，非影片直接內容）"
+      },
+      {
+        "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+        "line": 14,
+        "label": "啞門",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "4. 危險解剖區的進針原則（胸背部、眼區、頸項部風府/啞門等，嚴禁深刺直刺）。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "4. 危險解剖區的進針原則（胸背部、眼區、頸項部風府/啞門等，嚴禁深刺直刺）。"
+      },
+      {
+        "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+        "line": 75,
+        "label": "啞門",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。"
+      }
+    ],
+    "surfaceProjection": "Continuous torso and neck",
+    "meridian": "督脈",
+    "normal": [
+      0,
+      0,
+      -1
+    ],
+    "angleDegrees": null,
+    "angleSource": null,
+    "docs": [
+      "docs/4.14督脉.md",
+      "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+      "docs/4.17.1 背腰部常用腧穴-背腰部一区.md"
+    ],
+    "technique": {
+      "location": "教材未提供個別定位。",
+      "method": "教材未提供個別刺灸手法。",
+      "depth": "教材未提供深度。",
+      "safety": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。（註：此為臨床常規補充，非影片直接內容）",
+      "source": "docs/4.14督脉.md",
+      "group": true,
+      "angle": null,
+      "dangerLevel": "high"
+    },
+    "featured": false,
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.14督脉.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。",
+        "source": {
+          "path": "docs/4.14督脉.md",
+          "line": 51
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。",
+        "source": {
+          "path": "docs/4.14督脉.md",
+          "line": 51
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。",
+        "source": {
+          "path": "docs/4.14督脉.md",
+          "line": 51
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "4. 危險解剖區的進針原則（胸背部、眼區、頸項部風府/啞門等，嚴禁深刺直刺）。",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 14
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 75
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 75
+        }
+      }
+    ]
   },
   {
     "id": "GV16",
@@ -5553,6 +8486,66 @@
         "indications": "影片未提及具體主治，總論歸為頭項局部病證",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+        "line": 32,
+        "label": "風府",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。"
+      },
+      {
+        "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+        "line": 41,
+        "label": "風府",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；風池穴、天柱穴深部亦鄰近延髓與高位頸髓。若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；風池穴、天柱穴深部亦鄰近延髓與高位頸髓。若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。"
+      },
+      {
+        "path": "docs/4.14督脉.md",
+        "line": 51,
+        "label": "風府",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。（註：此為臨床常規補充，非影片直接內容）",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。（註：此為臨床常規補充，非影片直接內容）"
+      },
+      {
+        "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+        "line": 14,
+        "label": "風府",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "4. 危險解剖區的進針原則（胸背部、眼區、頸項部風府/啞門等，嚴禁深刺直刺）。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "4. 危險解剖區的進針原則（胸背部、眼區、頸項部風府/啞門等，嚴禁深刺直刺）。"
+      },
+      {
+        "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+        "line": 75,
+        "label": "風府",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。"
       }
     ],
     "surfaceProjection": "Continuous torso and neck",
@@ -5575,10 +8568,143 @@
       "depth": "向下頜方向斜刺 0.5~1 寸。",
       "safety": "嚴禁向內上方深刺，深部為枕骨大孔及延髓，誤刺可致呼吸心跳驟停。",
       "source": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 23
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "嚴禁向內上方深刺，深部為枕骨大孔及延髓，誤刺可致呼吸心跳驟停。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 23
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "嚴禁向內上方深刺，深部為枕骨大孔及延髓，誤刺可致呼吸心跳驟停。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 23
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "後項部三穴（風府、風池、天柱）：因處於人體延髓生命中樞外圍，進針時角度控制極為關鍵。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "術者需精確對準患者下頜（或鼻尖）方向，行斜刺 0.5~1 寸，得氣即止，手法宜輕柔，避免大幅度提插搗刺。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "延髓中樞雷區：風府穴正對枕骨大孔，內部為延髓；",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "風池穴、天柱穴深部亦鄰近延髓與高位頸髓。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "若進針角度錯誤（向內上方）且深度過深，針尖將穿過項韌帶、寰枕後膜刺中延髓，會引發患者劇烈觸電感、四肢抽搐，甚至瞬間呼吸心跳驟停而猝死。",
+        "source": {
+          "path": "docs/4.17.1 背腰部常用腧穴-背腰部一区.md",
+          "line": 41
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：本講次影片未具體展開。",
+        "source": {
+          "path": "docs/4.14督脉.md",
+          "line": 51
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。",
+        "source": {
+          "path": "docs/4.14督脉.md",
+          "line": 51
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "但在臨床實踐中，督脈循行於脊柱與延髓之上（如風府、啞門），屬絕對的高危針刺區域，需嚴格控制角度與深度。",
+        "source": {
+          "path": "docs/4.14督脉.md",
+          "line": 51
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "4. 危險解剖區的進針原則（胸背部、眼區、頸項部風府/啞門等，嚴禁深刺直刺）。",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 14
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 75
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "項部（風府、啞門）：嚴格掌握角度，禁深刺，防傷延腦。",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 75
+        }
+      }
+    ]
   },
   {
     "id": "GV25",
@@ -5621,10 +8747,21 @@
       "depth": "多採用針刺瀉法。",
       "safety": "影片未提及",
       "source": "docs/6.1.1针灸治疗原则（1）.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/6.1.1针灸治疗原则（1）.md",
+    "dangerWarnings": []
   },
   {
     "id": "GV26",
@@ -5726,10 +8863,39 @@
       "depth": "向上斜刺 0.3~0.5 寸。或用指甲掐按。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 35
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "痛覺敏感，手法宜重但不宜過深",
+        "source": {
+          "path": "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "GV28",
@@ -5772,10 +8938,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.14督脉.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.14督脉.md",
+    "dangerWarnings": []
   },
   {
     "id": "HT1",
@@ -5829,10 +9006,39 @@
       "depth": "直刺或斜刺 0.3～0.5 寸。",
       "safety": "嚴禁刺傷腋動脈（需避開動脈搏動進針）。",
       "source": "docs/4.18.6手少阴经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.3～0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3～0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.6手少阴经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "嚴禁刺傷腋動脈（需避開動脈搏動進針）。",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "HT6",
@@ -5876,10 +9082,47 @@
       "depth": "直刺 0.3～0.5 寸。",
       "safety": "位於腕部前臂前區，注意避開神經血管束。",
       "source": "docs/4.18.6手少阴经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3～0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3～0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.6手少阴经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "位於腕部前臂前區，注意避開神經血管束。",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "HT9",
@@ -5933,10 +9176,39 @@
       "depth": "淺刺 0.1 寸，或點刺出血。",
       "safety": "痛覺敏感區，手法需輕巧迅速；注意嚴格消毒以防感染。",
       "source": "docs/4.18.6手少阴经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.1 寸",
+    "depthValues": [
+      {
+        "raw": "0.1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.6手少阴经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "注意嚴格消毒以防感染。",
+        "source": {
+          "path": "docs/4.18.6手少阴经.md",
+          "line": 29
+        }
+      }
+    ]
   },
   {
     "id": "KI1",
@@ -5979,10 +9251,38 @@
       "depth": "直刺 0.5~1 寸",
       "safety": "局部足底皮肤较厚且敏感，进针需果断以减轻痛感。（其他影片未提及）",
       "source": "docs/4.19.5足少阴肾经和足厥阴经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      1,
+      0
+    ],
+    "vector": [
+      0,
+      1,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.5足少阴肾经和足厥阴经.md",
+    "dangerWarnings": []
   },
   {
     "id": "KI3",
@@ -6049,10 +9349,47 @@
       "depth": "直刺 0.5~1 寸",
       "safety": "避开胫后动、静脉进针。（影片未提及具体解剖，临床规范需注意）",
       "source": "docs/4.19.5足少阴肾经和足厥阴经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      1,
+      0,
+      0
+    ],
+    "vector": [
+      1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.5足少阴肾经和足厥阴经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "避开胫后动、静脉进针。",
+        "source": {
+          "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "KI6",
@@ -6117,10 +9454,38 @@
       "depth": "直刺 0.5~1 寸",
       "safety": "（影片未提及特殊禁忌，常规针刺即可）",
       "source": "docs/4.19.5足少阴肾经和足厥阴经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      1,
+      0,
+      0
+    ],
+    "vector": [
+      1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.5足少阴肾经和足厥阴经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LI1",
@@ -6165,10 +9530,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.2手阳明大肠经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.2手阳明大肠经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LI2",
@@ -6200,10 +9576,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/6.4针灸配穴处方.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/6.4针灸配穴处方.md",
+    "dangerWarnings": []
   },
   {
     "id": "LI5",
@@ -6235,10 +9622,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.18.1上肢部常用腧穴-概述.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.1上肢部常用腧穴-概述.md",
+    "dangerWarnings": []
   },
   {
     "id": "LI10",
@@ -6270,10 +9668,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.2手阳明大肠经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.2手阳明大肠经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LI15",
@@ -6328,10 +9737,30 @@
       "depth": "直刺或向下斜刺，或朝肩關節方向刺，深度 0.8~1.5 寸。",
       "safety": "需準確觸摸肩峰與肱骨大結節作為進針標誌；影片未提及絕對禁忌。",
       "source": "docs/4.18.2手阳明经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.8~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.8~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.2手阳明经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.2手阳明经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LI20",
@@ -6431,10 +9860,39 @@
       "depth": "向鼻尖方向斜刺 0.3~0.5 寸。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 34
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "面部穴位避開血管，注意防內出血淤青。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 32
+        }
+      }
+    ]
   },
   {
     "id": "LR1",
@@ -6477,10 +9935,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.12足厥阴肝经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.12足厥阴肝经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LR2",
@@ -6535,10 +10004,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/7.3失眠的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.3失眠的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "LR4",
@@ -6581,10 +10061,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.12足厥阴肝经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.12足厥阴肝经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LR13",
@@ -6638,10 +10129,47 @@
       "depth": "斜刺或平刺 0.5~0.8寸。",
       "safety": "不可深刺，以免傷及內臟。",
       "source": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.5~0.8寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及內臟。",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 28
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可深刺，以免傷及內臟。",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "LR14",
@@ -6674,6 +10202,18 @@
         "indications": "影片未詳述（作為體表分布線終點標誌）",
         "method": "影片未提及",
         "safety": "循行於胸脅部，臨床應防刺傷內臟（影片未直接提及，屬常規知識）"
+      },
+      {
+        "path": "docs/4.12足厥阴肝经.md",
+        "line": 48,
+        "label": "期門",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：雖影片未特別強調，但從其經脈分佈（上達小腹、屬肝絡膽、佈於脅肋）可知，胸脅部穴位（如期門）需嚴格控制角度與深度，嚴禁深直刺以防氣胸或刺傷肝膽。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：雖影片未特別強調，但從其經脈分佈（上達小腹、屬肝絡膽、佈於脅肋）可知，胸脅部穴位（如期門）需嚴格控制角度與深度，嚴禁深直刺以防氣胸或刺傷肝膽。"
       }
     ],
     "surfaceProjection": "Continuous torso and neck",
@@ -6695,10 +10235,63 @@
       "depth": "斜刺或平刺 0.5~0.8寸。",
       "safety": "不可深刺，以免傷及內臟。",
       "source": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.5~0.8寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "不可深刺，以免傷及內臟。",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可深刺，以免傷及內臟。",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 27
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：雖影片未特別強調，但從其經脈分佈（上達小腹、屬肝絡膽、佈於脅肋）可知，胸脅部穴位（如期門）需嚴格控制角度與深度，嚴禁深直刺以防氣胸或刺傷肝膽。",
+        "source": {
+          "path": "docs/4.12足厥阴肝经.md",
+          "line": 48
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "解剖危險區與刺灸深度禁忌：雖影片未特別強調，但從其經脈分佈（上達小腹、屬肝絡膽、佈於脅肋）可知，胸脅部穴位（如期門）需嚴格控制角度與深度，嚴禁深直刺以防氣胸或刺傷肝膽。",
+        "source": {
+          "path": "docs/4.12足厥阴肝经.md",
+          "line": 48
+        }
+      }
+    ]
   },
   {
     "id": "LU2",
@@ -6730,10 +10323,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.16.1 胸腹部常用腧穴-胸腹部一区.md",
+    "dangerWarnings": []
   },
   {
     "id": "LU5",
@@ -6800,10 +10404,47 @@
       "depth": "直刺 0.5~0.8 寸；或用三棱針點刺出血。",
       "safety": "影片未具體提及解剖危險，臨床一般需避開橈側神經與血管。",
       "source": "docs/4.18.5手太阴肺经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~0.8 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.5手太阴肺经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.5手太阴肺经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未具體提及解剖危險，臨床一般需避開橈側神經與血管。",
+        "source": {
+          "path": "docs/4.18.5手太阴肺经.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "LU7",
@@ -6904,10 +10545,30 @@
       "depth": "針尖向上斜刺 0.3~0.5 寸。",
       "safety": "皮下組織較薄，需嚴格控制角度與深度。",
       "source": "docs/4.18.5手太阴肺经.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.3~0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3~0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.5手太阴肺经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.5手太阴肺经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LU10",
@@ -6962,10 +10623,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.1手太阴肺经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.1手太阴肺经.md",
+    "dangerWarnings": []
   },
   {
     "id": "LU11",
@@ -7042,10 +10714,39 @@
       "depth": "淺刺 0.1 寸；或用三棱針點刺出血。",
       "safety": "屬於末梢神經豐富區，刺痛感較強；點刺放血需注意無菌操作。",
       "source": "docs/4.18.5手太阴肺经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.1 寸",
+    "depthValues": [
+      {
+        "raw": "0.1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.5手太阴肺经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.5手太阴肺经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "點刺放血需注意無菌操作。",
+        "source": {
+          "path": "docs/4.18.5手太阴肺经.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "REG-牙痛穴",
@@ -7088,10 +10789,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/3.1腧穴的定义发展分类命名.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/3.1腧穴的定义发展分类命名.md",
+    "dangerWarnings": []
   },
   {
     "id": "REG-腰痛穴",
@@ -7134,10 +10846,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/3.1腧穴的定义发展分类命名.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/3.1腧穴的定义发展分类命名.md",
+    "dangerWarnings": []
   },
   {
     "id": "REG-阿是穴",
@@ -7184,10 +10907,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/3.1腧穴的定义发展分类命名.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/3.1腧穴的定义发展分类命名.md",
+    "dangerWarnings": []
   },
   {
     "id": "REG-頭痛穴",
@@ -7230,10 +10964,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/3.1腧穴的定义发展分类命名.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/3.1腧穴的定义发展分类命名.md",
+    "dangerWarnings": []
   },
   {
     "id": "REG-頸夾脊",
@@ -7276,10 +11021,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "PC1",
@@ -7302,6 +11058,18 @@
         "indications": "影片未詳細提及（作為經脈起點標誌）",
         "method": "影片未提及",
         "safety": "影片未提及（臨床常規需防氣胸）"
+      },
+      {
+        "path": "docs/4.9手厥阴心包经.md",
+        "line": 50,
+        "label": "天池",
+        "group": false,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：影片未具體展開。但依據其循行路線（如胸脅部天池穴），臨床實踐中需絕對注意避免深刺以免引發創傷性氣胸；前臂段需注意避開正中神經主幹。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：影片未具體展開。但依據其循行路線（如胸脅部天池穴），臨床實踐中需絕對注意避免深刺以免引發創傷性氣胸；前臂段需注意避開正中神經主幹。"
       }
     ],
     "surfaceProjection": "Continuous torso and neck",
@@ -7322,10 +11090,62 @@
       "depth": "影片未提及",
       "safety": "影片未提及（臨床常規需防氣胸）",
       "source": "docs/4.9手厥阴心包经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.9手厥阴心包经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及（臨床常規需防氣胸）",
+        "source": {
+          "path": "docs/4.9手厥阴心包经.md",
+          "line": 36
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：影片未具體展開。",
+        "source": {
+          "path": "docs/4.9手厥阴心包经.md",
+          "line": 50
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "但依據其循行路線（如胸脅部天池穴），臨床實踐中需絕對注意避免深刺以免引發創傷性氣胸；",
+        "source": {
+          "path": "docs/4.9手厥阴心包经.md",
+          "line": 50
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "但依據其循行路線（如胸脅部天池穴），臨床實踐中需絕對注意避免深刺以免引發創傷性氣胸；",
+        "source": {
+          "path": "docs/4.9手厥阴心包经.md",
+          "line": 50
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "前臂段需注意避開正中神經主幹。",
+        "source": {
+          "path": "docs/4.9手厥阴心包经.md",
+          "line": 50
+        }
+      }
+    ]
   },
   {
     "id": "PC3",
@@ -7368,10 +11188,47 @@
       "depth": "直刺 1.0～1.5 寸；或用三稜針點刺出血。",
       "safety": "影片未提及，臨床需避開正中神經及肱動靜脈。",
       "source": "docs/4.18.7手厥阴心包经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1.0～1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1.0～1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.7手厥阴心包经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.7手厥阴心包经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及，臨床需避開正中神經及肱動靜脈。",
+        "source": {
+          "path": "docs/4.18.7手厥阴心包经.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "PC8",
@@ -7425,10 +11282,38 @@
       "depth": "直刺 0.3～0.5 寸。",
       "safety": "掌心痛覺神經豐富，進針需迅速；針刺較痛，需先告知患者。",
       "source": "docs/4.18.7手厥阴心包经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3～0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3～0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.7手厥阴心包经.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.7手厥阴心包经.md",
+    "dangerWarnings": []
   },
   {
     "id": "PC9",
@@ -7482,10 +11367,30 @@
       "depth": "淺刺 0.1 寸；或用三稜針點刺出血。",
       "safety": "指尖痛覺極其敏銳，多用於急救，操作需快。",
       "source": "docs/4.18.7手厥阴心包经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.1 寸",
+    "depthValues": [
+      {
+        "raw": "0.1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.7手厥阴心包经.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.7手厥阴心包经.md",
+    "dangerWarnings": []
   },
   {
     "id": "SI1",
@@ -7539,10 +11444,39 @@
       "depth": "毫針斜刺0.1寸；或用三棱針點刺出血（治療急證、熱證常用）。",
       "safety": "影片未提及（臨床常規需注意末梢痛覺敏感及局部消毒嚴格）。",
       "source": "docs/4.18.3手太阳经.md",
-      "group": false
+      "group": false,
+      "angle": "斜刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "斜刺",
+    "depth": "0.1寸",
+    "depthValues": [
+      {
+        "raw": "0.1寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.3手太阳经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.3手太阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及（臨床常規需注意末梢痛覺敏感及局部消毒嚴格）。",
+        "source": {
+          "path": "docs/4.18.3手太阳经.md",
+          "line": 27
+        }
+      }
+    ]
   },
   {
     "id": "SI3",
@@ -7599,10 +11533,47 @@
       "depth": "直刺0.5~1.0寸；治療手指攣痛時可透刺合谷。",
       "safety": "影片未提及（穿透掌部深層需注意解剖層次，避免過度提插損傷血管神經）。",
       "source": "docs/4.18.3手太阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1.0寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1.0寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.3手太阳经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      -1,
+      0,
+      0
+    ],
+    "vector": [
+      -1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.3手太阳经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及（穿透掌部深層需注意解剖層次，避免過度提插損傷血管神經）。",
+        "source": {
+          "path": "docs/4.18.3手太阳经.md",
+          "line": 28
+        }
+      }
+    ]
   },
   {
     "id": "SI6",
@@ -7645,10 +11616,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/3.5腧穴定位方法.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/3.5腧穴定位方法.md",
+    "dangerWarnings": []
   },
   {
     "id": "SI9",
@@ -7691,10 +11673,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "SI11",
@@ -7737,10 +11730,38 @@
       "depth": "直刺 0.5~1 寸。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.17.2 背腰部常用腧穴-背腰部二区.md",
+    "dangerWarnings": []
   },
   {
     "id": "SI19",
@@ -7773,6 +11794,18 @@
         "indications": "影片未提及具體主治",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.15.2头部常用腧穴.md",
+        "line": 60,
+        "label": "聽宮",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "耳前三穴（耳門、聽宮、聽會）：由於解剖上位於下頜骨髁突後方，閉口時該間隙狹小，進針容易刺中骨膜引起劇痛或損傷關節。因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "耳前三穴（耳門、聽宮、聽會）：由於解剖上位於下頜骨髁突後方，閉口時該間隙狹小，進針容易刺中骨膜引起劇痛或損傷關節。因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。"
       }
     ],
     "surfaceProjection": "Head",
@@ -7795,10 +11828,30 @@
       "depth": "張口取穴。",
       "safety": "留針時需保持微張口姿勢。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 60
+        }
+      }
+    ]
   },
   {
     "id": "SP1",
@@ -7853,10 +11906,30 @@
       "depth": "淺刺 0.1 寸",
       "safety": "影片未提及特殊禁忌",
       "source": "docs/4.19.4足太阴脾经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.1 寸",
+    "depthValues": [
+      {
+        "raw": "0.1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.4足太阴脾经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.19.4足太阴脾经.md",
+    "dangerWarnings": []
   },
   {
     "id": "SP3",
@@ -7900,10 +11973,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/7.3失眠的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.3失眠的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "SP4",
@@ -7947,10 +12031,38 @@
       "depth": "直刺 0.5~1 寸",
       "safety": "影片未提及特殊禁忌",
       "source": "docs/4.19.4足太阴脾经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.4足太阴脾经.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": [
+      1,
+      0,
+      0
+    ],
+    "vector": [
+      1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.4足太阴脾经.md",
+    "dangerWarnings": []
   },
   {
     "id": "SP8",
@@ -7993,10 +12105,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/7.7痛经的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.7痛经的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "SP9",
@@ -8061,10 +12184,38 @@
       "depth": "直刺 1~2 寸",
       "safety": "影片未提及特殊禁忌",
       "source": "docs/4.19.4足太阴脾经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~2 寸",
+    "depthValues": [
+      {
+        "raw": "1~2 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.4足太阴脾经.md",
+          "line": 31
+        }
+      }
+    ],
+    "needleVector": [
+      1,
+      0,
+      0
+    ],
+    "vector": [
+      1,
+      0,
+      0
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.4足太阴脾经.md",
+    "dangerWarnings": []
   },
   {
     "id": "SP10",
@@ -8164,10 +12315,47 @@
       "depth": "直刺 1~1.5 寸",
       "safety": "影片未提及特殊禁忌",
       "source": "docs/4.19.4足太阴脾经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.4足太阴脾经.md",
+          "line": 32
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.4足太阴脾经.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "膈俞嚴禁直刺深刺。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 31
+        }
+      }
+    ]
   },
   {
     "id": "SP15",
@@ -8211,10 +12399,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/7.2便秘的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.2便秘的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "SP21",
@@ -8279,10 +12478,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.4足太阴脾经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.4足太阴脾经.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST1",
@@ -8315,6 +12525,18 @@
         "indications": "影片未提及具體主治",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.3足阳明胃经.md",
+        "line": 55,
+        "label": "承泣",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。"
       }
     ],
     "surfaceProjection": "Head",
@@ -8336,10 +12558,71 @@
       "depth": "囑患者閉目，醫者以左手輕推眼球向上固定，沿眶緣緩慢直刺 0.5~1.5 寸。",
       "safety": "嚴禁提插捻轉。出針後需用乾棉球按壓以防出血。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 32
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "嚴禁提插捻轉。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "出針後需用乾棉球按壓以防出血。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。",
+        "source": {
+          "path": "docs/4.3足阳明胃经.md",
+          "line": 55
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。",
+        "source": {
+          "path": "docs/4.3足阳明胃经.md",
+          "line": 55
+        }
+      }
+    ]
   },
   {
     "id": "ST6",
@@ -8385,10 +12668,38 @@
       "depth": "直刺 0.5~1 寸，或向口角（地倉）方向透刺。",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 36
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST8",
@@ -8443,10 +12754,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.3足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.3足阳明胃经.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST12",
@@ -8481,6 +12803,18 @@
         "indications": "影片未提及具體主治",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.3足阳明胃经.md",
+        "line": 55,
+        "label": "缺盆",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。"
       }
     ],
     "surfaceProjection": "Continuous torso and neck",
@@ -8505,10 +12839,38 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.2手阳明大肠经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.2手阳明大肠经.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。",
+        "source": {
+          "path": "docs/4.3足阳明胃经.md",
+          "line": 55
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "解剖危險區與刺灸深度禁忌：本講未提及具體穴位深度禁忌，但經脈循行經過眼區（承泣）、頸動脈區（人迎）、胸肺區（缺盆、乳房）及腹部，臨床實操時需具備相應解剖安全意識。",
+        "source": {
+          "path": "docs/4.3足阳明胃经.md",
+          "line": 55
+        }
+      }
+    ]
   },
   {
     "id": "ST21",
@@ -8562,10 +12924,47 @@
       "depth": "直刺 1~1.5寸；寒證可用灸法。",
       "safety": "飽食後不可深刺。",
       "source": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "high"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "飽食後不可深刺。",
+        "source": {
+          "path": "docs/4.16.2 胸腹部常用腧穴-胸腹部二区.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "ST25",
@@ -8632,10 +13031,47 @@
       "depth": "直刺 1~1.5寸。",
       "safety": "孕婦慎用。",
       "source": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 31
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+    "dangerWarnings": [
+      {
+        "kind": "contraindication",
+        "text": "孕婦慎用。",
+        "source": {
+          "path": "docs/4.16.3 胸腹部常用腧穴-胸腹部三区.md",
+          "line": 31
+        }
+      }
+    ]
   },
   {
     "id": "ST27",
@@ -8667,10 +13103,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/7.4肥胖的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.4肥胖的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST28",
@@ -8702,10 +13149,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/7.4肥胖的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.4肥胖的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST29",
@@ -8749,10 +13207,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/7.7痛经的针灸治疗.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.7痛经的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST34",
@@ -8806,10 +13275,47 @@
       "depth": "直刺 1~1.5寸",
       "safety": "影片未提及特殊禁忌，臨床常規避開大血管。",
       "source": "docs/4.19.1足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.1足阳明胃经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及特殊禁忌，臨床常規避開大血管。",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 26
+        }
+      }
+    ]
   },
   {
     "id": "ST35",
@@ -8860,10 +13366,21 @@
       "depth": "三棱針點刺出血，以達瀉熱、消腫、止痛作用。",
       "safety": "影片未提及",
       "source": "docs/6.1.1针灸治疗原则（1）.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/6.1.1针灸治疗原则（1）.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST37",
@@ -8908,10 +13425,38 @@
       "depth": "直刺 1~1.5寸",
       "safety": "影片未提及特殊禁忌。",
       "source": "docs/4.19.1足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.1足阳明胃经.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST40",
@@ -8944,6 +13489,18 @@
         "indications": "協同調理脾胃，行滯通腑。",
         "method": "影片未提及",
         "safety": "影片未提及"
+      },
+      {
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 42,
+        "label": "豐隆",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "解剖危險區與刺灸深度禁忌：本講次涉及的下肢及足部穴位，解剖結構相對安全。但在臨床實踐中，針刺足三里、豐隆等穴區需注意避開脛前動靜脈及腓深神經幹，以防皮下出血或過度放電感。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "解剖危險區與刺灸深度禁忌：本講次涉及的下肢及足部穴位，解剖結構相對安全。但在臨床實踐中，針刺足三里、豐隆等穴區需注意避開脛前動靜脈及腓深神經幹，以防皮下出血或過度放電感。"
       },
       {
         "path": "docs/6.1.1针灸治疗原则（1）.md",
@@ -8988,10 +13545,55 @@
       "depth": "直刺 1~1.5寸",
       "safety": "取穴時需精確觸摸脛骨前肌外緣；影片未提及特殊禁忌。",
       "source": "docs/4.19.1足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "1~1.5寸",
+    "depthValues": [
+      {
+        "raw": "1~1.5寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 29
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.19.1足阳明胃经.md",
+    "dangerWarnings": [
+      {
+        "kind": "depth",
+        "text": "解剖危險區與刺灸深度禁忌：本講次涉及的下肢及足部穴位，解剖結構相對安全。",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 42
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "但在臨床實踐中，針刺足三里、豐隆等穴區需注意避開脛前動靜脈及腓深神經幹，以防皮下出血或過度放電感。",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 42
+        }
+      }
+    ]
   },
   {
     "id": "ST41",
@@ -9023,10 +13625,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.18.1上肢部常用腧穴-概述.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.1上肢部常用腧穴-概述.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST42",
@@ -9058,10 +13671,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.3足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.3足阳明胃经.md",
+    "dangerWarnings": []
   },
   {
     "id": "ST44",
@@ -9128,10 +13752,39 @@
       "depth": "直刺或斜刺 0.5~0.8寸",
       "safety": "影片未提及特殊禁忌，足背神經豐富，注意進針痛感。",
       "source": "docs/4.19.1足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": "0.5~0.8寸",
+    "depthValues": [
+      {
+        "raw": "0.5~0.8寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 30
+        }
+      }
+    ],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.19.1足阳明胃经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "影片未提及特殊禁忌，足背神經豐富，注意進針痛感。",
+        "source": {
+          "path": "docs/4.19.1足阳明胃经.md",
+          "line": 30
+        }
+      }
+    ]
   },
   {
     "id": "ST45",
@@ -9174,10 +13827,21 @@
       "depth": "影片未提及",
       "safety": "影片未提及",
       "source": "docs/4.3足阳明胃经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.3足阳明胃经.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE1",
@@ -9222,10 +13886,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.10手少阳三焦经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.10手少阳三焦经.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE3",
@@ -9269,10 +13944,38 @@
       "depth": "直刺 0.3～0.5 寸",
       "safety": "影片未提及",
       "source": "docs/4.18.4手少阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.3～0.5 寸",
+    "depthValues": [
+      {
+        "raw": "0.3～0.5 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.4手少阳经.md",
+          "line": 26
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.4手少阳经.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE4",
@@ -9306,10 +14009,21 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.18.4手少阳经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.18.4手少阳经.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE5",
@@ -9379,10 +14093,38 @@
       "depth": "直刺 0.5～1.0 寸",
       "safety": "影片未提及",
       "source": "docs/4.18.4手少阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5～1.0 寸",
+    "depthValues": [
+      {
+        "raw": "0.5～1.0 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.4手少阳经.md",
+          "line": 27
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.4手少阳经.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE6",
@@ -9439,10 +14181,38 @@
       "depth": "直刺 0.5～1.0 寸",
       "safety": "影片未提及",
       "source": "docs/4.18.4手少阳经.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5～1.0 寸",
+    "depthValues": [
+      {
+        "raw": "0.5～1.0 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.18.4手少阳经.md",
+          "line": 28
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      1
+    ],
+    "vector": [
+      0,
+      0,
+      1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.18.4手少阳经.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE14",
@@ -9486,10 +14256,21 @@
       "depth": "影片未提及具體深度",
       "safety": "影片未提及",
       "source": "docs/7.8痹证的针灸治疗.md",
-      "group": true
+      "group": true,
+      "angle": null,
+      "dangerLevel": "unreviewed"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/7.8痹证的针灸治疗.md",
+    "dangerWarnings": []
   },
   {
     "id": "TE21",
@@ -9512,6 +14293,18 @@
         "indications": "耳部疾患（耳鳴、耳聾）；下頜關節炎。",
         "method": "張口取穴，直刺 0.5~1 寸。",
         "safety": "留針時需保持微張口姿勢。"
+      },
+      {
+        "path": "docs/4.15.2头部常用腧穴.md",
+        "line": 60,
+        "label": "耳門",
+        "group": true,
+        "kind": "warning",
+        "excerpt": "耳前三穴（耳門、聽宮、聽會）：由於解剖上位於下頜骨髁突後方，閉口時該間隙狹小，進針容易刺中骨膜引起劇痛或損傷關節。因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。",
+        "location": "",
+        "indications": "",
+        "method": "",
+        "safety": "耳前三穴（耳門、聽宮、聽會）：由於解剖上位於下頜骨髁突後方，閉口時該間隙狹小，進針容易刺中骨膜引起劇痛或損傷關節。因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。"
       }
     ],
     "surfaceProjection": "Head",
@@ -9532,10 +14325,47 @@
       "depth": "張口取穴，直刺 0.5~1 寸。",
       "safety": "留針時需保持微張口姿勢。",
       "source": "docs/4.15.2头部常用腧穴.md",
-      "group": false
+      "group": false,
+      "angle": "直刺",
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": "直刺",
+    "depth": "0.5~1 寸",
+    "depthValues": [
+      {
+        "raw": "0.5~1 寸",
+        "unit": "寸",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 37
+        }
+      }
+    ],
+    "needleVector": [
+      0,
+      0,
+      -1
+    ],
+    "vector": [
+      0,
+      0,
+      -1
+    ],
+    "needleVectorPrecision": "schematic",
+    "docPath": "docs/4.15.2头部常用腧穴.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "因此必須囑患者張口取穴及進針，並在留針期間保持微張口姿態，切忌突然用力咀嚼或緊閉雙顎，以防滯針或彎針。",
+        "source": {
+          "path": "docs/4.15.2头部常用腧穴.md",
+          "line": 60
+        }
+      }
+    ]
   },
   {
     "id": "TE23",
@@ -9602,9 +14432,29 @@
       "depth": "教材未提供深度。",
       "safety": "教材未提供個別禁忌。",
       "source": "docs/4.10手少阳三焦经.md",
-      "group": false
+      "group": false,
+      "angle": null,
+      "dangerLevel": "caution"
     },
     "featured": false,
-    "reviewStatus": "unreviewed-source-material"
+    "reviewStatus": "unreviewed-source-material",
+    "pinyin": null,
+    "needle_angle": null,
+    "depth": null,
+    "depthValues": [],
+    "needleVector": null,
+    "vector": null,
+    "needleVectorPrecision": null,
+    "docPath": "docs/4.10手少阳三焦经.md",
+    "dangerWarnings": [
+      {
+        "kind": "anatomy",
+        "text": "面部穴位避開血管，注意防內出血淤青。",
+        "source": {
+          "path": "docs/7.5美容针灸治疗.md",
+          "line": 32
+        }
+      }
+    ]
   }
 ]

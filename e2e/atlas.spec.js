@@ -67,7 +67,7 @@ test('opens the selected source Markdown in the library and returns', async ({ p
 test('meridian filter and missing search show honest results and clear properly', async ({ page }) => {
   await ready(page);
   await openDirectory(page);
-  await page.getByRole('combobox', { name: '經絡篩選' }).selectOption({ label: '手陽明大腸經' });
+  await page.getByRole('combobox', { name: '經絡篩選', exact: true }).selectOption({ label: '手陽明大腸經' });
   const count = await page.locator('.point-row').count();
   expect(count).toBeGreaterThan(0);
   for (const label of await page.locator('.point-row small').allTextContents()) expect(label).toBe('手陽明大腸經');
@@ -76,7 +76,7 @@ test('meridian filter and missing search show honest results and clear properly'
   await expect(page.locator('.point-list .empty-state')).toContainText('沒有符合的穴位');
   await expect(page.locator('[data-result-count]')).toHaveText('0 個穴位');
   await page.locator('[data-clear]').click();
-  await expect(page.getByRole('combobox', { name: '經絡篩選' })).toHaveValue('');
+  await expect(page.getByRole('combobox', { name: '經絡篩選', exact: true })).toHaveValue('');
   expect(await page.locator('.point-row').count()).toBeGreaterThan(count);
 });
 

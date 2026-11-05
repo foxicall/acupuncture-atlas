@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseArgs, syncRepository } from '../scripts/git-push.js';
+import { parseArgs, syncRepository } from '../scripts/git-sync.js';
 
-function fixture({ dirty = true, failBuild = false, detached = false, upstream = true } = {}) {
+function fixture({ dirty = true, failBuild = false, detached = false, upstream = true, upstreamRemote = 'origin', upstreamBranch = 'main' } = {}) {
   const calls = [];
   return {
     calls,
@@ -11,8 +11,8 @@ function fixture({ dirty = true, failBuild = false, detached = false, upstream =
       assert.equal(options.shell, false);
       if (args[0] === 'symbolic-ref') return { status: detached ? 1 : 0, stdout: detached ? '' : 'main\n' };
       if (args[0] === 'status') return { status: 0, stdout: dirty ? '?? src/main.js\n' : '' };
-      if (args[0] === 'rev-parse' && args.includes('@{u}')) return { status: upstream ? 0 : 1, stdout: upstream ? 'origin/main' : '' };
-      if (bin === 'npm' && args[1] === 'build' && failBuild) return { status: 1, stdout: '' };
+      if (args[0] === 'for-each-ref') return { status: 0, stdout: upstream ? `${upstreamRemote}\0refs/heads/${upstreamBranch}\n` : '\0\n' };
+      if (args.at(-2) === 'run' && args.at(-1) === 'build' && failBuild) return { status: 1, stdout: '' };
       return { status: 0, stdout: '' };
     },
     log() {},
@@ -32,7 +32,7 @@ test('passes shell metacharacters literally in a single commit argument', () => 
   syncRepository([message], fixtureRun);
   const commit = fixtureRun.calls.find(({ args }) => args[0] === 'commit');
   assert.deepEqual(commit.args, ['commit', '-m', message]);
-  assert.deepEqual(fixtureRun.calls.filter(({ bin }) => bin === 'npm').map(({ args }) => args), [['run', 'check'], ['run', 'build']]);
+  assert.deepEqual(fixtureRun.calls.filter(({ args }) => args.at(-2) === 'run').map(({ args }) => args.slice(-2)), [['run', 'check'], ['run', 'build']]);
 });
 
 test('failed build prevents all staging, commits and pushes', () => {
@@ -58,12 +58,37 @@ test('dry run and status never build, stage, commit, or push', () => {
   for (const flag of ['--dry-run', '--status']) {
     const fixtureRun = fixture();
     syncRepository(['feat: x', flag], fixtureRun);
-    assert.equal(fixtureRun.calls.some(({ bin, args }) => bin === 'npm' || ['add', 'commit', 'push'].includes(args[0])), false);
+    assert.equal(fixtureRun.calls.some(({ bin, args }) => args.at(-2) === 'run' || ['add', 'commit', 'push'].includes(args[0])), false);
   }
 });
 
 test('detached HEAD fails before checks or changes', () => {
   const fixtureRun = fixture({ detached: true });
   assert.throws(() => syncRepository(['feat: x'], fixtureRun), /Detached HEAD/);
-  assert.equal(fixtureRun.calls.some(({ bin }) => bin === 'npm'), false);
+  assert.equal(fixtureRun.calls.some(({ args }) => args.at(-2) === 'run'), false);
+});
+
+
+test('default target follows actual upstream remote and branch instead of origin/local name', () => {
+  const fixtureRun = fixture({ upstreamRemote: 'team', upstreamBranch: 'release/mobile' });
+  syncRepository(['feat: x'], fixtureRun);
+  assert.deepEqual(fixtureRun.calls.at(-1).args, ['push', 'team', 'HEAD:refs/heads/release/mobile']);
+});
+
+test('explicit target overrides upstream without forcing', () => {
+  const fixtureRun = fixture({ upstreamRemote: 'team', upstreamBranch: 'release/mobile' });
+  syncRepository(['feat: x', '--remote', 'origin', '--branch', 'review'], fixtureRun);
+  assert.deepEqual(fixtureRun.calls.at(-1).args, ['push', '--set-upstream', 'origin', 'HEAD:refs/heads/review']);
+});
+
+test('a local-only upstream needs an explicit remote', () => {
+  const fixtureRun = fixture({ upstreamRemote: '.' });
+  assert.throws(() => syncRepository(['feat: x'], fixtureRun), /local-only/);
+  assert.equal(fixtureRun.calls.some(({ args }) => args[0] === 'push'), false);
+});
+
+test('legacy module keeps the same exported API', async () => {
+  const legacy = await import('../scripts/git-push.js');
+  assert.equal(legacy.syncRepository, syncRepository);
+  assert.equal(legacy.parseArgs, parseArgs);
 });

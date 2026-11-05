@@ -1,8 +1,9 @@
 {
   "markdownFiles": 75,
-  "acupoints": 157,
+  "acupoints": 158,
   "tableSourceRows": 334,
   "proseSourceRows": 18,
+  "warningSourceRows": 27,
   "excludedRows": [
     {
       "path": "docs/2.2经络系统的组成-十二经脉.md",
@@ -54,6 +55,7 @@
     }
   ],
   "coordinates": "schematic-unvalidated-surface-fitted",
+  "manualOverrides": 0,
   "surfaceProjectionUnresolved": [],
   "clinicalContent": "verbatim-unreviewed-source-material"
 }

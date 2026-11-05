@@ -27,7 +27,8 @@ export class AcupointList {
   render() {
     const query = normalize(this.query);
     const filtered = this.points.filter(p => (!this.meridian || p.meridian === this.meridian) &&
-      (!query || normalize([p.name, p.id, p.meridian, ...(p.aliases || []), p.technique?.location || ''].join(' ')).includes(query)));
+      (!query || normalize([p.name, p.pinyin || '', p.id, p.meridian, ...(p.aliases || []), p.technique?.location || ''].join(' ')).includes(query)));
+    this.filtered = filtered;
     this.element.querySelector('[data-result-count]').textContent = `${filtered.length} 個穴位`;
     this.element.querySelector('[data-clear]').hidden = !query && !this.meridian;
     const list = this.element.querySelector('.point-list');
@@ -35,7 +36,13 @@ export class AcupointList {
       <span class="point-code">${text(p.id.startsWith('DOC-') ? '•' : p.id)}</span><span class="point-name">${text(p.name)}<small>${text(p.meridian)}</small></span>${icon('chevron')}</button>`).join('') :
       '<p class="empty-state">沒有符合的穴位。<br>試試「合谷」、「LI4」或選擇其他經絡。</p>';
     list.querySelectorAll('button').forEach(button => button.onclick = () => this.onSelect(this.points.find(p => p.id === button.dataset.id)));
-    this.onFilter?.(filtered);
+    this.onFilter?.(filtered, { meridian: this.meridian, query: this.query });
+  }
+  setMeridian(meridian, clearQuery = false) {
+    this.meridian = meridian;
+    this.element.querySelector('select').value = meridian;
+    if (clearQuery) { this.query = ''; this.element.querySelector('input').value = ''; }
+    this.render();
   }
   select(point) {
     this.activeId = point.id;

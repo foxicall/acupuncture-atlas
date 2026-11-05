@@ -24,6 +24,15 @@ export function renderMarkdown(markdown) {
     else if (!href.startsWith('#')) a.removeAttribute('href');
   });
   template.content.querySelectorAll('table').forEach(table => {
+    const headers = [...table.querySelectorAll('thead th')];
+    const safetyIndex = headers.findIndex(header => /安全|禁忌|解剖注意/.test(header.textContent));
+    if (safetyIndex >= 0) table.querySelectorAll('tbody tr').forEach(row => {
+      const cell = row.querySelectorAll('td')[safetyIndex];
+      if (cell && /氣胸|气胸|延髓|延腦|延脑|椎動脈|椎动脉|頸動脈|颈动脉|脊髓|肺臟|肺脏|不可深刺|禁深刺/.test(cell.textContent)) {
+        const badge = document.createElement('strong'); badge.className = 'danger-badge'; badge.textContent = '危險深度／重要解剖';
+        cell.prepend(badge, document.createElement('br')); cell.classList.add('clinical-warning');
+      }
+    });
     const wrapper = document.createElement('div');
     wrapper.className = 'markdown-table-scroll';
     wrapper.tabIndex = 0;

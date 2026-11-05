@@ -2,12 +2,23 @@ import '@fontsource-variable/manrope';
 import 'github-markdown-css/github-markdown-light.css';
 import './styles/mobile.css';
 import { registerSW } from 'virtual:pwa-register';
-import acupoints from './data/acupoints.json';
+import originalAcupoints from './data/acupoints.json';
 import { Viewer3D } from './components/Viewer3D.js';
 import { AcupointList } from './components/AcupointList.js';
 import { TechniqueSheet } from './components/TechniqueSheet.js';
 import { documents, getDocument, normalize, renderMarkdown, text } from './lib/docs.js';
 import { icon } from './lib/icons.js';
+import { CalibrationPanel } from './components/CalibrationPanel.js';
+import { loadCalibration, mergeCalibration, saveCalibration, createCalibrationOverride } from './lib/calibration.js';
+
+let calibrationStorage;
+try { calibrationStorage = window.localStorage; } catch { /* Exports still work when browser storage is blocked. */ }
+const storedCalibration = loadCalibration(calibrationStorage, originalAcupoints);
+// Keep a malformed existing record intact so it can be recovered. In-memory
+// placement and JSON export remain available instead of overwriting that record.
+const calibrationStorageWritable = storedCalibration.ok;
+let calibrationOverrides = storedCalibration.overrides;
+let acupoints = mergeCalibration(originalAcupoints, calibrationOverrides);
 
 const mark = `<svg class="brand-mark" width="32" height="36" viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M6 30 16 6l10 24M10 21h12M16 2v32" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="13" r="3.2" fill="currentColor"/><circle cx="10.5" cy="25" r="2" fill="currentColor"/><circle cx="21.5" cy="25" r="2" fill="currentColor"/></svg>`;
 document.querySelector('#app').innerHTML = `<header class="app-header">
@@ -18,12 +29,14 @@ document.querySelector('#app').innerHTML = `<header class="app-header">
   <main class="workspace">
     <aside class="directory" aria-label="穴位目錄"></aside>
     <section class="atlas" aria-label="立體穴位圖譜">
-      <div class="atlas-heading"><div><h2>探索經絡與穴位</h2><p>從體表定位，走進刺灸手法。</p></div><span class="model-version">人體示意 · 3D</span></div>
+      <div class="atlas-heading"><div><h2>探索經絡與穴位</h2><p>從體表定位，走進刺灸手法。</p></div><button class="calibration-toggle" data-calibration-toggle aria-pressed="false" aria-controls="calibration-panel">${icon('pin')}校準模式</button></div>
+      <section class="calibration-panel" id="calibration-panel" data-calibration-panel aria-label="穴位座標校準" hidden></section>
       <div class="viewer" id="viewer"><div class="model-message" role="status" data-model-status>正在準備 3D 圖譜</div></div>
       <div class="orientation-controls" role="group" aria-label="觀察角度"><button class="view-button is-active" data-front>正面</button><button class="view-button" data-back>背面</button></div>
       <div class="zoom-controls" role="group" aria-label="縮放圖譜"><button class="icon-button" data-zoom-in aria-label="放大">${icon('plus')}</button><button class="icon-button" data-zoom-out aria-label="縮小">${icon('minus')}</button><button class="icon-button" data-reset aria-label="還原全身視角">${icon('reset')}</button></div>
       <div class="atlas-bottom"><div class="atlas-legend"><span class="landmark-dot"></span>穴位標記 <span class="needle-line"></span>入針方向</div><p>單指旋轉 · 雙指縮放</p></div>
       <button class="mobile-search mobile-only" data-open-list>${icon('search')}搜尋穴位與經絡<span>${acupoints.length}</span></button>
+      <label class="atlas-meridian-control"><span>經絡</span><select data-atlas-meridian aria-label="圖譜經絡篩選"><option value="">全部經絡</option></select></label>
       <button class="reopen-sheet" data-reopen hidden>${icon('pin')}<span></span>${icon('chevron')}</button>
     </section>
     <aside class="technique-sheet" aria-label="穴位詳解" aria-live="polite"></aside>
@@ -38,20 +51,40 @@ const directoryElement = document.querySelector('.directory');
 let viewer;
 let selected;
 let pendingInstall;
+let calibrationPanel;
+let calibrationEnabled = false;
+let sheetWasCollapsed = false;
 const initial = acupoints.find(p => p.id === new URLSearchParams(location.hash.slice(1)).get('point')) || acupoints.find(p => p.id === 'LI4') || acupoints[0];
 const sheet = new TechniqueSheet(sheetElement, point => viewer?.select(point), collapseSheet);
-const directory = new AcupointList(directoryElement, acupoints, selectPoint, filtered => viewer?.setVisible(filtered.length === acupoints.length ? filtered.filter(p => p.featured) : filtered));
+const directory = new AcupointList(directoryElement, acupoints, selectPoint, (filtered, state) => {
+  viewer?.setVisible(filtered.length === acupoints.length && !state.meridian ? filtered.filter(p => p.featured) : filtered, Boolean(state.meridian), Boolean(state.meridian || state.query.trim()));
+  document.querySelector('[data-atlas-meridian]').value = state.meridian;
+});
+const atlasMeridian = document.querySelector('[data-atlas-meridian]');
+atlasMeridian.innerHTML = directoryElement.querySelector('#meridian').innerHTML;
+atlasMeridian.onchange = () => {
+  directory.setMeridian(atlasMeridian.value, true);
+  if (directory.filtered.length && !directory.filtered.some(point => point.id === selected.id)) selectPoint(directory.filtered[0], false);
+  viewer?.reset(true);
+};
 
 function selectPoint(point, fly = true, updateHistory = true) {
   if (!point) return;
   selected = point;
+  if (directory.meridian && directory.meridian !== point.meridian) directory.setMeridian(point.meridian, true);
   directory.select(point); sheet.show(point); viewer?.select(point, fly);
+  if (calibrationEnabled) {
+    sheetElement.classList.add('is-collapsed');
+    calibrationPanel?.setSelected(point, calibrationOverrides.some(record => record.id === point.id));
+    viewer?.clearCalibrationMarker();
+  }
   document.querySelector('[data-reopen] span').textContent = `${point.name} · 穴位詳解`;
   document.querySelector('[data-reopen]').hidden = true;
   closeDirectory();
   if (updateHistory) history.replaceState(null, '', `#point=${encodeURIComponent(point.id)}`);
 }
 function collapseSheet() {
+  sheet.setExpanded(false);
   sheetElement.classList.add('is-collapsed');
   document.querySelector('[data-reopen]').hidden = false;
 }
@@ -78,14 +111,66 @@ selectPoint(initial, false, false);
 try {
   viewer = new Viewer3D(document.querySelector('#viewer'), acupoints, selectPoint, (message, error = false) => {
     const status = document.querySelector('[data-model-status]'); status.textContent = message; status.classList.toggle('has-error', error);
+  }, sample => {
+    if (sample) console.info('Calibration surface coordinate:', { x: sample.position[0], y: sample.position[1], z: sample.position[2] });
+    calibrationPanel?.showSample(sample);
   });
   viewer.select(initial, Boolean(location.hash));
-  window.__atlas = { get selectedId() { return selected.id; }, get modelLoaded() { return Boolean(viewer.body); } };
+  window.__atlas = {
+    get selectedId() { return selected.id; }, get modelLoaded() { return Boolean(viewer.body); },
+    get needleVisible() { return viewer.needle.visible && viewer.needle.children.length > 0; },
+    get visiblePointIds() { return viewer.meshes.filter(mesh => mesh.visible && viewer.hotspots.visible).map(mesh => mesh.userData.point.id); },
+  };
 } catch (error) {
   document.querySelector('[data-model-status]').textContent = '此裝置無法啟用 3D。仍可使用穴位目錄與完整教材。';
   document.querySelector('[data-model-status]').classList.add('has-error');
   console.warn('WebGL unavailable:', error.message);
+  document.querySelector('[data-calibration-toggle]').disabled = true;
 }
+calibrationPanel = new CalibrationPanel(document.querySelector('[data-calibration-panel]'), acupoints, {
+  onChoose: id => selectPoint(acupoints.find(point => point.id === id)),
+  onBind: sample => {
+    try {
+      const override = createCalibrationOverride({ id: selected.id, position: sample.position, normal: sample.normal }, originalAcupoints);
+      applyCalibration([...calibrationOverrides.filter(record => record.id !== selected.id), override]);
+    } catch (error) { calibrationPanel.status(`座標無法套用：${error.message}`, true); }
+  },
+  onReset: () => applyCalibration(calibrationOverrides.filter(record => record.id !== selected.id), true),
+  onExport: () => {
+    const url = URL.createObjectURL(new Blob([`${JSON.stringify(acupoints, null, 2)}\n`], { type: 'application/json' }));
+    const link = document.createElement('a'); link.href = url; link.download = 'acupoints.json'; link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    calibrationPanel.status('已匯出完整穴位 JSON；請以匯入指令更新專案。');
+  },
+});
+calibrationPanel.setSelected(selected, calibrationOverrides.some(record => record.id === selected.id));
+if (!storedCalibration.ok) calibrationPanel.status(storedCalibration.error, true);
+function applyCalibration(overrides, reset = false) {
+  const persisted = calibrationStorageWritable ? saveCalibration(calibrationStorage, originalAcupoints, overrides) : { ok: false };
+  calibrationOverrides = overrides;
+  acupoints = mergeCalibration(originalAcupoints, overrides);
+  viewer?.updatePoints(acupoints);
+  directory.points = acupoints; directory.render();
+  selectPoint(acupoints.find(point => point.id === selected.id), false);
+  calibrationPanel.status(persisted.ok ? (reset ? '此穴位已還原為專案座標。' : '已綁定座標，並保存於此瀏覽器。') : '已套用於本次畫面，但本機儲存失敗；請匯出 JSON 保存。', !persisted.ok);
+}
+document.querySelector('[data-calibration-toggle]').onclick = () => {
+  if (!viewer) return;
+  calibrationEnabled = !calibrationEnabled;
+  document.querySelector('[data-calibration-toggle]').setAttribute('aria-pressed', String(calibrationEnabled));
+  document.querySelector('[data-calibration-panel]').hidden = !calibrationEnabled;
+  document.querySelector('.atlas').classList.toggle('is-calibrating', calibrationEnabled);
+  viewer.setCalibrationMode(calibrationEnabled);
+  calibrationPanel.clearSample();
+  if (calibrationEnabled) {
+    sheetWasCollapsed = sheetElement.classList.contains('is-collapsed');
+    sheetElement.classList.add('is-collapsed');
+    document.querySelector('[data-reopen]').hidden = true;
+  } else {
+    sheetElement.classList.toggle('is-collapsed', sheetWasCollapsed);
+    document.querySelector('[data-reopen]').hidden = !sheetWasCollapsed;
+  }
+};
 function orientation(back) {
   viewer?.reset(true, back);
   document.querySelector('[data-front]').classList.toggle('is-active', !back);
@@ -165,6 +250,7 @@ if (import.meta.env.DEV) connectionLabel('開發模式');
 document.querySelector('[data-update]').onclick = () => updateSW(true);
 document.querySelector('[data-dismiss-update]').onclick = () => { document.querySelector('.update-notice').hidden = true; };
 document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && sheet.expanded && !library.open && !infoDialog.open) { sheet.setExpanded(false); return; }
   if (event.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !library.open && !infoDialog.open) {
     event.preventDefault();
     if (matchMedia('(max-width: 1100px)').matches) document.querySelector('[data-open-list]').click();

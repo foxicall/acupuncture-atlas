@@ -81,6 +81,43 @@ select { height: 42px; width: 100%; border: 1px solid #dce3dd; border-radius: 4p
 .atlas-heading h2 { font-size: 19px; font-weight: 500; letter-spacing: .015em; }
 .atlas-heading p { font-size: 12px; margin-top: 8px; color: var(--muted); }
 .model-version { font-size: 10px; color: var(--muted); white-space: nowrap; padding-top: 5px; }
+.calibration-toggle { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 10px; font-size: 12px; border-radius: 4px; white-space: nowrap; pointer-events: auto; background: var(--surface); }
+.calibration-toggle .icon { width: 16px; }
+.calibration-toggle[aria-pressed="true"] { color: white; background: var(--ink); }
+.calibration-toggle:disabled { opacity: .5; }
+.calibration-panel { position: absolute; z-index: 6; top: 88px; right: 20px; width: 310px; max-width: calc(100% - 40px); padding: 18px; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; }
+.calibration-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 16px; }
+.calibration-heading h3 { font-size: 15px; font-weight: 600; }
+.calibration-indicator { font-size: 11px; color: #9a3b3e; }
+.calibration-panel label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.calibration-panel select { background: white; height: 44px; }
+.calibration-coordinates { font: 12px/1.8 ui-monospace, monospace; color: var(--ink); padding: 12px; background: var(--active); min-height: 67px; white-space: pre-wrap; word-break: break-word; margin: 12px 0 8px; user-select: text; }
+.calibration-status { min-height: 38px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.calibration-status.has-error { color: #9a3b3e; }
+.calibration-actions { display: flex; gap: 8px; margin: 12px 0 6px; }
+.calibration-actions button { flex: 1; padding: 10px 8px; white-space: nowrap; }
+.calibration-panel button:disabled { opacity: .4; }
+.calibration-file-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.calibration-file-actions button { min-height: 44px; }
+.calibration-file-actions .icon { width: 14px; margin-right: 4px; }
+.calibration-help { font-size: 11px; color: var(--muted); line-height: 1.7; margin-top: 6px; }
+.viewer.is-calibrating canvas { cursor: crosshair; }
+.atlas-meridian-control { position: absolute; z-index: 3; top: 110px; right: 20px; width: 204px; display: flex; align-items: center; gap: 9px; padding: 0 10px; background: var(--surface); border-radius: 4px; }
+.atlas-meridian-control > span { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.atlas-meridian-control select { border: none; background: transparent; height: 44px; font-size: 12px; padding: 0; }
+.atlas.is-calibrating .atlas-meridian-control { display: none; }
+.meridian-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.meridian-label { position: absolute; pointer-events: auto; background: var(--surface); color: var(--accent); font-size: 11px; border-radius: 3px; min-height: 44px; padding: 6px 9px; white-space: nowrap; transform: translateY(-50%); }
+.hotspot-label small { display: block; font-size: 10px; margin-top: 4px; color: #d8e5df; max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+.danger-warning { padding: 13px; background: #fff0ef; color: #8f3034; border-radius: 4px; margin-bottom: 20px; font-size: 12px; line-height: 1.8; }
+.danger-badge { display: inline-block; color: #8f3034; background: #f9dddd; font-size: 11px; font-weight: 600; padding: 2px 6px; border-radius: 3px; margin-bottom: 5px; }
+.danger-warning > p { margin-bottom: 10px; }
+.danger-excerpt + .danger-excerpt { margin-top: 12px; }
+.danger-excerpt .text-button { color: #8f3034; text-align: left; min-height: 44px; }
+.danger-excerpt .icon { width: 13px; }
+.clinical-warning { background: #fff0ef; }
+.sheet-original { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.sheet-original > h3 { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
 .viewer { position: absolute; inset: 88px 0 55px; touch-action: none; }
 .viewer canvas { display: block; touch-action: none; width: 100%; height: 100%; }
 .model-message { position: absolute; left: 28px; bottom: 0; font-size: 10px; color: var(--muted); pointer-events: none; max-width: 70%; }
@@ -175,6 +212,7 @@ dialog::backdrop { background: rgb(18 33 27 / .45); }
   .mobile-search { display: flex !important; position: absolute; z-index: 2; top: 105px; left: 20px; right: 20px; height: 44px; padding: 0 12px; gap: 8px; background: var(--surface); border-radius: 4px; align-items: center; font-size: 12px; color: var(--muted); }
   .mobile-search span { margin-left: auto; font-size: 11px; }
   .orientation-controls { top: 165px; left: 20px; }
+  .atlas-meridian-control { top: 165px; }
   .viewer { top: 125px; }
   .workspace:has(.technique-sheet.is-collapsed) { grid-template-columns: 1fr; }
 }
@@ -197,16 +235,36 @@ dialog::backdrop { background: rgb(18 33 27 / .45); }
   .atlas-heading { top: 18px; left: 20px; right: 20px; }
   .atlas-heading h2 { font-size: 17px; }
   .atlas-heading p { font-size: 11px; margin-top: 6px; }
+  .calibration-toggle { font-size: 11px; min-width: 44px; padding: 8px; gap: 4px; }
+  .calibration-toggle .icon { width: 14px; }
+  .calibration-panel { top: auto; bottom: 12px; left: 20px; right: 20px; width: auto; padding: 12px 14px; }
+  .calibration-heading { margin-bottom: 9px; }
+  .calibration-heading h3 { font-size: 14px; }
+  .calibration-panel label { display: none; }
+  .calibration-panel select { font-size: 16px; }
+  .calibration-coordinates { min-height: 0; padding: 8px 10px; font-size: 11px; margin: 9px 0 6px; }
+  .calibration-status { min-height: 34px; font-size: 11px; }
+  .calibration-actions { margin: 6px 0 0; }
+  .calibration-help { display: none; }
+  .atlas.is-calibrating .viewer { top: 132px; bottom: 300px; }
+  .atlas.is-calibrating .zoom-controls { bottom: 310px; }
   .mobile-search { top: 83px; left: 20px; right: 20px; font-size: 13px; }
   .orientation-controls { top: 142px; left: 20px; padding: 2px; flex-direction: column; }
+  .atlas-meridian-control { top: 137px; right: 20px; left: 80px; width: auto; }
+  .atlas-meridian-control select { font-size: 13px; }
   .view-button { min-width: 44px; height: 44px; font-size: 12px; }
-  .viewer { inset: 110px 30px 16px 50px; }
+  .viewer { inset: 178px 30px 16px 50px; }
   .model-message { left: 0; bottom: 0; font-size: 9px; }
   .zoom-controls { right: 16px; bottom: 25px; padding: 0; background: transparent; }
   .zoom-controls .icon-button { width: 44px; height: 44px; }
   .atlas-bottom { display: none; }
-  .technique-sheet { flex: 0 0 min(38dvh, 340px); padding: 0 20px; border-left: 0; border-top: 1px solid var(--rule); border-radius: 14px 14px 0 0; position: relative; z-index: 3; margin-top: -10px; }
-  .sheet-handle { display: block !important; margin: 8px auto 0; width: 30px; height: 3px; border-radius: 2px; background: #cbd5ce; flex: 0 0 auto; }
+  .technique-sheet { flex: 0 0 min(35dvh, 340px); padding: 11px 20px 0; border-left: 0; border-top: 1px solid var(--rule); border-radius: 14px 14px 0 0; position: relative; z-index: 3; margin-top: -10px; }
+  .sheet-drag-handle { display: flex !important; position: absolute; z-index: 2; top: 0; left: calc(50% - 50px); width: 100px; height: 44px; align-items: flex-start; justify-content: center; padding: 8px 0 0; touch-action: none; cursor: ns-resize; }
+  .sheet-handle { display: block; width: 30px; height: 3px; border-radius: 2px; background: #cbd5ce; }
+  .technique-sheet.is-expanded { position: fixed; inset: 0; height: 100dvh; flex: none; z-index: 7; margin: 0; border-radius: 0; padding-top: calc(18px + env(safe-area-inset-top)); padding-bottom: env(safe-area-inset-bottom); }
+  .technique-sheet.is-expanded .sheet-top { top: calc(16px + env(safe-area-inset-top)); }
+  .technique-sheet.is-expanded .sheet-drag-handle { top: env(safe-area-inset-top); }
+  .sheet-scroll { touch-action: pan-y; }
   .sheet-top { position: absolute; top: 16px; right: 16px; height: 44px; z-index: 1; }
   .sheet-top > span { display: none; }
   .sheet-top .icon-button { width: 44px; height: 44px; }

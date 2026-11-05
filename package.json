@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build && node scripts/verify-build.js",
@@ -13,7 +15,9 @@
     "test:e2e": "playwright test",
     "data:generate": "node scripts/generate-acupoints.js",
     "model:generate": "node scripts/generate-model.js",
-    "sync": "node scripts/git-push.js"
+    "sync": "node scripts/git-sync.js",
+    "mobile:preview": "node scripts/mobile-preview.js",
+    "calibration:import": "node scripts/import-calibration.js"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",
@@ -21,6 +25,7 @@
     "github-markdown-css": "^5.8.1",
     "gsap": "^3.13.0",
     "marked": "^17.0.0",
+    "qrcode": "^1.5.4",
     "three": "^0.183.0"
   },
   "devDependencies": {
