@@ -228,6 +228,16 @@ export class Viewer3D {
   }
   updateVisibility() {
     const labelRects = [];
+    // Reserve the selected label before laying out peer labels; otherwise a
+    // neighboring point (e.g. LU2 next to LU1) can cover the selected name.
+    if (this.active && (this.visibleIds.has(this.active.id) || !this.restrictSelection)) {
+      const position = new THREE.Vector3(...this.active.position);
+      const facing = this.camera.position.clone().sub(position).normalize().dot(new THREE.Vector3(...this.active.normal)) > .1;
+      const projected = position.project(this.camera);
+      if (facing && projected.z < 1 && Math.abs(projected.x) < 1 && Math.abs(projected.y) < 1) {
+        labelRects.push({ x: (projected.x * .5 + .5) * this.container.clientWidth, y: (-projected.y * .5 + .5) * this.container.clientHeight });
+      }
+    }
     this.meshes.forEach(mesh => {
       const point = mesh.userData.point;
       const towardCamera = this.camera.position.clone().sub(mesh.position).normalize();

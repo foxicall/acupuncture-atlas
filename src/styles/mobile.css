@@ -106,7 +106,7 @@ select { height: 42px; width: 100%; border: 1px solid #dce3dd; border-radius: 4p
 .atlas-meridian-control > span { font-size: 11px; color: var(--muted); white-space: nowrap; }
 .atlas-meridian-control select { border: none; background: transparent; height: 44px; font-size: 12px; padding: 0; }
 .atlas.is-calibrating .atlas-meridian-control { display: none; }
-.meridian-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.meridian-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
 .meridian-label { position: absolute; pointer-events: auto; background: var(--surface); color: var(--accent); font-size: 11px; border-radius: 3px; min-height: 44px; padding: 6px 9px; white-space: nowrap; transform: translateY(-50%); }
 .hotspot-label small { display: block; font-size: 10px; margin-top: 4px; color: #d8e5df; max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
 .danger-warning { padding: 13px; background: #fff0ef; color: #8f3034; border-radius: 4px; margin-bottom: 20px; font-size: 12px; line-height: 1.8; }
@@ -122,7 +122,7 @@ select { height: 42px; width: 100%; border: 1px solid #dce3dd; border-radius: 4p
 .viewer canvas { display: block; touch-action: none; width: 100%; height: 100%; }
 .model-message { position: absolute; left: 28px; bottom: 0; font-size: 10px; color: var(--muted); pointer-events: none; max-width: 70%; }
 .model-message.has-error { font-size: 14px; background: var(--surface); padding: 20px; top: 30%; bottom: auto; line-height: 1.8; z-index: 3; }
-.hotspot-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hotspot-labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 2; }
 .hotspot-label { position: absolute; padding: 7px 12px; background: var(--ink); color: #fff; font-size: 11px; white-space: nowrap; transform: translate(14px, -50%); pointer-events: auto; border-radius: 3px; min-height: 44px; }
 .orientation-controls { position: absolute; top: 110px; left: 26px; z-index: 2; display: flex; background: #e1e8e3; padding: 3px; border-radius: 4px; }
 .view-button { height: 31px; min-width: 49px; font-size: 11px; color: var(--muted); border-radius: 2px; }
