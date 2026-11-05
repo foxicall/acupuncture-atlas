@@ -9,3 +9,9 @@ test-results/
 *.log
 .DS_Store
 .certs/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.jks
+*.keystore

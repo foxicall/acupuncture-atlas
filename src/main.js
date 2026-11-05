@@ -2,6 +2,7 @@ import '@fontsource-variable/manrope';
 import 'github-markdown-css/github-markdown-light.css';
 import './styles/mobile.css';
 import { registerSW } from 'virtual:pwa-register';
+import { Capacitor } from '@capacitor/core';
 import originalAcupoints from './data/acupoints.json';
 import { Viewer3D } from './components/Viewer3D.js';
 import { AcupointList } from './components/AcupointList.js';
@@ -10,6 +11,8 @@ import { documents, getDocument, normalize, renderMarkdown, text } from './lib/d
 import { icon } from './lib/icons.js';
 import { CalibrationPanel } from './components/CalibrationPanel.js';
 import { loadCalibration, mergeCalibration, saveCalibration, createCalibrationOverride } from './lib/calibration.js';
+
+const nativeApp = Capacitor.isNativePlatform();
 
 let calibrationStorage;
 try { calibrationStorage = window.localStorage; } catch { /* Exports still work when browser storage is blocked. */ }
@@ -47,6 +50,7 @@ document.querySelector('#app').innerHTML = `<header class="app-header">
   <div class="update-notice" role="status" hidden><span>新版本已準備好。</span><button data-update>更新圖譜</button><button class="icon-button" data-dismiss-update aria-label="稍後更新">${icon('close')}</button></div>`;
 
 const sheetElement = document.querySelector('.technique-sheet');
+if (nativeApp) document.querySelector('[data-install]').hidden = true;
 const directoryElement = document.querySelector('.directory');
 let viewer;
 let selected;
@@ -233,21 +237,23 @@ document.querySelector('[data-install]').onclick = async () => {
   } else showInfo('將圖譜帶在身邊', '<p><strong>iPhone / iPad</strong><br>在 Safari 開啟本頁，點選「分享」，再選「加入主畫面」。</p><p><strong>Android</strong><br>在 Chrome 選單中選擇「安裝應用程式」或「加到主畫面」。</p><p>首次連線開啟後，請等候離線教材準備完成。安裝與離線快取需要 HTTPS；本機開發可使用 localhost。</p>');
 };
 function connectionLabel(label) { document.querySelector('[data-connection] span').textContent = label; }
-window.addEventListener('online', () => connectionLabel('已連線'));
-window.addEventListener('offline', () => connectionLabel('目前離線'));
-connectionLabel(navigator.onLine ? '離線教材準備中' : '目前離線');
-const updateSW = registerSW({
+window.addEventListener('online', () => connectionLabel(nativeApp ? '離線教材已內嵌' : '已連線'));
+window.addEventListener('offline', () => connectionLabel(nativeApp ? '離線教材已內嵌' : '目前離線'));
+connectionLabel(nativeApp ? '離線教材已內嵌' : navigator.onLine ? '離線教材準備中' : '目前離線');
+// Android serves packaged assets itself. A WebView Service Worker could otherwise
+// retain an old bundle after an APK update, so native builds do not register it.
+const updateSW = nativeApp ? async () => {} : registerSW({
   immediate: true,
   onOfflineReady() { connectionLabel('離線教材已就緒'); },
   onNeedRefresh() { document.querySelector('.update-notice').hidden = false; },
   onRegisterError(error) { connectionLabel('離線快取未啟用'); console.warn('Service worker:', error); },
 });
-if ('serviceWorker' in navigator && !import.meta.env.DEV) {
+if (!nativeApp && 'serviceWorker' in navigator && !import.meta.env.DEV) {
   navigator.serviceWorker.ready.then(async () => {
     if (await caches.match(`${import.meta.env.BASE_URL}models/acupuncture_body.glb`, { ignoreSearch: true })) connectionLabel(navigator.onLine ? '離線教材已就緒' : '目前離線');
   });
 }
-if (import.meta.env.DEV) connectionLabel('開發模式');
+if (import.meta.env.DEV && !nativeApp) connectionLabel('開發模式');
 document.querySelector('[data-update]').onclick = () => updateSW(true);
 document.querySelector('[data-dismiss-update]').onclick = () => { document.querySelector('.update-notice').hidden = true; };
 document.addEventListener('keydown', event => {

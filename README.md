@@ -147,6 +147,47 @@ npm run mobile:tunnel
 
 依服務商指示完成帳戶或驗證流程；公開網址可讓知道網址的人瀏覽成品。此雲端先前的 Cloudflare quick-tunnel API 直連遭拒（`connect: connection refused`），HTTP/2 隧道也需要 outbound TCP 7844；ngrok／localtunnel 本輪未在雲端啟動。預設 LAN 預覽不依賴外部隧道、不變更網路政策，也不設定 `allowedHosts: true`。
 
+## Android APK 打包與安裝
+
+Android 版使用 Capacitor 將正式 Web 成品封裝到原生專案；`android/` 已納入版本控制，不需每次重新執行 `cap add android`。APK 只適用 Android，不能安裝到 iPhone／iPad；iOS 仍使用前述 PWA 路徑，或另行建立與簽署 iOS 原生專案。
+
+目前原生工具鏈依鎖定的 **Capacitor 8.6.0**：Node.js 22 以上（CI 使用 24）、**JDK 21**、Android SDK Platform **36**、SDK Build Tools **35.0.0**，最低支援 Android API 24（Android 7.0）。專案使用 AGP 8.13.0 與 Gradle wrapper 8.14.3；AGP 的 Build Tools 預設為 35.0.0，並非跟著 target API 改為 36.0.0。相容性來源：[Android 官方 AGP 8.13 說明](https://developer.android.com/build/releases/past-releases/agp-8-13-0-release-notes)。Capacitor 的 Java 來源要求 21，因此沒有沿用舊版範例的 JDK 17。
+
+### 本機打包
+
+先安裝 Android Studio 或 Android SDK command-line tools、上述 SDK 套件與 JDK，設定 `JAVA_HOME` 和 Android SDK 路徑（通常為 `ANDROID_HOME`），並接受 SDK 授權。不要提交含本機 SDK 絕對路徑的 `android/local.properties`。使用儲存庫內的 Gradle wrapper，讓 Gradle 版本與專案一致。
+
+```sh
+npm ci
+npm run check
+# 以根路徑建立正式 Web 成品並同步到既有 Android 專案
+npm run cap:build
+# 完整執行 Web 建置、Capacitor 同步和原生 debug APK 建置
+npm run build:apk
+```
+
+`npm run build:apk` 的輸出為 `android/app/build/outputs/apk/debug/app-debug.apk`。只要 Web 建置、驗證、原生同步或 Gradle 失敗，指令就會失敗；不使用 `|| true` 掩蓋錯誤。已成功執行 `cap:build` 後，也可在 `android/` 直接執行：
+
+```sh
+# macOS / Linux
+./gradlew --no-daemon --max-workers=2 assembleDebug --stacktrace
+# Windows PowerShell
+.\gradlew.bat --no-daemon --max-workers=2 assembleDebug --stacktrace
+```
+
+沒有 Android SDK 的環境仍可驗證 Web 成品及同步，但不能據此宣稱 APK 已成功建置。原生安裝、WebView 內的 3D 效能與離線行為仍需 Android 實機驗證；不以桌面瀏覽器測試替代實機結果。
+
+### 從 GitHub Actions 下載 APK
+
+[`.github/workflows/build-apk.yml`](.github/workflows/build-apk.yml) 在 `main` 有新提交時建置，也支援手動 `workflow_dispatch`；它安裝鎖定依賴、執行檢查與正式 Web 建置／原生同步，再以 Gradle 組裝 debug APK。不建立新的 Android 專案、不跳過失敗，亦不需要發行用 keystore 或額外 secrets。
+
+1. 在 GitHub 儲存庫開啟 **Actions → Build Android debug APK**。手動建置可選 **Run workflow**；工作流程須先存在於預設分支才會提供標準手動入口。
+2. 開啟本次執行，確認 `build-debug-apk` 成功。只有實際產生 APK，才會出現名為 **acupuncture-atlas-debug-apk** 的 Artifact，保留 **14 天**。
+3. 下載 Artifact ZIP 並解壓，取得 **app-debug.apk**；將 APK 傳到 Android 手機或直接在手機下載解壓。
+4. 點選 APK。依 Android 提示，僅為你使用的瀏覽器／檔案管理員允許「安裝未知應用程式」，完成後安裝；設定名稱依系統版本與廠牌不同。受管理裝置可能不允許側載。
+
+這是以開發用 debug key 簽署的測試包，不是可直接提交 Google Play 的正式發行版本。CI 每次環境的 debug key 可能不同，更新既有安裝若出現簽章不符，需先匯出本機校準資料，再移除舊測試版重裝；移除應用程式會清掉該安裝的本機資料。正式發行需另外規劃固定簽章金鑰、版本號及發行流程。
+
 ## GitHub 同步
 
 ```sh

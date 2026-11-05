@@ -10,6 +10,9 @@
     "dev": "vite --host 0.0.0.0",
     "dev:https": "vite --config vite.https.config.js",
     "build": "vite build && node scripts/verify-build.js",
+    "cap:build": "node scripts/build-android.js --sync-only",
+    "build:apk": "node scripts/build-android.js",
+    "cap:open": "cap open android",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --test",
     "check": "node --test",
@@ -24,6 +27,8 @@
     "calibration:import": "node scripts/import-calibration.js"
   },
   "dependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/core": "^8.6.0",
     "@fontsource-variable/manrope": "^5.2.8",
     "dompurify": "^3.3.0",
     "github-markdown-css": "^5.8.1",
@@ -33,6 +38,7 @@
     "three": "^0.183.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.6.0",
     "@playwright/test": "^1.58.0",
     "@vitejs/plugin-basic-ssl": "^2.3.0",
     "vite": "^7.3.0",
