@@ -1037,9 +1037,28 @@
     "bytes": 7567
   },
   {
+    "path": "docs/techniques/strong_stimulation_draining.md",
+    "title": "強刺激瀉法",
+    "acupointIds": [
+      "BL40",
+      "EX-HN5",
+      "GB30",
+      "GB34",
+      "LI4",
+      "LR3"
+    ],
+    "bytes": 8873
+  },
+  {
     "path": "docs/症狀與針法索引說明.md",
     "title": "症狀與針法索引說明",
-    "acupointIds": [],
-    "bytes": 3465
+    "acupointIds": [
+      "BL40",
+      "GB30",
+      "GB34",
+      "LI4",
+      "LR3"
+    ],
+    "bytes": 3854
   }
 ]

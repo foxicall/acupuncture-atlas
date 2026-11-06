@@ -18,6 +18,16 @@ export const SYMPTOMS = [
   { label: '痛經', categories: ['婦兒雜病'], pattern: /痛經|痛经/ },
   { label: '月經不調', categories: ['婦兒雜病'], pattern: /月經不調|月经不调/ },
   { label: '耳鳴', categories: ['頭面五官'], pattern: /耳鳴|耳鸣/ },
+  { label: '坐骨神經痛', categories: ['神經疼痛'], pattern: /坐骨神[經经]痛/ },
+  { label: '腰腿痛', categories: ['神經疼痛'], pattern: /腰腿(?:疼)?痛/ },
+  { label: '下肢痿痺', categories: ['神經疼痛'], pattern: /下肢痿[痺痹]/ },
+  { label: '急性扭傷', categories: ['神經疼痛'], pattern: /急性(?:腰)?扭[傷伤]/ },
+  { label: '膽絞痛', categories: ['胸腹消化'], pattern: /[膽胆][絞绞]痛/ },
+  { label: '三叉神經痛', categories: ['頭面五官', '神經疼痛'], pattern: /三叉神[經经]痛/ },
+  { label: '肝火上炎', categories: ['婦兒雜病'], pattern: /肝火上炎/ },
+  { label: '急躁易怒', categories: ['婦兒雜病'], pattern: /急躁易怒/ },
+  { label: '高血壓頭痛', categories: ['神經疼痛'], pattern: /高血[壓压][頭头]痛/ },
+  { label: '下肢拘急疼痛', categories: ['神經疼痛'], pattern: /下肢拘急(?:疼)?痛/ },
 ];
 export const SYMPTOM_CATEGORIES = ['頭面五官', '胸腹消化', '神經疼痛', '婦兒雜病'];
 export const TECHNIQUES = ['直刺', '斜刺', '平刺/橫刺', '瀉法', '強刺激瀉法', '補法', '平補平瀉', '點刺放血', '透刺'];
@@ -76,7 +86,7 @@ export function withClinicalIndex(point) {
   };
 }
 
-const searchPairs = [['头','頭'],['颈','頸'],['齿','齒'],['痛经','痛經'],['面瘫','面癱'],['气','氣'],['泻','瀉'],['补','補'],['针','針'],['横','橫'],['发','發']];
+const searchPairs = [['头','頭'],['颈','頸'],['齿','齒'],['经','經'],['面瘫','面癱'],['气','氣'],['泻','瀉'],['补','補'],['针','針'],['横','橫'],['发','發'],['伤','傷'],['胆','膽'],['绞','絞'],['压','壓'],['痹','痺']];
 export function normalizeClinical(value) {
   let normalized = String(value || '').normalize('NFKC').toLowerCase().replace(/\s+/g, '');
   for (const [from, to] of searchPairs) normalized = normalized.replaceAll(from, to);
@@ -86,6 +96,14 @@ export function matchesClinical(point, filter = {}) {
   if (filter.category && !point.symptomCategories?.includes(filter.category)) return false;
   if (!filter.value) return true;
   return (filter.mode === 'technique' ? point.techniqueType : point.indications)?.includes(filter.value) || false;
+}
+/** Resolve the exact teaching row for the selected technique, not a nearby point. */
+export function getTechniqueContext(point, techniqueType) {
+  const evidence = point.techniqueEvidence?.find(entry => entry.label === techniqueType);
+  if (!evidence) return null;
+  const source = point.sources?.find(entry => entry.path === evidence.path && entry.line === evidence.line);
+  const type = ROUTES.filter(label => point.techniqueEvidence.some(entry => entry.label === label && entry.path === evidence.path && entry.line === evidence.line)).join(' / ') || null;
+  return source ? { ...source, techniqueType, type } : null;
 }
 export function matchesPointQuery(point, query) {
   const needle = normalizeClinical(query);

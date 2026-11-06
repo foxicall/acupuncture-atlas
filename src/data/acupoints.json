@@ -1122,6 +1122,16 @@
         "safety": "孕婦慎用/禁用"
       },
       {
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "label": "合谷",
+        "group": false,
+        "location": "手背第 1、2 掌骨間，定位依原部位講義。",
+        "indications": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。",
+        "method": "強刺激瀉法的條件式教學例：提插瀉法採輕插重提，或採受控雙向捻轉瀉法；原部位講義記載直刺 0.5~1.0 寸。",
+        "safety": "孕婦禁用本頁強刺激操作。注意手部神經、血管及個體耐受，避免粗暴提插、單向纏繞。"
+      },
+      {
         "path": "docs/7.5美容针灸治疗.md",
         "line": 27,
         "label": "合谷",
@@ -1226,6 +1236,7 @@
     "docs": [
       "docs/4.18.2手阳明经.md",
       "docs/5.1.4毫针刺法—异常情况处理与注意事项.md",
+      "docs/techniques/strong_stimulation_draining.md",
       "docs/7.5美容针灸治疗.md",
       "docs/3.2腧穴的主治特点和规律.md",
       "docs/4.2手阳明大肠经.md",
@@ -1239,7 +1250,8 @@
       "docs/4.19.4足太阴脾经.md",
       "docs/4.19.5足少阴肾经和足厥阴经.md",
       "docs/7.2便秘的针灸治疗.md",
-      "docs/7.4肥胖的针灸治疗.md"
+      "docs/7.4肥胖的针灸治疗.md",
+      "docs/症狀與針法索引說明.md"
     ],
     "technique": {
       "location": "標準定位：手背部，第1、2掌骨間，當第2掌骨橈側的中點處。簡便取穴：以一手的拇指指關節橫紋，放在另一手拇、食指之間的指蹼緣上，拇指尖下即是。",
@@ -1252,7 +1264,8 @@
       "dangerLevel": "caution",
       "type": "直刺",
       "manipulation": [
-        "瀉法"
+        "瀉法",
+        "強刺激瀉法"
       ]
     },
     "featured": true,
@@ -1301,6 +1314,22 @@
       },
       {
         "kind": "contraindication",
+        "text": "孕婦禁用本頁強刺激操作。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "注意手部神經、血管及個體耐受，避免粗暴提插、單向纏繞。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 32
+        }
+      },
+      {
+        "kind": "contraindication",
         "text": "孕婦禁針，易致流產。",
         "source": {
           "path": "docs/7.5美容针灸治疗.md",
@@ -1318,6 +1347,7 @@
     ],
     "indications": [
       "頭痛",
+      "偏頭痛",
       "牙痛",
       "面癱",
       "感冒發熱"
@@ -1329,6 +1359,7 @@
     "techniqueType": [
       "直刺",
       "瀉法",
+      "強刺激瀉法",
       "點刺放血",
       "透刺"
     ],
@@ -1364,6 +1395,38 @@
         "group": false,
         "context": null,
         "text": "近治：手指麻木、攣痺不用。遠治：頭痛、目赤腫痛、齒痛、鼻衄、口眼歪斜、耳聾等五官病證。特殊：外感病證、痛證。"
+      },
+      {
+        "label": "頭痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": null,
+        "text": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。"
+      },
+      {
+        "label": "偏頭痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": null,
+        "text": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。"
+      },
+      {
+        "label": "牙痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": null,
+        "text": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。"
+      },
+      {
+        "label": "感冒發熱",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": null,
+        "text": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。"
       },
       {
         "label": "牙痛",
@@ -1446,6 +1509,30 @@
         "group": false,
         "context": "影片重點：重度暈針急救；孕婦絕對禁針。",
         "text": "直刺0.5~1寸"
+      },
+      {
+        "label": "直刺",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。",
+        "text": "強刺激瀉法的條件式教學例：提插瀉法採輕插重提，或採受控雙向捻轉瀉法；原部位講義記載直刺 0.5~1.0 寸。"
+      },
+      {
+        "label": "瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。",
+        "text": "強刺激瀉法的條件式教學例：提插瀉法採輕插重提，或採受控雙向捻轉瀉法；原部位講義記載直刺 0.5~1.0 寸。"
+      },
+      {
+        "label": "強刺激瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 32,
+        "group": false,
+        "context": "急性牙痛、外感高熱、偏頭痛；限實證辨證情境，牙痛仍須處理牙科病因。",
+        "text": "強刺激瀉法的條件式教學例：提插瀉法採輕插重提，或採受控雙向捻轉瀉法；原部位講義記載直刺 0.5~1.0 寸。"
       },
       {
         "label": "直刺",
@@ -1725,6 +1812,16 @@
         "safety": "需沿跖骨间隙进针，避免刺中骨膜引起剧痛。（影片未提及解剖）"
       },
       {
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "label": "太衝",
+        "group": false,
+        "location": "足背第 1、2 跖骨間，定位依原部位講義。",
+        "indications": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。",
+        "method": "強刺激瀉法的條件式教學例：受控捻轉瀉法；原部位講義記載直刺 0.5~0.8 寸。迎隨瀉法與捻轉法分別理解，依辨證選擇。",
+        "safety": "注意足背動脈、神經與骨膜，避免粗暴深刺或持續單向捻轉。突發劇烈頭痛或血壓相關急症須先接受醫療評估。"
+      },
+      {
         "path": "docs/7.1胃痛的针灸治疗.md",
         "line": 30,
         "label": "太衝",
@@ -1786,6 +1883,7 @@
     "angleSource": null,
     "docs": [
       "docs/4.19.5足少阴肾经和足厥阴经.md",
+      "docs/techniques/strong_stimulation_draining.md",
       "docs/7.1胃痛的针灸治疗.md",
       "docs/7.7痛经的针灸治疗.md",
       "docs/7.3失眠的针灸治疗.md",
@@ -1793,7 +1891,8 @@
       "docs/7.6偏头痛的针灸治疗.md",
       "docs/4.12足厥阴肝经.md",
       "docs/6.4针灸配穴处方.md",
-      "docs/7.2便秘的针灸治疗.md"
+      "docs/7.2便秘的针灸治疗.md",
+      "docs/症狀與針法索引說明.md"
     ],
     "technique": {
       "location": "足背，第1、2跖骨间，跖骨底结合部前方凹陷中。",
@@ -1806,7 +1905,8 @@
       "dangerLevel": "caution",
       "type": "直刺",
       "manipulation": [
-        "瀉法"
+        "瀉法",
+        "強刺激瀉法"
       ]
     },
     "featured": true,
@@ -1844,6 +1944,22 @@
           "path": "docs/4.19.5足少阴肾经和足厥阴经.md",
           "line": 29
         }
+      },
+      {
+        "kind": "depth",
+        "text": "注意足背動脈、神經與骨膜，避免粗暴深刺或持續單向捻轉。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 33
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "注意足背動脈、神經與骨膜，避免粗暴深刺或持續單向捻轉。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 33
+        }
       }
     ],
     "indications": [
@@ -1855,7 +1971,11 @@
       "感冒發熱",
       "痛經",
       "月經不調",
-      "耳鳴"
+      "耳鳴",
+      "三叉神經痛",
+      "肝火上炎",
+      "急躁易怒",
+      "高血壓頭痛"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -1865,7 +1985,8 @@
     ],
     "techniqueType": [
       "直刺",
-      "瀉法"
+      "瀉法",
+      "強刺激瀉法"
     ],
     "indicationEvidence": [
       {
@@ -1899,6 +2020,46 @@
         "group": false,
         "context": null,
         "text": "近治：不明显；远治：中风、癫狂、小儿惊风、头痛眩晕、耳鸣、目赤肿痛、口歪；月经不调等妇科病；黄疸、胁痛等肝胃病。"
+      },
+      {
+        "label": "頭痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": null,
+        "text": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。"
+      },
+      {
+        "label": "三叉神經痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": null,
+        "text": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。"
+      },
+      {
+        "label": "肝火上炎",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": null,
+        "text": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。"
+      },
+      {
+        "label": "急躁易怒",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": null,
+        "text": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。"
+      },
+      {
+        "label": "高血壓頭痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": null,
+        "text": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。"
       },
       {
         "label": "胃痛",
@@ -1957,6 +2118,30 @@
         "group": false,
         "context": "近治：不明显；远治：中风、癫狂、小儿惊风、头痛眩晕、耳鸣、目赤肿痛、口歪；月经不调等妇科病；黄疸、胁痛等肝胃病。",
         "text": "直刺 0.5~0.8 寸"
+      },
+      {
+        "label": "直刺",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。",
+        "text": "強刺激瀉法的條件式教學例：受控捻轉瀉法；原部位講義記載直刺 0.5~0.8 寸。迎隨瀉法與捻轉法分別理解，依辨證選擇。"
+      },
+      {
+        "label": "瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。",
+        "text": "強刺激瀉法的條件式教學例：受控捻轉瀉法；原部位講義記載直刺 0.5~0.8 寸。迎隨瀉法與捻轉法分別理解，依辨證選擇。"
+      },
+      {
+        "label": "強刺激瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 33,
+        "group": false,
+        "context": "肝火上炎、急躁易怒、高血壓頭痛、三叉神經痛為需求教學情境；頭痛須辨別肝陽上亢等實證及其他病因。",
+        "text": "強刺激瀉法的條件式教學例：受控捻轉瀉法；原部位講義記載直刺 0.5~0.8 寸。迎隨瀉法與捻轉法分別理解，依辨證選擇。"
       },
       {
         "label": "瀉法",
@@ -2529,7 +2714,8 @@
       "胃痛",
       "腹瀉",
       "痛經",
-      "月經不調"
+      "月經不調",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "胸腹消化",
@@ -2558,6 +2744,14 @@
       },
       {
         "label": "月經不調",
+        "path": "docs/4.19.4足太阴脾经.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "1. 近治：下肢痿痹、腳氣。2. 遠治：腸鳴泄瀉（脾）；月經不調、產難、不孕（婦）；遺精、陽痿（男）。3. 特殊：失眠、疝氣。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.4足太阴脾经.md",
         "line": 30,
         "group": false,
@@ -2873,7 +3067,8 @@
       "腹瀉",
       "噁心嘔吐",
       "咳嗽氣喘",
-      "痛經"
+      "痛經",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -2913,6 +3108,14 @@
       },
       {
         "label": "噁心嘔吐",
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 27,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、癱瘓、腳氣、水腫。遠治：胃痛、嘔吐、腹脹、泄瀉、便秘、腸癰、乳癰。特殊：強壯保健大穴；治虛勞羸瘦、虛性眩暈、癲狂癇。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.1足阳明胃经.md",
         "line": 27,
         "group": false,
@@ -4869,7 +5072,8 @@
       "失眠",
       "腰痛",
       "痛經",
-      "耳鳴"
+      "耳鳴",
+      "腰腿痛"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -4890,6 +5094,14 @@
       },
       {
         "label": "耳鳴",
+        "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
+        "line": 25,
+        "group": false,
+        "context": null,
+        "text": "共同主治：腰腿痛、腸道/生殖/泌尿病變。特長/配穴：常與命門合用溫補腎陽。用於腎陽虛病變（腰膝酸軟、頭暈耳鳴、畏寒肢冷、夜尿頻多、宮寒、不孕不育等）。"
+      },
+      {
+        "label": "腰腿痛",
         "path": "docs/4.17.5 背腰部常用腧穴-背腰部五区.md",
         "line": 25,
         "group": false,
@@ -5276,6 +5488,16 @@
         "safety": "影片未提及特殊禁忌，解剖上需注意膕動靜脈及神經。"
       },
       {
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "label": "委中",
+        "group": false,
+        "location": "膕橫紋中點，定位依原部位講義。",
+        "indications": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。",
+        "method": "強刺激瀉法的條件式教學例：受控提插瀉法或捻轉瀉法；原部位講義記載直刺 1~1.5 寸。點刺放血另屬刺絡療法，須獨立評估，不是強刺激瀉法的必做步驟。",
+        "safety": "膕窩深部有膕動靜脈與脛神經，嚴禁向大血管盲目深刺或粗暴提插。凝血異常或抗凝用藥者須先評估；不可把深部血管當放血目標。"
+      },
+      {
         "path": "docs/3.2腧穴的主治特点和规律.md",
         "line": 29,
         "label": "委中",
@@ -5317,12 +5539,14 @@
     "angleSource": null,
     "docs": [
       "docs/4.19.2足太阳经.md",
+      "docs/techniques/strong_stimulation_draining.md",
       "docs/3.2腧穴的主治特点和规律.md",
       "docs/7.9感冒的针灸治疗.md",
       "docs/5.4三棱针.md",
       "docs/4.19.4足太阴脾经.md",
       "docs/4.19.5足少阴肾经和足厥阴经.md",
-      "docs/4.7足太阳膀胱经.md"
+      "docs/4.7足太阳膀胱经.md",
+      "docs/症狀與針法索引說明.md"
     ],
     "technique": {
       "location": "膝後區，膕橫紋的中點。",
@@ -5332,9 +5556,12 @@
       "source": "docs/4.19.2足太阳经.md",
       "group": false,
       "angle": "直刺",
-      "dangerLevel": "caution",
+      "dangerLevel": "high",
       "type": "直刺",
-      "manipulation": []
+      "manipulation": [
+        "瀉法",
+        "強刺激瀉法"
+      ]
     },
     "featured": false,
     "reviewStatus": "unreviewed-source-material",
@@ -5371,12 +5598,39 @@
           "path": "docs/4.19.2足太阳经.md",
           "line": 27
         }
+      },
+      {
+        "kind": "depth",
+        "text": "膕窩深部有膕動靜脈與脛神經，嚴禁向大血管盲目深刺或粗暴提插。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 34
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "膕窩深部有膕動靜脈與脛神經，嚴禁向大血管盲目深刺或粗暴提插。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 34
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可把深部血管當放血目標。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 34
+        }
       }
     ],
     "indications": [
       "腰痛",
       "感冒發熱",
-      "腹痛"
+      "腹痛",
+      "下肢痿痺",
+      "急性扭傷",
+      "下肢拘急疼痛"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -5385,6 +5639,8 @@
     ],
     "techniqueType": [
       "直刺",
+      "瀉法",
+      "強刺激瀉法",
       "點刺放血"
     ],
     "indicationEvidence": [
@@ -5405,6 +5661,30 @@
         "text": "近治：下肢痿痺。遠治：腰背痛。特殊：小便不利、遺尿、腹痛、吐瀉、丹毒。"
       },
       {
+        "label": "下肢痿痺",
+        "path": "docs/4.19.2足太阳经.md",
+        "line": 27,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痺。遠治：腰背痛。特殊：小便不利、遺尿、腹痛、吐瀉、丹毒。"
+      },
+      {
+        "label": "急性扭傷",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "group": false,
+        "context": null,
+        "text": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。"
+      },
+      {
+        "label": "下肢拘急疼痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "group": false,
+        "context": null,
+        "text": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。"
+      },
+      {
         "label": "腰痛",
         "path": "docs/3.2腧穴的主治特点和规律.md",
         "line": 29,
@@ -5419,6 +5699,14 @@
         "group": false,
         "context": "感冒發熱",
         "text": "挾暑感冒配穴"
+      },
+      {
+        "label": "急性扭傷",
+        "path": "docs/5.4三棱针.md",
+        "line": 29,
+        "group": true,
+        "context": null,
+        "text": "中暑、急性腰扭傷、熱證"
       }
     ],
     "techniqueEvidence": [
@@ -5437,6 +5725,38 @@
         "group": false,
         "context": "近治：下肢痿痺。遠治：腰背痛。特殊：小便不利、遺尿、腹痛、吐瀉、丹毒。",
         "text": "直刺 1~1.5 寸；或點刺出血。"
+      },
+      {
+        "label": "直刺",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "group": false,
+        "context": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：受控提插瀉法或捻轉瀉法；原部位講義記載直刺 1~1.5 寸。點刺放血另屬刺絡療法，須獨立評估，不是強刺激瀉法的必做步驟。"
+      },
+      {
+        "label": "點刺放血",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "group": false,
+        "context": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：受控提插瀉法或捻轉瀉法；原部位講義記載直刺 1~1.5 寸。點刺放血另屬刺絡療法，須獨立評估，不是強刺激瀉法的必做步驟。"
+      },
+      {
+        "label": "瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "group": false,
+        "context": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：受控提插瀉法或捻轉瀉法；原部位講義記載直刺 1~1.5 寸。點刺放血另屬刺絡療法，須獨立評估，不是強刺激瀉法的必做步驟。"
+      },
+      {
+        "label": "強刺激瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 34,
+        "group": false,
+        "context": "急性腰扭傷、下肢拘急疼痛；限辨證屬實且局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：受控提插瀉法或捻轉瀉法；原部位講義記載直刺 1~1.5 寸。點刺放血另屬刺絡療法，須獨立評估，不是強刺激瀉法的必做步驟。"
       },
       {
         "label": "點刺放血",
@@ -5599,7 +5919,8 @@
     ],
     "indications": [
       "腰痛",
-      "便秘"
+      "便秘",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "胸腹消化",
@@ -5619,6 +5940,14 @@
       },
       {
         "label": "便秘",
+        "path": "docs/4.19.2足太阳经.md",
+        "line": 28,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痺、腳氣、小腿拘急疼痛。遠治：腰背拘急疼痛。特殊：痔疾、便秘。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.2足太阳经.md",
         "line": 28,
         "group": false,
@@ -5757,7 +6086,8 @@
     ],
     "indications": [
       "頭痛",
-      "肩頸僵硬"
+      "肩頸僵硬",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -5777,6 +6107,14 @@
       },
       {
         "label": "肩頸僵硬",
+        "path": "docs/4.19.2足太阳经.md",
+        "line": 29,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痺、足跟腫痛、踝部腫痛。遠治：頭痛、項強、鼻衄。特殊：癲狂癇、眩暈、難產。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.2足太阳经.md",
         "line": 29,
         "group": false,
@@ -8673,7 +9011,8 @@
       "docs/7.3失眠的针灸治疗.md",
       "docs/7.5美容针灸治疗.md",
       "docs/7.6偏头痛的针灸治疗.md",
-      "docs/7.7痛经的针灸治疗.md"
+      "docs/7.7痛经的针灸治疗.md",
+      "docs/techniques/strong_stimulation_draining.md"
     ],
     "technique": {
       "location": "眉梢與目外眥之間，向後約1橫指的凹陷中。",
@@ -9251,12 +9590,25 @@
     "needleVectorPrecision": "schematic",
     "docPath": "docs/4.19.6奇穴.md",
     "dangerWarnings": [],
-    "indications": [],
-    "symptomCategories": [],
+    "indications": [
+      "下肢痿痺"
+    ],
+    "symptomCategories": [
+      "神經疼痛"
+    ],
     "techniqueType": [
       "直刺"
     ],
-    "indicationEvidence": [],
+    "indicationEvidence": [
+      {
+        "label": "下肢痿痺",
+        "path": "docs/4.19.6奇穴.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "慢性/急性闌尾炎、胃脘疼痛、納呆、下肢痿痺。"
+      }
+    ],
     "techniqueEvidence": [
       {
         "label": "直刺",
@@ -9470,7 +9822,8 @@
       }
     ],
     "indications": [
-      "頭痛"
+      "頭痛",
+      "急性扭傷"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -9482,6 +9835,14 @@
     "indicationEvidence": [
       {
         "label": "頭痛",
+        "path": "docs/4.19.6奇穴.md",
+        "line": 26,
+        "group": false,
+        "context": null,
+        "text": "急性腰扭傷（特長）、頭痛、手背紅腫疼痛、小兒急慢驚風。"
+      },
+      {
+        "label": "急性扭傷",
         "path": "docs/4.19.6奇穴.md",
         "line": 26,
         "group": false,
@@ -10565,6 +10926,16 @@
         "safety": "解剖危險區與刺灸深度禁忌：影片中雖未特別強調禁忌，但針對環跳穴給出了 2~3 寸的深刺範圍。臨床實踐中，此部位脂肪與肌肉層較厚，但深部有坐骨神經通過，操作需由具備解剖知識的醫師進行，以防神經幹損傷。"
       },
       {
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "label": "環跳",
+        "group": false,
+        "location": "臀部定位依原部位講義，須按個別解剖確認。",
+        "indications": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。",
+        "method": "強刺激瀉法的條件式教學例：提插瀉法（輕插重提）可配合受控捻轉；原部位講義記載直刺 2~3 寸。刺激量由操作者依反應調整，放射感不是強度目標。",
+        "safety": "注意深部坐骨神經，避免盲目加深或反覆探刺神經。出現強烈觸電樣疼痛或持續麻木應停止加重刺激並評估。不可因臀部肌肉較厚而推定安全。"
+      },
+      {
         "path": "docs/7.8痹证的针灸治疗.md",
         "line": 27,
         "label": "臀部：環跳、秩邊、承扶",
@@ -10586,8 +10957,10 @@
     "angleSource": null,
     "docs": [
       "docs/4.19.3足少阳经.md",
+      "docs/techniques/strong_stimulation_draining.md",
       "docs/7.8痹证的针灸治疗.md",
-      "docs/4.11足少阳胆经.md"
+      "docs/4.11足少阳胆经.md",
+      "docs/症狀與針法索引說明.md"
     ],
     "technique": {
       "location": "臀區：股骨大轉子最高點與骶管裂孔連線的外1/3與內2/3交點處。取穴體位：側臥，屈股（彎曲上方腿）",
@@ -10599,7 +10972,10 @@
       "angle": "直刺",
       "dangerLevel": "caution",
       "type": "直刺",
-      "manipulation": []
+      "manipulation": [
+        "瀉法",
+        "強刺激瀉法"
+      ]
     },
     "featured": false,
     "reviewStatus": "unreviewed-source-material",
@@ -10652,16 +11028,37 @@
           "path": "docs/4.19.3足少阳经.md",
           "line": 42
         }
+      },
+      {
+        "kind": "anatomy",
+        "text": "注意深部坐骨神經，避免盲目加深或反覆探刺神經。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 30
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "不可因臀部肌肉較厚而推定安全。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 30
+        }
       }
     ],
     "indications": [
-      "腰痛"
+      "腰痛",
+      "坐骨神經痛",
+      "腰腿痛",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "神經疼痛"
     ],
     "techniqueType": [
-      "直刺"
+      "直刺",
+      "瀉法",
+      "強刺激瀉法"
     ],
     "indicationEvidence": [
       {
@@ -10671,6 +11068,62 @@
         "group": false,
         "context": null,
         "text": "近治：下肢痿痹、癱瘓、腰腿痛（坐骨神經痛等）。遠治/特殊：不明顯。"
+      },
+      {
+        "label": "坐骨神經痛",
+        "path": "docs/4.19.3足少阳经.md",
+        "line": 26,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、癱瘓、腰腿痛（坐骨神經痛等）。遠治/特殊：不明顯。"
+      },
+      {
+        "label": "腰腿痛",
+        "path": "docs/4.19.3足少阳经.md",
+        "line": 26,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、癱瘓、腰腿痛（坐骨神經痛等）。遠治/特殊：不明顯。"
+      },
+      {
+        "label": "下肢痿痺",
+        "path": "docs/4.19.3足少阳经.md",
+        "line": 26,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、癱瘓、腰腿痛（坐骨神經痛等）。遠治/特殊：不明顯。"
+      },
+      {
+        "label": "腰痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。"
+      },
+      {
+        "label": "坐骨神經痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。"
+      },
+      {
+        "label": "腰腿痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。"
+      },
+      {
+        "label": "下肢痿痺",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。"
       }
     ],
     "techniqueEvidence": [
@@ -10681,6 +11134,30 @@
         "group": false,
         "context": "近治：下肢痿痹、癱瘓、腰腿痛（坐骨神經痛等）。遠治/特殊：不明顯。",
         "text": "直刺 2~3 寸。要求有觸電般的放射感向下肢傳導。"
+      },
+      {
+        "label": "直刺",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：提插瀉法（輕插重提）可配合受控捻轉；原部位講義記載直刺 2~3 寸。刺激量由操作者依反應調整，放射感不是強度目標。"
+      },
+      {
+        "label": "瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：提插瀉法（輕插重提）可配合受控捻轉；原部位講義記載直刺 2~3 寸。刺激量由操作者依反應調整，放射感不是強度目標。"
+      },
+      {
+        "label": "強刺激瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 30,
+        "group": false,
+        "context": "坐骨神經痛、腰腿痛、下肢痿痺；限辨證屬實、體質及局部條件適合者評估。",
+        "text": "強刺激瀉法的條件式教學例：提插瀉法（輕插重提）可配合受控捻轉；原部位講義記載直刺 2~3 寸。刺激量由操作者依反應調整，放射感不是強度目標。"
       }
     ]
   },
@@ -10781,6 +11258,16 @@
         "safety": "影片未提及"
       },
       {
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "label": "陽陵泉",
+        "group": false,
+        "location": "腓骨小頭前下方凹陷，定位依原部位講義。",
+        "indications": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。",
+        "method": "強刺激瀉法的條件式教學例：捻轉瀉法配合受控提插；原部位講義記載直刺 1~1.5 寸。以辨證、解剖與耐受決定刺激量。",
+        "safety": "避免損傷腓總神經及局部血管，不可為增強針感盲目深刺。急性膽道症狀不能只以針刺替代病因處置。"
+      },
+      {
         "path": "docs/7.8痹证的针灸治疗.md",
         "line": 28,
         "label": "膝部：膝眼、梁丘、血海、陽陵泉、膝陽關",
@@ -10803,9 +11290,11 @@
     "docs": [
       "docs/4.19.3足少阳经.md",
       "docs/4.18.1上肢部常用腧穴-概述.md",
+      "docs/techniques/strong_stimulation_draining.md",
       "docs/7.8痹证的针灸治疗.md",
       "docs/4.19.6奇穴.md",
-      "docs/6.4针灸配穴处方.md"
+      "docs/6.4针灸配穴处方.md",
+      "docs/症狀與針法索引說明.md"
     ],
     "technique": {
       "location": "小腿外側：腓骨小頭前下方的凹陷中。",
@@ -10817,7 +11306,10 @@
       "angle": "直刺",
       "dangerLevel": "caution",
       "type": "直刺",
-      "manipulation": []
+      "manipulation": [
+        "瀉法",
+        "強刺激瀉法"
+      ]
     },
     "featured": false,
     "reviewStatus": "unreviewed-source-material",
@@ -10854,16 +11346,41 @@
           "path": "docs/4.19.3足少阳经.md",
           "line": 27
         }
+      },
+      {
+        "kind": "depth",
+        "text": "避免損傷腓總神經及局部血管，不可為增強針感盲目深刺。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 31
+        }
+      },
+      {
+        "kind": "anatomy",
+        "text": "避免損傷腓總神經及局部血管，不可為增強針感盲目深刺。",
+        "source": {
+          "path": "docs/techniques/strong_stimulation_draining.md",
+          "line": 31
+        }
       }
     ],
     "indications": [
-      "噁心嘔吐"
+      "腰痛",
+      "肩頸僵硬",
+      "噁心嘔吐",
+      "腰腿痛",
+      "下肢痿痺",
+      "急性扭傷",
+      "膽絞痛"
     ],
     "symptomCategories": [
-      "胸腹消化"
+      "胸腹消化",
+      "神經疼痛"
     ],
     "techniqueType": [
-      "直刺"
+      "直刺",
+      "瀉法",
+      "強刺激瀉法"
     ],
     "indicationEvidence": [
       {
@@ -10873,6 +11390,54 @@
         "group": false,
         "context": null,
         "text": "近治：下肢痿痹、膝腫痛。遠治：嘔吐、黃疸、脅痛、口苦。特殊：筋脈拘攣、小兒驚風。"
+      },
+      {
+        "label": "下肢痿痺",
+        "path": "docs/4.19.3足少阳经.md",
+        "line": 27,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、膝腫痛。遠治：嘔吐、黃疸、脅痛、口苦。特殊：筋脈拘攣、小兒驚風。"
+      },
+      {
+        "label": "腰痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": null,
+        "text": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。"
+      },
+      {
+        "label": "肩頸僵硬",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": null,
+        "text": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。"
+      },
+      {
+        "label": "腰腿痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": null,
+        "text": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。"
+      },
+      {
+        "label": "急性扭傷",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": null,
+        "text": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。"
+      },
+      {
+        "label": "膽絞痛",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": null,
+        "text": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。"
       }
     ],
     "techniqueEvidence": [
@@ -10883,6 +11448,30 @@
         "group": false,
         "context": "近治：下肢痿痹、膝腫痛。遠治：嘔吐、黃疸、脅痛、口苦。特殊：筋脈拘攣、小兒驚風。",
         "text": "直刺 1~1.5 寸。"
+      },
+      {
+        "label": "直刺",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。",
+        "text": "強刺激瀉法的條件式教學例：捻轉瀉法配合受控提插；原部位講義記載直刺 1~1.5 寸。以辨證、解剖與耐受決定刺激量。"
+      },
+      {
+        "label": "瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。",
+        "text": "強刺激瀉法的條件式教學例：捻轉瀉法配合受控提插；原部位講義記載直刺 1~1.5 寸。以辨證、解剖與耐受決定刺激量。"
+      },
+      {
+        "label": "強刺激瀉法",
+        "path": "docs/techniques/strong_stimulation_draining.md",
+        "line": 31,
+        "group": false,
+        "context": "急性扭傷、筋脈拘攣、肩背腰腿疼痛；膽絞痛為需先明確病因的需求教學情境，須排除需急處置的膽道疾病。",
+        "text": "強刺激瀉法的條件式教學例：捻轉瀉法配合受控提插；原部位講義記載直刺 1~1.5 寸。以辨證、解剖與耐受決定刺激量。"
       }
     ]
   },
@@ -12354,13 +12943,26 @@
         }
       }
     ],
-    "indications": [],
-    "symptomCategories": [],
+    "indications": [
+      "急性扭傷"
+    ],
+    "symptomCategories": [
+      "神經疼痛"
+    ],
     "techniqueType": [
       "斜刺",
       "瀉法"
     ],
-    "indicationEvidence": [],
+    "indicationEvidence": [
+      {
+        "label": "急性扭傷",
+        "path": "docs/4.15.2头部常用腧穴.md",
+        "line": 35,
+        "group": false,
+        "context": null,
+        "text": "1. 急救要穴：神昏、中風、中暑、癲狂癇。2. 督脈病：急性腰扭傷。"
+      }
+    ],
     "techniqueEvidence": [
       {
         "label": "斜刺",
@@ -14487,11 +15089,13 @@
     ],
     "indications": [
       "感冒發熱",
-      "咳嗽氣喘"
+      "咳嗽氣喘",
+      "急性扭傷"
     ],
     "symptomCategories": [
       "頭面五官",
-      "胸腹消化"
+      "胸腹消化",
+      "神經疼痛"
     ],
     "techniqueType": [
       "直刺",
@@ -14505,6 +15109,14 @@
         "group": false,
         "context": null,
         "text": "近治：肘臂攣痛。遠治：咳嗽、氣喘、咳血、咽喉腫痛。特殊：急性吐瀉、中暑、小兒驚風等急症。"
+      },
+      {
+        "label": "急性扭傷",
+        "path": "docs/5.4三棱针.md",
+        "line": 29,
+        "group": true,
+        "context": null,
+        "text": "中暑、急性腰扭傷、熱證"
       },
       {
         "label": "感冒發熱",
@@ -18469,10 +19081,12 @@
       }
     ],
     "indications": [
-      "胃痛"
+      "胃痛",
+      "下肢痿痺"
     ],
     "symptomCategories": [
-      "胸腹消化"
+      "胸腹消化",
+      "神經疼痛"
     ],
     "techniqueType": [
       "直刺"
@@ -18480,6 +19094,14 @@
     "indicationEvidence": [
       {
         "label": "胃痛",
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 26,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、癱瘓、膝痛。遠治：胃痛、乳癰。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.1足阳明胃经.md",
         "line": 26,
         "group": false,
@@ -18661,10 +19283,12 @@
     "indications": [
       "便秘",
       "腹痛",
-      "腹瀉"
+      "腹瀉",
+      "下肢痿痺"
     ],
     "symptomCategories": [
-      "胸腹消化"
+      "胸腹消化",
+      "神經疼痛"
     ],
     "techniqueType": [
       "直刺"
@@ -18688,6 +19312,14 @@
       },
       {
         "label": "腹瀉",
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 28,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、癱瘓、腳氣。遠治：腹痛、腸鳴、泄瀉、痢疾等胃腸病變。特殊：便秘、腸癰。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.1足阳明胃经.md",
         "line": 28,
         "group": false,
@@ -18850,7 +19482,8 @@
       "頭痛",
       "偏頭痛",
       "便秘",
-      "咳嗽氣喘"
+      "咳嗽氣喘",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -18880,6 +19513,14 @@
       },
       {
         "label": "咳嗽氣喘",
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 29,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、水腫。遠治：腹脹、便秘等胃腸病。特殊：祛痰要穴（治痰多咳嗽之外痰，及頭痛、眩暈、癲狂癇之內痰）。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.1足阳明胃经.md",
         "line": 29,
         "group": false,
@@ -19141,7 +19782,8 @@
       "胃痛",
       "面癱",
       "便秘",
-      "腹痛"
+      "腹痛",
+      "下肢痿痺"
     ],
     "symptomCategories": [
       "頭面五官",
@@ -19187,6 +19829,14 @@
       },
       {
         "label": "腹痛",
+        "path": "docs/4.19.1足阳明胃经.md",
+        "line": 30,
+        "group": false,
+        "context": null,
+        "text": "近治：下肢痿痹、腳背腫痛。遠治：齒痛、咽喉痛、口眼歪斜、面痛、胃痛吐酸、腹痛便秘等。特殊：熱病（清胃熱要穴）。"
+      },
+      {
+        "label": "下肢痿痺",
         "path": "docs/4.19.1足阳明胃经.md",
         "line": 30,
         "group": false,

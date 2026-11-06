@@ -1,7 +1,8 @@
 import { getDocument, renderMarkdown, text } from '../lib/docs.js';
 import { icon } from '../lib/icons.js';
 import { needleSpec, normalizedNeedleVector } from '../lib/needle.js';
-import { techniqueSummaryLabel } from '../lib/clinical-index.js';
+import { getTechniqueContext, techniqueSummaryLabel } from '../lib/clinical-index.js';
+import { sourceDepthValues } from '../lib/needle-data.js';
 
 export class TechniqueSheet {
   constructor(element, onFocus, onClose) {
@@ -44,11 +45,14 @@ export class TechniqueSheet {
   show(point) {
     this.point = point;
     const technique = point.technique || {};
-    const primaryDoc = getDocument(point.docPath || technique.source || point.docs[0]);
+    const context = getTechniqueContext(point, this.group?.value);
+    const primaryPath = context?.path || point.docPath || technique.source || point.docs[0];
+    const primaryDoc = getDocument(primaryPath);
+    const contextDepth = context ? sourceDepthValues({ ...point, technique: { ...technique, method: context.method, source: context.path } }).map(value => value.raw).join('；') : null;
     const warnings = (point.dangerWarnings || []).filter((warning, index, all) => all.findIndex(other => other.text === warning.text) === index);
     const danger = technique.dangerLevel === 'high';
     const hasNeedleVector = normalizedNeedleVector(point.needleVector) !== null;
-    const fields = [['體表定位', technique.location], ['刺灸操作', technique.method], ['進針深度', technique.depth], ['安全與禁忌', technique.safety]];
+    const fields = [['體表定位', technique.location], ['刺灸操作', context?.method || technique.method], ['進針深度', context?.method || technique.depth], ['安全與禁忌', context?.safety || technique.safety]];
     const manipulationEvidence = (point.techniqueEvidence || []).filter(e => technique.manipulation?.includes(e.label));
     const symptomContext = point.indications?.includes(this.group?.value);
     const relevantEvidence = manipulationEvidence.filter(e => !this.group?.value || e.label === this.group.value || point.indicationEvidence?.some(i => i.label === this.group.value && i.path === e.path && i.line === e.line));
@@ -60,9 +64,10 @@ export class TechniqueSheet {
       <div class="sheet-actions"><button class="primary-button" data-focus>${icon('pin')}聚焦穴位</button><button class="secondary-button" data-expand>${icon('book')}閱讀講義</button></div>
       <div class="sheet-scroll"><section class="clinical-summary" aria-label="症狀與手法速查">
         <h3>主要對應病症</h3><div class="symptom-tags">${indicationTags || '<span class="search-hint">教材未載明可索引的症狀</span>'}</div>
-        <h3>手法速查摘要</h3><dl class="technique-summary"><div><dt>入針方式</dt><dd data-summary-angle>${text(technique.type || '教材未載明')}</dd></div><div><dt>刺入深度</dt><dd>${text(point.depth || '教材未載明')}</dd></div><div><dt>補瀉手法</dt><dd>${text(manipulation)}</dd></div></dl>
+        <h3>手法速查摘要</h3><dl class="technique-summary"><div><dt>入針方式</dt><dd data-summary-angle>${text((context ? context.type : technique.type) || '教材未載明')}</dd></div><div><dt>刺入深度</dt><dd>${text((context ? contextDepth : point.depth) || '教材未載明')}</dd></div><div><dt>補瀉手法</dt><dd>${text(manipulation)}</dd></div></dl>
         <details class="clinical-evidence"><summary>查看適用條件與教材依據</summary><p>深度依入針路徑與條件而異，請對照完整操作原文。</p>${(point.techniqueEvidence || []).filter(e => !this.group?.value || e.label === this.group.value || shownEvidence.includes(e)).map(e => `<p>${text(e.label)}${e.group ? '（配穴群共同記述）' : ''}：${text(e.text)}<br>${text(e.context || '')}<button class="text-button" data-source="${text(e.path)}">查閱來源 · 第 ${e.line} 行</button></p>`).join('')}${(point.indicationEvidence || []).filter(e => !this.group?.value || e.label === this.group.value).map(e => `<p>${text(e.label)}：${text(e.text)}${e.group ? '（配穴群／辨證加減，詳見原文）' : ''}<button class="text-button" data-source="${text(e.path)}">查閱來源 · 第 ${e.line} 行</button></p>`).join('')}</details>
       </section>
+      ${context ? `<section class="technique-context" data-technique-context aria-label="所選針法操作與禁忌"><h3>${text(context.techniqueType)} · 操作與禁忌</h3><p>${text(context.indications)}</p><div class="markdown-body" data-context-method>${renderMarkdown(context.method)}</div><div class="context-warning" data-context-warning><strong>本手法注意事項</strong><p>${text(context.safety || '教材未載明個別禁忌，請對照完整講義。')}</p></div><button class="text-button" data-source="${text(context.path)}">閱讀本手法教材 · 第 ${context.line} 行 ${icon('arrow')}</button></section>` : ''}
       ${this.group ? `<section class="group-navigation"><h3>${text(this.group.label)} · ${this.group.points.length} 穴</h3><p>含教材辨證加減配穴，點選穴名查看個別手法。</p><div>${this.group.points.map(p => `<button data-group-point="${text(p.id)}" aria-pressed="${point.id === p.id}">${text(p.name)} <small>${text(p.id)}</small></button>`).join('')}</div></section>` : ''}
       ${danger ? `<section class="danger-warning" data-danger-warning aria-label="高風險穴位警示"><strong class="danger-badge">高風險穴位 · 危險深度</strong><p>避開重要臟器／血管，依教材確認方向與深度。</p>${warnings.map(warning => `<div class="danger-excerpt"><p>${text(warning.text)}</p><button class="text-button" data-danger-source="${text(warning.source.path)}">查閱警示來源 · 第 ${text(warning.source.line)} 行 ${icon('arrow')}</button></div>`).join('')}</section>` : ''}
       <div class="geometry-note">${icon('layers')}<p>${point.coordinatePrecision === 'manual' ? '手動表面取點（待審訂）' : '體表區域示意'} · ${hasNeedleVector ? (needleSpec(point) ? text(needleSpec(point).label) : '依教材所載針向示意') : '<span data-needle-calibration-warning>進針角度與向量：待專業校準</span>'}<br><span>模型、針向與針體長度為示意，未將「寸」換算為模型距離。</span></p></div>
@@ -71,7 +76,7 @@ export class TechniqueSheet {
       <section class="sheet-original" data-sheet-original hidden><h3>原始講義全文</h3><div class="markdown-body">${renderMarkdown(primaryDoc?.markdown || '此穴位沒有對應的原始講義。')}</div></section>
       <p class="learning-note">供針灸課程學習與教材檢索使用。實際操作須由合格專業人員依個別解剖條件評估。</p></div>`;
     this.element.querySelector('[data-focus]').onclick = () => this.onFocus(point);
-    this.element.querySelector('[data-expand]').onclick = () => this.openDocument?.(point.docPath || point.docs[0], point.name);
+    this.element.querySelector('[data-expand]').onclick = () => this.openDocument?.(primaryPath, point.name);
     this.element.querySelector('[data-close-sheet]').onclick = () => this.onClose();
     this.element.querySelectorAll('[data-source]').forEach(button => button.onclick = () => this.openDocument?.(button.dataset.source, point.name));
     this.element.querySelectorAll('[data-sheet-symptom]').forEach(button => button.onclick = () => this.onSymptom?.(button.dataset.sheetSymptom));

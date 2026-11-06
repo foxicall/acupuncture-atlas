@@ -23,8 +23,8 @@ test('symptom group highlights all body sides, fits the camera, and links to the
   await expect(page.locator('.group-navigation')).toContainText('頭痛');
   await expect(page.locator('.clinical-summary')).toContainText('主要對應病症');
   await expect(page.locator('.clinical-summary')).toContainText('手法速查摘要');
-  // LI4's reducing method is sourced to a cold-treatment row, not headache.
-  await expect(page.locator('.technique-summary')).toContainText('本症狀未載明');
+  // The new LI4 supplement explicitly includes the migraine/headache context.
+  await expect(page.locator('.technique-summary')).toContainText('強刺激瀉法');
   await page.locator('[data-fit-group]').click();
   await expectGroup(page, symptomIds('頭痛'));
   await expect(page.locator('#viewer canvas')).toBeVisible();
@@ -34,6 +34,8 @@ test('symptom group highlights all body sides, fits the camera, and links to the
   await page.locator('[data-group-point="GB20"]').click();
   await expect(page.locator('.point-title h2')).toHaveText('風池');
   await expect(page.locator('[data-summary-angle]')).toHaveText('斜刺');
+  // GB20 still has no headache-specific reducing method; do not borrow its cold row.
+  await expect(page.locator('.technique-summary')).toContainText('本症狀未載明');
   await expect(page.locator('[data-danger-warning]')).toContainText('高風險');
   expect(errors).toEqual([]);
 });
@@ -46,7 +48,29 @@ test('technique/category switching replaces stale filters and clears back to all
   await page.getByRole('tab', { name: /針法索引/ }).click();
   await page.locator('[data-clinical-value="透刺"]').click();
   await expectGroup(page, points.filter(p => p.techniqueType.includes('透刺')).map(p => p.id).sort());
-  await expect(page.locator('[data-clinical-value="強刺激瀉法"]')).toBeDisabled();
+  const strong = page.locator('[data-clinical-value="強刺激瀉法"]');
+  await expect(strong).toBeEnabled();
+  await expect(strong.locator('span')).toHaveText('5');
+  await strong.click();
+  await expectGroup(page, ['BL40', 'GB30', 'GB34', 'LI4', 'LR3']);
+  const cautions = { GB30: '坐骨神經', GB34: '腓總神經', LI4: '孕婦禁用', LR3: '足背動脈', BL40: '膕動靜脈' };
+  for (const [id, caution] of Object.entries(cautions)) {
+    await page.locator(`[data-group-point="${id}"]`).click();
+    await expect(page.locator('[data-context-method]')).toContainText('強刺激瀉法的條件式教學例');
+    await expect(page.locator('[data-context-warning]')).toContainText(caution);
+    await expect(page.locator('.technique-summary')).toContainText('強刺激瀉法');
+  }
+  await page.getByRole('button', { name: '閱讀講義', exact: true }).click();
+  await expect(page.locator('[data-document-body] h1')).toHaveText('強刺激瀉法');
+  await expect(page.locator('[data-document-body]')).toContainText('輕插重提');
+  await page.keyboard.press('Escape');
+  if (await page.locator('[data-sheet-drag]').isVisible()) {
+    await page.locator('[data-sheet-drag]').click();
+    await expect(page.locator('[data-sheet-original] h1')).toHaveText('強刺激瀉法');
+    await page.keyboard.press('Escape');
+  }
+  await page.locator('[data-fit-group]').click();
+  await expectGroup(page, ['BL40', 'GB30', 'GB34', 'LI4', 'LR3']);
   await page.locator('[data-clinical-value=""]').click();
   await expect.poll(() => page.evaluate(() => window.__atlas.highlightedPointIds)).toEqual([]);
   await expect(page.locator('.point-row')).toHaveCount(points.length);

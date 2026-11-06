@@ -353,6 +353,13 @@ dialog::backdrop { background: rgb(18 33 27 / .45); }
 .group-navigation button { flex-shrink: 0; min-height: 44px; border: 1px solid var(--rule); border-radius: 4px; padding: 8px; font-size: 12px; }
 .group-navigation button[aria-pressed="true"] { background: var(--active); border-color: var(--accent); }
 .group-navigation small { color: var(--muted); }
+.technique-context { padding: 14px; margin-bottom: 20px; background: var(--active); border-radius: 4px; font-size: 12px; line-height: 1.8; }
+.technique-context h3 { font-size: 13px; margin-bottom: 8px; }
+.technique-context > p { color: var(--muted); margin-bottom: 10px; }
+.technique-context .markdown-body { font-size: 12px; }
+.context-warning { padding: 10px; background: #fff0df; color: #7d4b1e; border-radius: 4px; margin-top: 12px; }
+.context-warning strong { display: block; margin-bottom: 4px; font-size: 11px; }
+.technique-context .text-button { text-align: left; min-height: 44px; }
 .atlas.is-calibrating .filter-dashboard { display: none; }
 .atlas.is-calibrating { --viewer-top: 150px; }
 .atlas.is-calibrating .orientation-controls { top: 100px; }
