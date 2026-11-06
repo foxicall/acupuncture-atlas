@@ -1,5 +1,22 @@
 # 穴位與教材索引
 
+## 症狀／針法雙向索引
+
+操作與索引語意見 [症狀與針法索引說明](../../docs/症狀與針法索引說明.md)。`data:generate` 會透過 `src/lib/clinical-index.js` 產生下列欄位，重新生成與手動校準均保留相容性：
+
+```js
+{
+  indications: ['頭痛', '牙痛', '面癱', '感冒發熱'],
+  symptomCategories: ['頭面五官', '神經疼痛'],
+  techniqueType: ['直刺', '瀉法', '點刺放血', '透刺'], // 多個來源／條件，不等於同時操作
+  technique: { type: '直刺', manipulation: ['瀉法'] /* 原有欄位不變 */ },
+  indicationEvidence: [{ label, path, line, text, group, context }],
+  techniqueEvidence: [{ label, path, line, text, group, context }],
+}
+```
+
+沒有來源的症狀與手法使用空陣列；主要入針方式無法確定則為 `null`。不得將缺少補瀉記述預設成平補平瀉，也不得把一般瀉法改列為強刺激瀉法。精確條件、深度與禁忌仍以來源原文為準。
+
 先保留／執行 `node scripts/generate-model.js` 產生本專案 GLB，再執行 `node scripts/generate-acupoints.js`，從 `docs/**/*.md` 重新產生三個 JSON。原始教材保持不變；新增教材不需搬動既有檔案。
 
 - `acupoints.json`：穴位陣列；標準穴位用 WHO 常用代碼如 `LI4`，耳穴命名空間 `EAR-`，教材非標準舉例 `REG-`。

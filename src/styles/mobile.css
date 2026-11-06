@@ -303,3 +303,100 @@ dialog::backdrop { background: rgb(18 33 27 / .45); }
   .update-notice { gap: 8px; font-size: 12px; padding-left: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* Clinical index occupies its own lane above the canvas at every breakpoint. */
+.atlas { --filter-top: 92px; --viewer-top: 320px; }
+.filter-dashboard { position: absolute; top: var(--filter-top); left: 20px; right: 20px; z-index: 4; min-width: 0; }
+.compact-category { display: none; }
+.filter-tabs { display: flex; gap: 20px; border-bottom: 1px solid #cedad2; }
+.filter-tabs button { min-height: 44px; padding: 8px 0; font-size: 13px; color: var(--muted); border-bottom: 2px solid transparent; }
+.filter-tabs button[aria-selected="true"] { color: var(--accent); border-color: var(--accent); font-weight: 600; }
+.filter-tabs small { font-size: 9px; margin-left: 6px; font-weight: 400; }
+.filter-categories, .filter-chips { display: flex; align-items: center; gap: 6px; overflow-x: auto; scrollbar-width: thin; overscroll-behavior-x: contain; }
+.filter-categories button { flex-shrink: 0; min-height: 40px; padding: 6px 7px; font-size: 11px; color: var(--muted); }
+.filter-categories button[aria-pressed="true"] { color: var(--ink); text-decoration: underline; text-underline-offset: 5px; }
+.filter-chips { padding: 5px 0; }
+.filter-chips button { display: flex; align-items: center; gap: 8px; flex-shrink: 0; min-height: 44px; padding: 8px 13px; border: 1px solid #cfddd4; border-radius: 24px; background: var(--surface); font-size: 12px; }
+.filter-chips button span { font-size: 10px; opacity: .7; }
+.filter-chips button[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
+.filter-chips button:disabled { opacity: .42; }
+.filter-status { min-height: 32px; display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 10px; color: var(--muted); }
+.filter-status button { min-height: 32px; padding: 4px; white-space: nowrap; }
+.viewer { top: var(--viewer-top); }
+.orientation-controls, .atlas-meridian-control { top: 272px; }
+.meridian-label.is-far-side { border: 1px dashed var(--accent); background: #e4ede7; }
+.symptom-suggestions { flex: 0 1 auto; max-height: 265px; overflow-y: auto; background: white; border: 1px solid var(--rule); border-top: 0; padding: 8px; scrollbar-width: thin; }
+.symptom-suggestions > p { font-size: 10px; color: var(--muted); margin: 6px 4px; }
+.symptom-suggestions button { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; width: 100%; text-align: left; font-size: 12px; padding: 6px; }
+.symptom-suggestions button:hover { background: var(--active); }
+.symptom-suggestions button span { font-size: 10px; color: var(--muted); max-width: 65%; }
+.search-hint { font-size: 11px; color: var(--muted); }
+.directory-context { font-size: 12px; color: var(--accent); margin-top: 12px; }
+.clinical-summary { padding-bottom: 16px; margin-bottom: 18px; border-bottom: 1px solid var(--rule); }
+.clinical-summary h3, .group-navigation h3 { font-size: 12px; margin: 0 0 9px; }
+.symptom-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 17px; }
+.symptom-tag { min-height: 32px; padding: 5px 9px; border-radius: 4px; background: #dfeee5; color: #246446; font-size: 11px; }
+.symptom-tag:nth-child(3n+2) { background: #f4e9d6; color: #795522; }
+.symptom-tag:nth-child(3n) { background: #e3eaf3; color: #405e84; }
+.symptom-tag.is-active { outline: 1px solid currentColor; outline-offset: -1px; }
+.technique-summary { margin: 0; font-size: 12px; }
+.technique-summary > div { display: grid; grid-template-columns: 75px 1fr; gap: 8px; padding: 5px 0; line-height: 1.6; }
+.technique-summary dt { color: var(--muted); }
+.technique-summary dd { margin: 0; overflow-wrap: anywhere; }
+.clinical-evidence { font-size: 11px; line-height: 1.8; margin-top: 8px; color: var(--muted); }
+.clinical-evidence summary { cursor: pointer; padding: 6px 0; }
+.clinical-evidence p { margin: 9px 0; }
+.clinical-evidence button { display: block; text-align: left; }
+.group-navigation { margin-bottom: 20px; }
+.group-navigation > p { font-size: 11px; line-height: 1.7; color: var(--muted); margin-bottom: 8px; }
+.group-navigation > div { display: flex; gap: 6px; overflow-x: auto; }
+.group-navigation button { flex-shrink: 0; min-height: 44px; border: 1px solid var(--rule); border-radius: 4px; padding: 8px; font-size: 12px; }
+.group-navigation button[aria-pressed="true"] { background: var(--active); border-color: var(--accent); }
+.group-navigation small { color: var(--muted); }
+.atlas.is-calibrating .filter-dashboard { display: none; }
+.atlas.is-calibrating { --viewer-top: 150px; }
+.atlas.is-calibrating .orientation-controls { top: 100px; }
+@media (max-width: 1100px) {
+  .atlas { --filter-top: 140px; --viewer-top: 368px; }
+  .mobile-search { top: 88px; }
+  .orientation-controls, .atlas-meridian-control { top: 320px; }
+  .atlas-heading h2 { font-size: 17px; }
+  .filter-tabs { gap: 16px; }
+  .filter-tabs small { display: none; }
+}
+@media (max-width: 680px) {
+  .atlas { --filter-top: 100px; --viewer-top: 264px; min-height: 425px; }
+  .atlas-heading { top: 8px; align-items: center; }
+  .atlas-heading h2 { font-size: 15px; }
+  .atlas-heading p { display: none; }
+  .mobile-search { top: 56px; font-size: 12px; }
+  .filter-tabs button { min-height: 36px; padding: 5px 0; font-size: 12px; }
+  .filter-categories { display: none; }
+  .compact-category { display: block; position: absolute; top: 0; right: 0; width: 110px; height: 36px; font-size: 11px; border: 0; background: transparent; padding: 0 4px; }
+  .filter-categories button { min-height: 34px; padding: 4px; }
+  .filter-chips button { min-height: 40px; padding: 6px 11px; }
+  .filter-status { font-size: 9px; }
+  .orientation-controls { top: 220px; left: 20px; flex-direction: row; }
+  .view-button { height: 36px; }
+  .atlas-meridian-control { top: 218px; left: 130px; }
+  .atlas-meridian-control select { height: 40px; font-size: 11px; }
+  .viewer { inset: var(--viewer-top) 44px 14px 16px; }
+  .technique-sheet { flex-basis: min(35dvh, 340px); }
+  .sheet-actions { margin: 8px 0; }
+  .clinical-summary h3 { font-size: 11px; margin-bottom: 6px; }
+  .symptom-tags { flex-wrap: nowrap; overflow-x: auto; margin-bottom: 10px; }
+  .symptom-tag { flex-shrink: 0; }
+  .technique-summary { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; }
+  .technique-summary > div { display: block; padding: 0; }
+  .technique-summary dt { margin-bottom: 3px; }
+  .clinical-summary { margin-bottom: 12px; padding-bottom: 10px; }
+  .technique-sheet.is-expanded .symptom-tags { flex-wrap: wrap; }
+  .atlas.is-calibrating .mobile-search { top: 65px; }
+  .atlas.is-calibrating .orientation-controls { top: 115px; }
+  .atlas.is-calibrating .viewer { top: 160px; bottom: 300px; }
+  .symptom-suggestions { max-height: 255px; }
+}
+@media (max-width: 680px) and (max-height: 750px) {
+  #app { min-height: 740px; height: auto; }
+  .workspace { min-height: 640px; }
+}

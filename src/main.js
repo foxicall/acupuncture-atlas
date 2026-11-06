@@ -6,6 +6,8 @@ import { Capacitor } from '@capacitor/core';
 import originalAcupoints from './data/acupoints.json';
 import { Viewer3D } from './components/Viewer3D.js';
 import { AcupointList } from './components/AcupointList.js';
+import { FilterDashboard } from './components/FilterDashboard.js';
+import { matchesClinical } from './lib/clinical-index.js';
 import { TechniqueSheet } from './components/TechniqueSheet.js';
 import { documents, getDocument, normalize, renderMarkdown, text } from './lib/docs.js';
 import { icon } from './lib/icons.js';
@@ -32,13 +34,14 @@ document.querySelector('#app').innerHTML = `<header class="app-header">
   <main class="workspace">
     <aside class="directory" aria-label="穴位目錄"></aside>
     <section class="atlas" aria-label="立體穴位圖譜">
-      <div class="atlas-heading"><div><h2>探索經絡與穴位</h2><p>從體表定位，走進刺灸手法。</p></div><button class="calibration-toggle" data-calibration-toggle aria-pressed="false" aria-controls="calibration-panel">${icon('pin')}校準模式</button></div>
+      <div class="atlas-heading"><div><h2>從症狀，找到穴位</h2><p>對照病症與針法，探索教材配穴。</p></div><button class="calibration-toggle" data-calibration-toggle aria-pressed="false" aria-controls="calibration-panel">${icon('pin')}校準模式</button></div>
+      <section class="filter-dashboard" aria-label="症狀與針法篩選"></section>
       <section class="calibration-panel" id="calibration-panel" data-calibration-panel aria-label="穴位座標校準" hidden></section>
       <div class="viewer" id="viewer"><div class="model-message" role="status" data-model-status>正在準備 3D 圖譜</div></div>
       <div class="orientation-controls" role="group" aria-label="觀察角度"><button class="view-button is-active" data-front>正面</button><button class="view-button" data-back>背面</button></div>
       <div class="zoom-controls" role="group" aria-label="縮放圖譜"><button class="icon-button" data-zoom-in aria-label="放大">${icon('plus')}</button><button class="icon-button" data-zoom-out aria-label="縮小">${icon('minus')}</button><button class="icon-button" data-reset aria-label="還原全身視角">${icon('reset')}</button></div>
       <div class="atlas-bottom"><div class="atlas-legend"><span class="landmark-dot"></span>穴位標記 <span class="needle-line"></span>入針方向</div><p>單指旋轉 · 雙指縮放</p></div>
-      <button class="mobile-search mobile-only" data-open-list>${icon('search')}搜尋穴位與經絡<span>${acupoints.length}</span></button>
+      <button class="mobile-search mobile-only" data-open-list>${icon('search')}搜尋症狀、穴名或代碼<span>${acupoints.length}</span></button>
       <label class="atlas-meridian-control"><span>經絡</span><select data-atlas-meridian aria-label="圖譜經絡篩選"><option value="">全部經絡</option></select></label>
       <button class="reopen-sheet" data-reopen hidden>${icon('pin')}<span></span>${icon('chevron')}</button>
     </section>
@@ -58,12 +61,31 @@ let pendingInstall;
 let calibrationPanel;
 let calibrationEnabled = false;
 let sheetWasCollapsed = false;
+let dashboard;
 const initial = acupoints.find(p => p.id === new URLSearchParams(location.hash.slice(1)).get('point')) || acupoints.find(p => p.id === 'LI4') || acupoints[0];
 const sheet = new TechniqueSheet(sheetElement, point => viewer?.select(point), collapseSheet);
 const directory = new AcupointList(directoryElement, acupoints, selectPoint, (filtered, state) => {
-  viewer?.setVisible(filtered.length === acupoints.length && !state.meridian ? filtered.filter(p => p.featured) : filtered, Boolean(state.meridian), Boolean(state.meridian || state.query.trim()));
+  const clinicalActive = Boolean(state.clinical.value || state.clinical.category);
+  const grouped = clinicalActive || Boolean(state.query.trim());
+  const group = clinicalActive ? { label: state.clinical.value || state.clinical.category, value: state.clinical.value, points: filtered } : null;
+  sheet.setGroup(group);
+  viewer?.setVisible(!grouped && filtered.length === acupoints.length && !state.meridian ? filtered.filter(p => p.featured) : filtered, Boolean(state.meridian) || grouped, Boolean(state.meridian) || grouped, grouped);
+  dashboard?.updateResult(filtered, clinicalActive);
   document.querySelector('[data-atlas-meridian]').value = state.meridian;
+  if (selected) {
+    if (clinicalActive && filtered.length) selectPoint(filtered.find(p => p.id === selected.id) || filtered[0], false);
+    else sheet.show(selected);
+  }
+  if (grouped && filtered.length) viewer?.fitGroup(filtered);
 });
+dashboard = new FilterDashboard(document.querySelector('.filter-dashboard'), acupoints, state => directory.setClinical(state));
+dashboard.updateResult(acupoints, false);
+dashboard.onFit = () => viewer?.fitGroup(directory.filtered);
+directory.onClearClinical = () => dashboard.reset();
+const chooseSymptom = value => { dashboard.choose({ mode: 'symptom', category: '', value }); closeDirectory(); };
+directory.onSymptom = chooseSymptom;
+sheet.onSymptom = chooseSymptom;
+sheet.onSelectPoint = selectPoint;
 const atlasMeridian = document.querySelector('[data-atlas-meridian]');
 atlasMeridian.innerHTML = directoryElement.querySelector('#meridian').innerHTML;
 atlasMeridian.onchange = () => {
@@ -75,6 +97,7 @@ atlasMeridian.onchange = () => {
 function selectPoint(point, fly = true, updateHistory = true) {
   if (!point) return;
   selected = point;
+  if (!matchesClinical(point, directory.clinical)) { dashboard.reset(); directory.setClinical(dashboard.state); }
   if (directory.meridian && directory.meridian !== point.meridian) directory.setMeridian(point.meridian, true);
   directory.select(point); sheet.show(point); viewer?.select(point, fly);
   if (calibrationEnabled) {
@@ -125,6 +148,14 @@ try {
     get needleVisible() { return viewer.needle.visible && viewer.needle.children.length > 0; },
     get needleMeshCount() { return viewer.needle.children.length; },
     get visiblePointIds() { return viewer.meshes.filter(mesh => mesh.visible && viewer.hotspots.visible).map(mesh => mesh.userData.point.id); },
+    get highlightedPointIds() { return viewer.groupHighlight ? [...viewer.visibleIds] : []; },
+    get groupPointsInFrame() {
+      viewer.camera.updateMatrixWorld();
+      return viewer.meshes.filter(mesh => viewer.visibleIds.has(mesh.userData.point.id)).every(mesh => {
+        const p = mesh.position.clone().project(viewer.camera);
+        return Math.abs(p.x) < 1 && Math.abs(p.y) < 1 && p.z > -1 && p.z < 1;
+      });
+    },
   };
 } catch (error) {
   document.querySelector('[data-model-status]').textContent = '此裝置無法啟用 3D。仍可使用穴位目錄與完整教材。';
@@ -155,6 +186,7 @@ function applyCalibration(overrides, reset = false) {
   calibrationOverrides = overrides;
   acupoints = mergeCalibration(originalAcupoints, overrides);
   viewer?.updatePoints(acupoints);
+  dashboard.points = acupoints; dashboard.render();
   directory.points = acupoints; directory.render();
   selectPoint(acupoints.find(point => point.id === selected.id), false);
   calibrationPanel.status(persisted.ok ? (reset ? '此穴位已還原為專案座標。' : '已綁定座標，並保存於此瀏覽器。') : '已套用於本次畫面，但本機儲存失敗；請匯出 JSON 保存。', !persisted.ok);

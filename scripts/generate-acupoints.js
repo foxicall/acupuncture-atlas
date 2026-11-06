@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { mergeCalibration, parseCalibration } from '../src/lib/calibration.js';
 import { withNeedleData } from '../src/lib/needle-data.js';
+import { withClinicalIndex } from '../src/lib/clinical-index.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dataDir = path.join(root, 'src/data');
@@ -220,7 +221,7 @@ for(const doc of catalog) doc.acupointIds=doc.acupointIds.filter(id=>ids.has(id)
 let overrides=[];
 try { overrides=parseCalibration(await readFile(path.join(dataDir,'calibration-overrides.json'),'utf8'),points); }
 catch(error) { if(error.code!=='ENOENT')throw error; }
-const calibratedPoints=mergeCalibration(points.map(withNeedleData),overrides);
+const calibratedPoints=mergeCalibration(points.map(withNeedleData).map(withClinicalIndex),overrides);
 await mkdir(dataDir,{recursive:true});
 await writeFile(path.join(dataDir,'acupoints.json'),JSON.stringify(calibratedPoints,null,2)+'\n');
 await writeFile(path.join(dataDir,'docs-catalog.json'),JSON.stringify(catalog,null,2)+'\n');

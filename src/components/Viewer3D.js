@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import gsap from 'gsap';
 import { normalizedNeedleVector } from '../lib/needle.js';
+import { fitAcupointGroup } from '../lib/group-camera.js';
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export class Viewer3D {
@@ -38,7 +39,7 @@ export class Viewer3D {
     this.controls.enablePan = true;
     this.controls.touches.ONE = THREE.TOUCH.ROTATE;
     this.controls.touches.TWO = THREE.TOUCH.DOLLY_PAN;
-    this.controls.addEventListener('start', () => this.stopTween());
+    this.controls.addEventListener('start', () => { this.fitPoints = null; this.stopTween(); });
     this.scene.add(new THREE.HemisphereLight('#ffffff', '#777f78', 1.9));
     const key = new THREE.DirectionalLight('#ffffff', 2.3);
     key.position.set(-3, 4, 5);
@@ -127,6 +128,7 @@ export class Viewer3D {
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(width, height);
+    if (this.fitPoints?.length) this.fitGroup(this.fitPoints, false);
   }
   stopTween() { gsap.killTweensOf(this.camera.position); gsap.killTweensOf(this.controls.target); }
   move(position, target, animate = true) {
@@ -136,18 +138,30 @@ export class Viewer3D {
     gsap.to(this.controls.target, { ...target, duration, ease: 'power2.inOut' });
   }
   reset(animate = true, back = false) {
+    this.fitPoints = null;
     const distance = Math.max(6.5, 3.45 / this.camera.aspect);
     this.move({ x: 0, y: 0.04, z: (back ? -1 : 1) * distance }, { x: 0, y: 0, z: 0 }, animate);
   }
   zoom(factor) {
+    this.fitPoints = null;
     this.stopTween();
     const offset = this.camera.position.clone().sub(this.controls.target);
     const distance = THREE.MathUtils.clamp(offset.length() * factor, this.controls.minDistance, this.controls.maxDistance);
     this.camera.position.copy(this.controls.target).add(offset.setLength(distance));
   }
-  setVisible(points, showLabels = false, restrictSelection = false) {
+  fitGroup(points, animate = true) {
+    const frame = fitAcupointGroup(points, this.camera.fov, this.camera.aspect);
+    if (!frame) return;
+    this.fitPoints = points;
+    this.controls.maxDistance = Math.max(12, frame.distance * 1.5);
+    this.move(frame.position, frame.target, animate);
+  }
+  setVisible(points, showLabels = false, restrictSelection = false, groupHighlight = false) {
     this.visibleIds = new Set(points.map(p => p.id));
     this.restrictSelection = restrictSelection;
+    this.groupHighlight = groupHighlight;
+    this.fitPoints = null;
+    this.container.dataset.groupHighlight = String(groupHighlight);
     this.meridianOverlay.replaceChildren(); this.meridianLabels.clear();
     if (showLabels) points.forEach(point => {
       const label = document.createElement('button'); label.className = 'meridian-label';
@@ -217,6 +231,7 @@ export class Viewer3D {
       this.needle.add(shaft, handle, tip, arrow);
     }
     if (fly) {
+      this.fitPoints = null;
       const target = new THREE.Vector3(...point.position);
       const direction = new THREE.Vector3(...point.normal).normalize();
       // Approach obliquely so a perpendicular needle is seen from the side instead
@@ -234,7 +249,7 @@ export class Viewer3D {
     // neighboring point (e.g. LU2 next to LU1) can cover the selected name.
     if (this.active && (this.visibleIds.has(this.active.id) || !this.restrictSelection)) {
       const position = new THREE.Vector3(...this.active.position);
-      const facing = this.camera.position.clone().sub(position).normalize().dot(new THREE.Vector3(...this.active.normal)) > .1;
+      const facing = this.groupHighlight || this.camera.position.clone().sub(position).normalize().dot(new THREE.Vector3(...this.active.normal)) > .1;
       const projected = position.project(this.camera);
       if (facing && projected.z < 1 && Math.abs(projected.x) < 1 && Math.abs(projected.y) < 1) {
         labelRects.push({ x: (projected.x * .5 + .5) * this.container.clientWidth, y: (-projected.y * .5 + .5) * this.container.clientHeight });
@@ -244,12 +259,17 @@ export class Viewer3D {
       const point = mesh.userData.point;
       const towardCamera = this.camera.position.clone().sub(mesh.position).normalize();
       const frontFacing = towardCamera.dot(new THREE.Vector3(...point.normal)) > 0.1;
-      mesh.visible = (this.visibleIds.has(point.id) || (!this.restrictSelection && point.id === this.active?.id)) && frontFacing;
-      const pixels = point.id === this.active?.id ? 5 : 3.5;
+      mesh.visible = (this.visibleIds.has(point.id) || (!this.restrictSelection && point.id === this.active?.id)) && (this.groupHighlight || frontFacing);
+      mesh.material.color.set(point.id === this.active?.id ? '#c17a31' : this.groupHighlight ? '#087f68' : '#24765e');
+      mesh.material.transparent = true;
+      mesh.material.opacity = this.groupHighlight && !frontFacing ? 0.55 : 1;
+      const pixels = point.id === this.active?.id ? 6 : this.groupHighlight ? 5 : 3.5;
       const worldRadius = 2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2)) * this.camera.position.distanceTo(mesh.position) * pixels / this.container.clientHeight;
       mesh.scale.setScalar(worldRadius / 0.021);
       const label = this.meridianLabels.get(point.id);
       if (label) {
+        label.classList.toggle('is-far-side', this.groupHighlight && !frontFacing);
+        label.title = this.groupHighlight && !frontFacing ? '位於其他體側，旋轉模型查看' : '';
         const projected = mesh.position.clone().project(this.camera);
         const x = (projected.x * .5 + .5) * this.container.clientWidth;
         const y = (-projected.y * .5 + .5) * this.container.clientHeight;

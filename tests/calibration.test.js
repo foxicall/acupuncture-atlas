@@ -113,7 +113,7 @@ test('CLI imports persist through source regeneration and retain previous manual
     await mkdir(resolve(fixture, 'src/data'), { recursive: true });
     await mkdir(resolve(fixture, 'public/models'), { recursive: true });
     await writeFile(resolve(fixture, 'package.json'), '{"type":"module"}\n');
-    for (const file of ['scripts/import-calibration.js', 'scripts/generate-acupoints.js', 'src/lib/calibration.js', 'src/lib/needle-data.js', 'public/models/acupuncture_body.glb']) await cp(resolve(root, file), resolve(fixture, file));
+    for (const file of ['scripts/import-calibration.js', 'scripts/generate-acupoints.js', 'src/lib/calibration.js', 'src/lib/needle-data.js', 'src/lib/clinical-index.js', 'public/models/acupuncture_body.glb']) await cp(resolve(root, file), resolve(fixture, file));
     await cp(resolve(root, 'docs'), resolve(fixture, 'docs'), { recursive: true });
     await writeFile(resolve(fixture, 'src/data/acupoints.json'), JSON.stringify(points));
     await writeFile(resolve(fixture, 'src/data/calibration-overrides.json'), JSON.stringify(calibrationEnvelope([patch('LU1')], points)));
